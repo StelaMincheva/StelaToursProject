@@ -1,0 +1,526 @@
+﻿
+/*=============================================================
+    Authour URI: www.binarytheme.com
+    License: Commons Attribution 3.0
+
+    http://creativecommons.org/licenses/by/3.0/
+
+    100% To use For Personal And Commercial Use.
+    IN EXCHANGE JUST GIVE US CREDITS AND TELL YOUR FRIENDS ABOUT US
+   
+    ========================================================  */
+
+
+/*=======================================
+    GENERAL STYLES
+==================================================*/
+
+body {
+          font-family:'Open Sans', sans-serif;
+    font-size:14px;
+   
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family:'Open Sans', sans-serif;
+}
+
+
+.text-center {
+    text-align:center;
+}
+
+h2 {
+    line-height:50px;
+    color:#E91C1C;
+}
+h3 {
+    line-height:30px;
+
+}
+h4 {
+
+line-height: 40px;
+padding-bottom: 0px;
+}
+
+p {
+    font-weight:300;
+    line-height:30px;
+    padding-bottom:15px;
+}
+
+
+.space-free {
+    height:100px;
+}
+
+section {
+    padding-top:50px;
+    margin-top:50px;
+}
+.g-pad-bottom {
+    padding-bottom:30px;
+}
+
+.label-danger {
+font-size: 18px;
+}
+/*=======================================
+    HOME SECTION STYLES
+==================================================*/
+
+.go-marg {
+    margin-top:40px;
+}
+
+#home-sec {
+background: url(../images/2.jpg) no-repeat 50% 50%;
+    filter: brightness(80%);
+background-attachment: fixed;
+-webkit-background-size: cover;
+-moz-background-size: cover;
+-o-background-size: cover;
+background-size: cover;
+width: 100%;
+display: block;
+height: auto;
+ padding-top:190px;
+   min-height:650px;
+    color:#fff;
+}
+
+.head-main {
+    font-size:42px;
+    color: lightyellow;
+    font-weight:900;
+    padding:15px;
+    text-transform:uppercase;
+    
+}
+
+.head-last {
+    margin-top:26px;
+    font-size:22px ;
+    font-weight:900;
+    color: lightgoldenrodyellow;
+}
+
+.link-dark {
+    font-size: 20px;
+}
+
+
+/* ===========================================================
+   NAVBAR CHANGES   
+   ============================================================*/
+.navbar {
+	font-size: 18px;
+}
+
+.navbar-inverse {
+background: lightyellow;
+min-height: 60px;
+padding-top: 5px;
+
+}
+
+.navbar-inverse .navbar-nav > .active > a {
+	background: lightyellow;
+}
+
+.navbar-inverse .navbar-brand {
+	color: #000;
+	font-size: 24px;
+    font-weight:bold;
+	letter-spacing: 2px;
+}
+
+.navbar-brand span {
+    color: #46b8da;
+    font-size: 28px;
+}
+.navbar-inverse :hover .navbar-brand:hover {
+	color: #000;	
+}
+.navbar-inverse .navbar-nav > li > a {
+color: #000;
+}
+.navbar-inverse {
+border-color: #D6D6D6;
+}
+.navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form {
+border-color: #000;
+}
+
+.navbar-inverse .navbar-nav > li > a:hover, .navbar-inverse .navbar-nav > li > a:focus {
+color: #000;
+}
+.navbar-toggle {
+    background-color: black;
+}
+
+#services-sec {
+    background-color: whitesmoke;
+}
+
+
+/*=======================================
+    FOOTER STYLES
+==================================================*/
+
+
+#footer {
+background-color: lightyellow;
+color: #000;
+padding: 20px 50px 20px 50px;
+text-align: center;
+border-top: 1px solid #d6d6d6;
+}
+
+
+/*=======================================
+    MEDIA QUERIES
+    
+    ==================================================*/
+
+@media all and (max-width:640px) and (min-width:381px) {
+    .head-main { 
+        font-size:28px ;
+    }
+}
+@media all and (max-width:381px) and (min-width:200px) {
+    .head-main { 
+        font-size:24px ;
+    }
+}
+
+/*=======================================
+    REGISTER SECTION
+==================================================*/
+.register-sec {
+    background-image:url(../images/3.jpg);
+    background-repeat:no-repeat;
+    background-size:cover;
+    width:100%;
+    height:100vh;
+    overflow:auto;
+}
+
+.register-sec .container{
+    font-family:Roboto,sans-serif;
+    background-image:url(https://image.freepik.com/free-vector/dark-blue-blurred-background_1034-589.jpg) ;
+
+    border-style: solid;
+    border-color: grey;
+    border-width: 1px;
+    margin: 76px auto;
+    text-align: left;
+    opacity: 0.8;
+    box-shadow: 2px 5px 5px 2px #eee;
+    max-width: 500px;
+    padding-top: 10px;
+    height: 363px;
+}
+/*--- for label of first and last name---*/
+.lastname{
+    margin-left: 1px;
+    font-family: sans-serif;
+    font-size: 14px;
+    color: white;
+    margin-top: 10px;
+}
+.firstname{
+    margin-left: 1px;
+    font-family: sans-serif;
+    font-size: 14px;
+    color: white;
+    margin-top: 5px;
+}
+#lname{
+    margin-top:5px;
+    color: black;
+}
+#fname {
+    color: black;
+}
+
+/*---for heading-----*/
+.heading{
+    font-weight: bold;
+    text-align : center;
+    font-size:30px;
+    color: lightyellow;
+    padding-top:10px;
+}
+/*-------for email----------*/
+/*------label----*/
+#email{
+    margin-top: 5px;
+    color: black;
+}
+/*-----------for Password--------*/
+/*-------label-----*/
+.mail{
+    margin-left: 1px;
+    font-family: sans-serif;
+    color: white;
+    font-size: 14px;
+    margin-top: 10px;
+}
+.pass{
+    color: white;
+    margin-top: 10px;
+    font-size: 14px;
+    font-family: sans-serif;
+    margin-left: 1px;
+}
+#password{
+    margin-top: 6px;
+    color: black;
+}
+
+#cpassword{
+    margin-top: 6px;
+    color: black;
+}
+
+/*------------For submit button---------*/
+.btn.btn-warning {
+    color: black;
+    font-weight: bold;
+    font-size: 14px;
+    border: 1px solid white;
+    background-color: lightyellow;
+    margin-top: 12px;
+    box-shadow: 1px 2px 2px 1px white;
+}
+.btn.btn-warning:hover {
+    box-shadow: 2px 1px 2px 3px #99ccff;
+    background:#5900a6;
+    color:#fff;
+    transition: background-color 1.15s ease-in-out,border-color 1.15s ease-in-out,box-shadow 1.15s ease-in-out;
+
+}
+
+/*=======================================
+    LOGIN SECTION
+==================================================*/
+
+
+.login-sec {
+    background-image:url(../images/3.jpg);
+    background-repeat:no-repeat;
+    background-size:cover;
+    width:100%;
+    height:100vh;
+    overflow:auto;
+}
+
+.login-sec .container {
+    font-family:Roboto,sans-serif;
+    background-image:url(https://image.freepik.com/free-vector/dark-blue-blurred-background_1034-589.jpg) ;
+
+    border-style: solid;
+    border-color: grey;
+    border-width: 1px;
+    margin: 76px auto;
+    text-align: center;
+    opacity: 0.8;
+    box-shadow: 2px 5px 5px 2px #eee;
+    max-width: 500px;
+    padding-top: 10px;
+    height: 340px;
+}
+
+#email-login{
+    margin-top: 5px;
+    color: black;
+}
+/*-----------for Password--------*/
+/*-------label-----*/
+.mail-login{
+    margin-left: 1px;
+    font-family: sans-serif;
+    color: white;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+.pass-login{
+    color: white;
+    margin-top: 10px;
+    font-size: 14px;
+    font-family: sans-serif;
+    margin-left: 1px;
+}
+#password-login{
+    margin-top: 12px;
+    color: black;
+}
+
+.btn.btn-warning.login-btn {
+    color: black;
+    font-weight: bold;
+    font-size: 16px;
+    border: 1px solid white;
+    background-color: lightyellow;
+    margin-top: 28px;
+    box-shadow: 1px 2px 2px 1px white;
+    padding: 4px 16px;
+}
+.btn.btn-warning.login-btn:hover {
+    box-shadow: 2px 1px 2px 3px #99ccff;
+    background:#5900a6;
+    color:#fff;
+    transition: background-color 1.15s ease-in-out,border-color 1.15s ease-in-out,box-shadow 1.15s ease-in-out;
+
+}
+
+
+#destination-sec {
+    background-color: whitesmoke;
+}
+
+
+/*------------------------------------
+	Member area
+------------------------------------*/
+
+.sidebar-menu li {
+    background-color: #f4f4f4;
+}
+
+.sidebar-menu a {
+    font-size: 28px;
+    color: darkslategrey;
+}
+
+.sidebar-item {
+    position: relative;
+    display: block;
+    padding: 0.75rem 1.25rem;
+    margin-bottom: 30px;
+    border: 2px solid black;
+    border-radius: 10px;
+}
+
+.sidebar-item:hover {
+    background-color: #fff;
+}
+
+.profile-info {
+    margin-bottom: 30px;
+}
+
+.profile-info span {
+    font-size: 20px;
+}
+
+.profile-info img {
+    margin-bottom: 14px;
+}
+
+#profile-sec .container {
+    margin-top: 26px;
+    margin-bottom: 26px;
+}
+
+.person-info p {
+    text-align: left;
+    font-size: 20px;
+    padding-left: 40px;
+    line-height: 12px;
+    font-weight: bold;
+    color: #5e5e5e;
+
+}
+
+.person-info span {
+    font-size: 22px;
+    font-style: italic;
+    color: black;
+}
+
+.person-info {
+    padding-top: 26px;
+    border: 1px solid black;
+    border-radius: 8px;
+    background-color: lightgray;
+}
+
+.change-btn {
+    margin-top: 24px ;
+    margin-bottom: 16px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.about-sec p {
+    padding-bottom: 2px !important;
+    line-height: 22px !important;
+}
+
+.about-sec {
+    background-color: whitesmoke;
+}
+
+.about-sec .text-start {
+    margin-bottom: 26px;
+}
+
+.contact-sec {
+    background-color: whitesmoke;
+}
+
+.contact-sec h2 {
+    margin-top: 2px;
+    margin-bottom: 2px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

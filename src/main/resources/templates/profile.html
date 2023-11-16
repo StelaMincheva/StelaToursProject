@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<!--<![endif]-->
+<head th:replace="~{fragments/commons::head}"></head>
+<body>
+
+<!-- NAV SECTION -->
+<header th:replace="~{fragments/commons::header}"></header>
+<!--END NAV SECTION -->
+
+<!-- PROFILE SECTION -->
+<section id="profile-sec">
+  <div class="container">
+    <div class="row text-center">
+      <!--right sidebar-->
+      <div class="col-sm-3 profile-info text-center">
+        <div style="width: 50%">
+          <img class="img-responsive" src="/images/user.png"> <span>Name</span>
+        </div>
+      </div>
+      <!--left sidebar-->
+      <div class="col-sm-4">
+        <div class="sidebar-left">
+          <!--sidebar menu-->
+          <ul class="list-unstyled sidebar-menu">
+            <li>
+              <a class="sidebar-item" style="text-decoration: none" href="">
+                Profile
+              </a>
+            </li>
+            <li>
+              <a class="sidebar-item" style="text-decoration: none" href="">
+                Favorites
+              </a>
+            </li>
+            <li>
+              <a class="sidebar-item" style="text-decoration: none" href="">
+                Upcoming bookings
+              </a>
+            </li>
+            <li>
+              <a class="sidebar-item" style="text-decoration: none" href="">
+                Past bookings
+              </a>
+            </li>
+            <li>
+              <a class="sidebar-item" style="text-decoration: none" href="">
+                Bonus points
+              </a>
+            </li>
+            <li>
+              <a class="sidebar-item" style="text-decoration: none" href="">
+                Sign out
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+<!--END PROFILE SECTION -->
+
+<!--FOOTER SECTION -->
+<footer th:replace="~{fragments/commons::footer}"></footer>
+<!-- END FOOTER SECTION -->
+
+</body>
+</html>

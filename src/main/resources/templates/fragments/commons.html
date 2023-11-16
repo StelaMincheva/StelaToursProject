@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+  <!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+  <!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+  <!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+  <!--[if (gte IE 9)|!(IE)]><!-->
+  <html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+        xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <meta name="description" content="My Project">
+    <meta name="author" content="S. Mincheva">
+    <!--[if IE]>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <![endif]-->
+    <title>My Project</title>
+    <!--REQUIRED STYLE SHEETS-->
+    <!-- BOOTSTRAP CORE STYLE CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.css"/>
+    <!-- FONTAWESOME STYLE CSS -->
+    <link rel="stylesheet" href="/css/font-awesome.min.css"/>
+    <!--ANIMATED FONTAWESOME STYLE CSS -->
+    <link rel="stylesheet" href="/css/font-awesome-animation.css"/>
+    <!--PRETTYPHOTO MAIN STYLE -->
+    <link rel="stylesheet" href="/css/prettyPhoto.css"/>
+    <!-- CUSTOM STYLE CSS -->
+    <link rel="stylesheet" href="/css/style.css"/>
+    <!-- GOOGLE FONT -->
+    <link rel="stylesheet" href='http://fonts.googleapis.com/css?family=Open+Sans' type='text/css'>
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]--></head>
+  <body>
+  <header>
+  <!-- NAV SECTION -->
+  <div class="navbar navbar-inverse navbar-fixed-top">
+
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+
+        <a  class="navbar-brand" th:href="@{/}">
+          <strong><span>STELA</span>TOURS</strong>
+        </a>
+
+      </div>
+      <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a th:href="@{/home}">HOME</a></li>
+          <li><a th:href="@{/about}">ABOUT US</a></li>
+          <li><a th:href="@{/destinations}">DESTINATIONS</a></li>
+          <li><a th:href="@{/contacts}">CONTACT</a></li>
+          <li><a th:href="@{/register}">REGISTER</a></li>
+          <li><a th:href="@{/profile}">MY PROFILE</a></li>
+          <li><a th:href="@{/login}">LOGIN</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <!--END NAV SECTION -->
+  </header>
+
+  <footer>
+    <div id="footer">
+      © 2023 Copyright: Stela Mincheva
+    </div>
+    <!-- END FOOTER SECTION -->
+
+    <!-- JAVASCRIPT FILES PLACED AT THE BOTTOM TO REDUCE THE LOADING TIME  -->
+    <!-- CORE JQUERY  -->
+    <script src="/plugins/jquery-1.10.2.js"></script>
+    <!-- BOOTSTRAP CORE SCRIPT   -->
+    <script src="/plugins/bootstrap.min.js"></script>
+    <!-- ISOTOPE SCRIPT   -->
+    <script src="/plugins/jquery.isotope.min.js"></script>
+    <!-- PRETTY PHOTO SCRIPT   -->
+    <script src="/plugins/jquery.prettyPhoto.js"></script>
+    <!-- CUSTOM SCRIPTS -->
+    <script src="/js/custom.js"></script>
+  </footer>
+
+  </body>
+</html>
