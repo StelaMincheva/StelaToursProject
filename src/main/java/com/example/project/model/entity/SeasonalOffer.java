@@ -1,6 +1,7 @@
 package com.example.project.model.entity;
 
 import jakarta.persistence.*;
+import org.hibernate.validator.constraints.Length;
 
 import java.util.Set;
 
@@ -8,6 +9,7 @@ import java.util.Set;
 @Table(name = "seasonal_offers")
 public class SeasonalOffer extends BaseEntity {
 
+    @Length(min = 3, max = 70)
     @Column(name = "offer_title", nullable = false)
     private String offerTitle;
     @ManyToOne

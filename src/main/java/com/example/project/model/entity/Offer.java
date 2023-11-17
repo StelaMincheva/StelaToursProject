@@ -1,6 +1,7 @@
 package com.example.project.model.entity;
 
 import jakarta.persistence.*;
+import org.hibernate.validator.constraints.Length;
 
 import java.math.BigDecimal;
 import java.util.Set;
@@ -9,6 +10,7 @@ import java.util.Set;
 @Table(name = "offers")
 public class Offer extends BaseEntity {
 
+    @Length(min = 3, max = 70)
     @Column(name = "title", nullable = false)
     private String title;
     @OneToMany

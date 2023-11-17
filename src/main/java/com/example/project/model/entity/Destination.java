@@ -9,9 +9,9 @@ import java.util.Set;
 @Table(name = "destinations")
 public class Destination extends BaseEntity {
 
-    @ManyToOne
+    @ManyToOne(optional = false)
     private Country country;
-    @ManyToOne
+    @ManyToOne(optional = false)
     private Image destinationImage;
     @OneToMany
     private Set<Offer> offers;

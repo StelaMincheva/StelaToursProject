@@ -8,7 +8,7 @@ import jakarta.persistence.Table;
 @Entity
 @Table(name = "images")
 public class Image extends BaseEntity {
-    @Column(name = "url")
+    @Column(name = "url", nullable = false)
     private String url;
 
     public Image() {

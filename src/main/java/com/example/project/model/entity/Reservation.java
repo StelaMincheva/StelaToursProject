@@ -2,6 +2,7 @@ package com.example.project.model.entity;
 
 import com.example.project.model.enums.HotelCategory;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Future;
 
 import java.time.LocalDate;
 
@@ -13,6 +14,7 @@ public class Reservation extends BaseEntity {
     private int numberOfAdults;
     @Column(name = "number_of_kids")
     private int numberOfKids;
+    @Future
     @Column(name = "date", nullable = false)
     private LocalDate date;
     @Enumerated(EnumType.STRING)
@@ -20,7 +22,7 @@ public class Reservation extends BaseEntity {
     private HotelCategory hotelCategory;
     @Column(name = "number_of_insurances", nullable = false)
     private int numberOfInsurances;
-    @ManyToOne
+    @ManyToOne(optional = false)
     private Offer offer;
 
     public Reservation() {
