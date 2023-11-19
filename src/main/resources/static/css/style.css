@@ -334,20 +334,20 @@ border-top: 1px solid #d6d6d6;
     overflow:auto;
 }
 
-.login-sec .container {
+.login-sec form {
     font-family:Roboto,sans-serif;
     background-image:url(https://image.freepik.com/free-vector/dark-blue-blurred-background_1034-589.jpg) ;
 
     border-style: solid;
     border-color: grey;
     border-width: 1px;
-    margin: 76px auto;
+    margin: 40px auto auto auto;
     text-align: center;
     opacity: 0.8;
     box-shadow: 2px 5px 5px 2px #eee;
-    max-width: 500px;
+    max-width: 420px;
     padding-top: 10px;
-    height: 340px;
+    height: 330px;
 }
 
 #email-login{
@@ -391,7 +391,11 @@ border-top: 1px solid #d6d6d6;
     background:#5900a6;
     color:#fff;
     transition: background-color 1.15s ease-in-out,border-color 1.15s ease-in-out,box-shadow 1.15s ease-in-out;
+}
 
+.login-sec .checkbox {
+    color: white;
+    text-align: left;
 }
 
 
