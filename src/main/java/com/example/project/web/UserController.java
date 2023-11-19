@@ -41,10 +41,6 @@ public class UserController {
         return new ModelAndView("redirect:/login");
     }
 
-    @GetMapping("/login")
-    public ModelAndView login() {
-        return new ModelAndView("login");
-    }
 
 
 }
