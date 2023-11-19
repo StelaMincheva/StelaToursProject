@@ -1,4 +1,4 @@
-package com.example.project.controller;
+package com.example.project.web;
 
 import com.example.project.model.dto.UserRegisterDto;
 import com.example.project.service.UserService;
