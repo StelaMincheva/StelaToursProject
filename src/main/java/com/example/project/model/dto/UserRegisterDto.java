@@ -16,7 +16,7 @@ public class UserRegisterDto {
     @Email
     @NotBlank(message = "Email cannot be empty!")
     private String email;
-    @Size(min = 5, max = 255, message = "Password length must be between 5 and 20 characters!")
+    @Size(min = 5, max = 20, message = "Password length must be between 5 and 20 characters!")
     @NotNull
     private String password;
     @NotNull

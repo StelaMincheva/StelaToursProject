@@ -31,13 +31,6 @@ public class DemoController {
 
 
 
-
-
-    @GetMapping("/login")
-    public ModelAndView login() {
-        return new ModelAndView("login");
-    }
-
     @GetMapping("/profile")
     public ModelAndView profile() {
         return new ModelAndView("profile");
