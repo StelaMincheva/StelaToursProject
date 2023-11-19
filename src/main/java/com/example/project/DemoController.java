@@ -1,7 +1,9 @@
 package com.example.project;
 
+import org.springframework.boot.Banner;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
@@ -27,10 +29,9 @@ public class DemoController {
         return new ModelAndView("destinations");
     }
 
-    @GetMapping("/register")
-    public ModelAndView register() {
-        return new ModelAndView("register");
-    }
+
+
+
 
     @GetMapping("/login")
     public ModelAndView login() {

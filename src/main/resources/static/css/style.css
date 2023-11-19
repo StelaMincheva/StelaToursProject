@@ -205,22 +205,23 @@ border-top: 1px solid #d6d6d6;
     width:100%;
     height:100vh;
     overflow:auto;
+    margin-top: 20px;
 }
 
-.register-sec .container{
+.register-sec form {
     font-family:Roboto,sans-serif;
     background-image:url(https://image.freepik.com/free-vector/dark-blue-blurred-background_1034-589.jpg) ;
 
     border-style: solid;
     border-color: grey;
     border-width: 1px;
-    margin: 76px auto;
+    margin: 20px auto auto auto;
     text-align: left;
-    opacity: 0.8;
+    opacity: 0.9;
     box-shadow: 2px 5px 5px 2px #eee;
-    max-width: 500px;
+    max-width: 440px;
     padding-top: 10px;
-    height: 363px;
+    height: 500px;
 }
 /*--- for label of first and last name---*/
 .lastname{
@@ -252,6 +253,15 @@ border-top: 1px solid #d6d6d6;
     font-size:30px;
     color: lightyellow;
     padding-top:10px;
+}
+
+.register-sec hr {
+    margin-top: 10px!important;
+    margin-bottom: 10px!important;
+}
+
+.register-sec .form-group {
+    margin-bottom: 5px;
 }
 /*-------for email----------*/
 /*------label----*/
@@ -285,6 +295,11 @@ border-top: 1px solid #d6d6d6;
     color: black;
 }
 
+.register-sec label {
+    margin-bottom: 1px;
+    margin-top: 2px;
+}
+
 /*------------For submit button---------*/
 .btn.btn-warning {
     color: black;
@@ -292,7 +307,7 @@ border-top: 1px solid #d6d6d6;
     font-size: 14px;
     border: 1px solid white;
     background-color: lightyellow;
-    margin-top: 12px;
+    margin-top: 30px;
     box-shadow: 1px 2px 2px 1px white;
 }
 .btn.btn-warning:hover {
@@ -302,6 +317,8 @@ border-top: 1px solid #d6d6d6;
     transition: background-color 1.15s ease-in-out,border-color 1.15s ease-in-out,box-shadow 1.15s ease-in-out;
 
 }
+
+
 
 /*=======================================
     LOGIN SECTION
