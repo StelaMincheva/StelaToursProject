@@ -54,9 +54,11 @@
               </a>
             </li>
             <li>
-              <a class="sidebar-item" style="text-decoration: none" href="">
-                Sign out
+              <form th:action="@{/logout}" th:method="POST">
+              <a class="sidebar-item" style="text-decoration: none">
+                <button type="submit" class="btn sign-out-btn">Sign out</button>
               </a>
+              </form>
             </li>
           </ul>
         </div>

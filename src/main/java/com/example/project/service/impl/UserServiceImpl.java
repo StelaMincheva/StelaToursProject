@@ -1,9 +1,7 @@
 package com.example.project.service.impl;
 
 import com.example.project.model.dto.UserRegisterDto;
-import com.example.project.model.entity.Role;
 import com.example.project.model.entity.User;
-import com.example.project.model.enums.UserRole;
 import com.example.project.repository.UserRepository;
 import com.example.project.service.UserService;
 import org.springframework.security.crypto.password.PasswordEncoder;
