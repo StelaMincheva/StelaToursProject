@@ -34,7 +34,7 @@ public class SecurityConfig {
                             //the name of the input fields (in login.hml)
                             .usernameParameter("email")
                             .passwordParameter("password")
-                            .defaultSuccessUrl("/home")
+                            .defaultSuccessUrl("/home", true)
                             .failureForwardUrl("/login-error");
                 }
         ).logout(
