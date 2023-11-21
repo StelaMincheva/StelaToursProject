@@ -46,9 +46,9 @@
           <li><a th:href="@{/about}">ABOUT US</a></li>
           <li><a th:href="@{/destinations}">DESTINATIONS</a></li>
           <li><a th:href="@{/contacts}">CONTACT</a></li>
-          <li><a th:href="@{/register}">REGISTER</a></li>
-          <li><a th:href="@{/profile}">MY PROFILE</a></li>
-          <li><a th:href="@{/login}">LOGIN</a></li>
+          <li sec:authorize="!isAuthenticated()"><a th:href="@{/register}">REGISTER</a></li>
+          <li sec:authorize="isAuthenticated()"><a th:href="@{/profile}">MY PROFILE</a></li>
+          <li sec:authorize="!isAuthenticated()"><a th:href="@{/login}">LOGIN</a></li>
         </ul>
       </div>
     </div>
