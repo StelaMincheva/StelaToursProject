@@ -1,11 +1,7 @@
 <!DOCTYPE html>
-<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
-<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
-<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
-<!--[if (gte IE 9)|!(IE)]><!-->
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:th="http://www.thymeleaf.org">
-<!--<![endif]-->
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec='http://www.thymeleaf.org/extras/spring-security'>
 <head th:replace="~{fragments/commons::head}"></head>
 <body>
 
@@ -20,7 +16,10 @@
       <!--right sidebar-->
       <div class="col-sm-3 profile-info text-center">
         <div style="width: 50%">
-          <img class="img-responsive" src="/images/user.png"> <span>Name</span>
+          <img class="img-responsive" src="/images/user.png">
+          <span> <th:block sec:authorize="isAuthenticated()">
+            <th:block sec:authentication="name"></th:block>
+          </th:block></span>
         </div>
       </div>
       <!--left sidebar-->
