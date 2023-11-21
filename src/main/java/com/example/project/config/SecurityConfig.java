@@ -2,6 +2,7 @@ package com.example.project.config;
 
 import com.example.project.repository.UserRepository;
 import com.example.project.service.AppUserDetailsService;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.autoconfigure.security.servlet.PathRequest;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -10,6 +11,7 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
+
 
 @Configuration
 public class SecurityConfig {
@@ -23,7 +25,7 @@ public class SecurityConfig {
                         .requestMatchers(PathRequest.toStaticResources().atCommonLocations()).permitAll()
                         //allow anyone to see the pages
                         .requestMatchers("/", "/home", "/about", "/destinations", "/contacts",
-                                "/register", "/login", "/fonts/**", "/plugins/**", "/login-error").permitAll()
+                                "/register", "/login", "/fonts/**", "/plugins/**").permitAll()
                         //all other requests are authenticated
                         .anyRequest().authenticated()
         ).formLogin(
@@ -47,8 +49,14 @@ public class SecurityConfig {
                             // invalidate the http session
                             .invalidateHttpSession(true);
                 }
+        ).rememberMe(
+                rememberMe -> {
+                    rememberMe
+                            .key("rememberme")
+                            .rememberMeParameter("rememberme")
+                            .rememberMeCookieName("rememberme");
+                }
         );
-        //TODO: remember me!
 
         return httpSecurity.build();
     }

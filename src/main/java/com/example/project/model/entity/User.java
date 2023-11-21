@@ -29,7 +29,7 @@ public class User extends BaseEntity {
     @Past
     @Column(name = "birth_date")
     private LocalDate birthDate;
-    @ManyToMany
+    @ManyToMany(fetch = FetchType.EAGER)
     private Set<Role> roles;
     @OneToMany
     private Set<Offer> favorites;
