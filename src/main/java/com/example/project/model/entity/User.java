@@ -6,6 +6,8 @@ import jakarta.validation.constraints.Past;
 import org.hibernate.validator.constraints.Length;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Set;
 
 @Entity
@@ -30,7 +32,7 @@ public class User extends BaseEntity {
     @Column(name = "birth_date")
     private LocalDate birthDate;
     @ManyToMany(fetch = FetchType.EAGER)
-    private Set<Role> roles;
+    private List<Role> roles;
     @OneToMany
     private Set<Offer> favorites;
     @OneToMany
@@ -41,6 +43,7 @@ public class User extends BaseEntity {
     private int bonusPoints;
 
     public User() {
+        this.roles = new ArrayList<>();
     }
 
     public String getFirstName() {
@@ -91,11 +94,11 @@ public class User extends BaseEntity {
         this.birthDate = birthDate;
     }
 
-    public Set<Role> getRoles() {
+    public List<Role> getRoles() {
         return roles;
     }
 
-    public void setRoles(Set<Role> roles) {
+    public void setRoles(List<Role> roles) {
         this.roles = roles;
     }
 
@@ -129,5 +132,9 @@ public class User extends BaseEntity {
 
     public void setBonusPoints(int bonusPoints) {
         this.bonusPoints = bonusPoints;
+    }
+
+    public void addRole(Role role) {
+        this.roles.add(role);
     }
 }

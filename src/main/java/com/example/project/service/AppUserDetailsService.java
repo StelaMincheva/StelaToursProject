@@ -33,7 +33,7 @@ public class AppUserDetailsService implements UserDetailsService {
         return org.springframework.security.core.userdetails.User
                 .withUsername(user.getEmail())
                 .password(user.getPassword())
-                .authorities(user.getRoles().stream().map(AppUserDetailsService::map).collect(Collectors.toSet()))
+                .authorities(user.getRoles().stream().map(AppUserDetailsService::map).collect(Collectors.toList()))
                 .build();
     }
 
