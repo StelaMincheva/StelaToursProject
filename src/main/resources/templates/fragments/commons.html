@@ -46,6 +46,23 @@
           <li><a th:href="@{/about}">ABOUT US</a></li>
           <li><a th:href="@{/destinations}">DESTINATIONS</a></li>
           <li><a th:href="@{/contacts}">CONTACT</a></li>
+          <li class="dropdown" sec:authorize="hasRole('ADMIN')">
+            <a th:href="@{/}" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+              ADMIN PROFILE
+              <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu">
+              <li><a th:href="@{/}">Add new Distance</a></li>
+              <li class="dropdown-submenu">
+                <a tabindex="-1" th:href="@{/}" class="dropdown-submenu-toggle">Add new Offers<b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                  <li><a th:href="@{/}">Offer</a></li>
+                  <li><a th:href="@{/}">Special Offer</a></li>
+                  <li><a th:href="@{/}">Seasonal Offer</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
           <li sec:authorize="!isAuthenticated()"><a th:href="@{/register}">REGISTER</a></li>
           <li sec:authorize="isAuthenticated()"><a th:href="@{/profile}">MY PROFILE</a></li>
           <li sec:authorize="!isAuthenticated()"><a th:href="@{/login}">LOGIN</a></li>
@@ -71,6 +88,7 @@
     <script src="/plugins/jquery.prettyPhoto.js"></script>
     <!-- CUSTOM SCRIPTS -->
     <script src="/js/custom.js"></script>
+    <script src="/js/navbar-dropdown.js"></script>
   </footer>
 
   </body>
