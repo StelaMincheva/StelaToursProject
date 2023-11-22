@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments/commons::head}"></head>
+<body>
+
+<!-- NAV SECTION -->
+<header th:replace="~{fragments/commons::header}"></header>
+<!-- END NAV SECTION -->
+
+<!-- DESTINATION ADD SECTION -->
+<section id="destination-add-sec">
+    <div class="container">
+        <header class="heading">Add New Destination</header><hr></hr>
+        <form
+         th:method="POST"
+         th:action="@{/destination-add}"
+         th:object="${destinationAddDto}">
+
+            <div class="col-sm-7 form-group">
+                <div class="col-sm-5">
+                    <label class="country">Country: </label>
+                </div>
+                <input type="text" name="country" id="country" class="form-control"/>
+            </div>
+
+            <div class="col-sm-7 form-group">
+                <div class="col-sm-5 control-fileupload">
+                   <label for="file">Choose a image: </label>
+                </div>
+                <input type="file" id="file">
+            </div>
+
+
+
+
+        </form>
+    </div>
+</section>
+<!-- END DESTINATION ADD SECTION -->
+
+<!--FOOTER SECTION -->
+<footer th:replace="~{fragments/commons::footer}"></footer>
+<!-- END FOOTER SECTION -->
+
+</body>
+</html>

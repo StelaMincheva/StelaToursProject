@@ -42,6 +42,12 @@ public class DemoController {
     }
 
 
+    @GetMapping("/destination-add")
+    public ModelAndView addDestination() {
+        return new ModelAndView("destination-add");
+    }
+
+
 
 
 

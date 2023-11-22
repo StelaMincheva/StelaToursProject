@@ -2,10 +2,8 @@ package com.example.project.model.entity;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
-import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
-import java.util.Set;
 
 @Entity
 @Table(name = "countries")

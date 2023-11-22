@@ -3,7 +3,6 @@ package com.example.project.model.entity;
 import jakarta.persistence.*;
 
 import java.util.List;
-import java.util.Set;
 
 
 @Entity
