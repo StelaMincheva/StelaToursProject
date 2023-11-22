@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import org.hibernate.validator.constraints.Length;
 
 import java.math.BigDecimal;
+import java.util.List;
 import java.util.Set;
 
 @Entity
@@ -14,7 +15,7 @@ public class Offer extends BaseEntity {
     @Column(name = "title", nullable = false)
     private String title;
     @OneToMany
-    private Set<Image> offerImages;
+    private List<Image> offerImages;
     @Column(name = "info", columnDefinition = "TEXT", nullable = false)
     private String info;
     @Column(name = "program", columnDefinition = "MEDIUMTEXT", nullable = false)
@@ -35,11 +36,11 @@ public class Offer extends BaseEntity {
         this.title = title;
     }
 
-    public Set<Image> getOfferImages() {
+    public List<Image> getOfferImages() {
         return offerImages;
     }
 
-    public void setOfferImages(Set<Image> offerImages) {
+    public void setOfferImages(List<Image> offerImages) {
         this.offerImages = offerImages;
     }
 

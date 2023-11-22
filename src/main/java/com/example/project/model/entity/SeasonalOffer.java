@@ -3,6 +3,7 @@ package com.example.project.model.entity;
 import jakarta.persistence.*;
 import org.hibernate.validator.constraints.Length;
 
+import java.util.List;
 import java.util.Set;
 
 @Entity
@@ -15,7 +16,7 @@ public class SeasonalOffer extends BaseEntity {
     @ManyToOne
     private Image image;
     @OneToMany
-    private Set<SpecialOffer> specialOffers;
+    private List<SpecialOffer> specialOffers;
 
     public SeasonalOffer() {
     }
@@ -36,11 +37,11 @@ public class SeasonalOffer extends BaseEntity {
         this.image = image;
     }
 
-    public Set<SpecialOffer> getSpecialOffers() {
+    public List<SpecialOffer> getSpecialOffers() {
         return specialOffers;
     }
 
-    public void setSpecialOffers(Set<SpecialOffer> specialOffers) {
+    public void setSpecialOffers(List<SpecialOffer> specialOffers) {
         this.specialOffers = specialOffers;
     }
 }

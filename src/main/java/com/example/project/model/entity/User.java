@@ -34,11 +34,11 @@ public class User extends BaseEntity {
     @ManyToMany(fetch = FetchType.EAGER)
     private List<Role> roles;
     @OneToMany
-    private Set<Offer> favorites;
+    private List<Offer> favorites;
     @OneToMany
-    private Set<Reservation> upcomingBookings;
+    private List<Reservation> upcomingBookings;
     @OneToMany
-    private Set<Reservation> pastBookings;
+    private List<Reservation> pastBookings;
     @Column(name = "bonus_points")
     private int bonusPoints;
 
@@ -102,27 +102,27 @@ public class User extends BaseEntity {
         this.roles = roles;
     }
 
-    public Set<Offer> getFavorites() {
+    public List<Offer> getFavorites() {
         return favorites;
     }
 
-    public void setFavorites(Set<Offer> favorites) {
+    public void setFavorites(List<Offer> favorites) {
         this.favorites = favorites;
     }
 
-    public Set<Reservation> getUpcomingBookings() {
+    public List<Reservation> getUpcomingBookings() {
         return upcomingBookings;
     }
 
-    public void setUpcomingBookings(Set<Reservation> upcomingBookings) {
+    public void setUpcomingBookings(List<Reservation> upcomingBookings) {
         this.upcomingBookings = upcomingBookings;
     }
 
-    public Set<Reservation> getPastBookings() {
+    public List<Reservation> getPastBookings() {
         return pastBookings;
     }
 
-    public void setPastBookings(Set<Reservation> pastBookings) {
+    public void setPastBookings(List<Reservation> pastBookings) {
         this.pastBookings = pastBookings;
     }
 

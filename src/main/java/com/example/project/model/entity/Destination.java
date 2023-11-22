@@ -2,6 +2,7 @@ package com.example.project.model.entity;
 
 import jakarta.persistence.*;
 
+import java.util.List;
 import java.util.Set;
 
 
@@ -14,7 +15,7 @@ public class Destination extends BaseEntity {
     @ManyToOne(optional = false)
     private Image destinationImage;
     @OneToMany
-    private Set<Offer> offers;
+    private List<Offer> offers;
 
     public Destination() {
     }
@@ -35,11 +36,11 @@ public class Destination extends BaseEntity {
         this.destinationImage = destinationImage;
     }
 
-    public Set<Offer> getOffers() {
+    public List<Offer> getOffers() {
         return offers;
     }
 
-    public void setOffers(Set<Offer> offers) {
+    public void setOffers(List<Offer> offers) {
         this.offers = offers;
     }
 }
