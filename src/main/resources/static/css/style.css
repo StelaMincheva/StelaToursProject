@@ -618,12 +618,13 @@ input[type=file] {
     padding: 0 10px 2px 10px;
     overflow: hidden;
     position: relative;
+}
 
-&:before, input, label {
+.control-fileupload:before, input, label {
      cursor: pointer !important;
  }
 /* File upload button */
-&:before {
+.control-fileupload:before {
      /* inherit from boostrap btn styles */
      padding: 4px 12px;
      margin-bottom: 0;
@@ -651,15 +652,14 @@ input[type=file] {
      top: 2px;
      right: 2px;
  }
-&:hover, &:focus {
-&:before {
+.control-fileupload:hover, .control-fileupload:focus,
+.control-fileupload:before {
      color: #333333;
      background-color: #e6e6e6;
      text-decoration: none;
      background-position: 0 -15px;
      transition: background-position 0.2s ease-out;
  }
-}
 
 label {
     line-height: 24px;
@@ -675,6 +675,10 @@ label {
     margin-bottom: 0;
     cursor: text;
 }
+
+.country {
+    color: black;
+    font-weight: bold;
 }
 
 

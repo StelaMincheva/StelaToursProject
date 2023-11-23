@@ -5,3 +5,4 @@ $(function() {
         $(this).prev('label').text(labelText);
     })
 });
+
