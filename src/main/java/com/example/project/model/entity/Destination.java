@@ -9,7 +9,7 @@ import java.util.List;
 @Table(name = "destinations")
 public class Destination extends BaseEntity {
 
-    @ManyToOne(optional = false)
+    @OneToOne(optional = false)
     private Country country;
     @ManyToOne(optional = false)
     private Image destinationImage;

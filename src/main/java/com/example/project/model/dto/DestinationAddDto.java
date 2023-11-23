@@ -8,5 +8,19 @@ public class DestinationAddDto {
     public DestinationAddDto() {
     }
 
+    public CountryDto getCountry() {
+        return country;
+    }
 
+    public void setCountry(CountryDto country) {
+        this.country = country;
+    }
+
+    public ImageDto getDestinationImage() {
+        return destinationImage;
+    }
+
+    public void setDestinationImage(ImageDto destinationImage) {
+        this.destinationImage = destinationImage;
+    }
 }
