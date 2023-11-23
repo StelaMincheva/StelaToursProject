@@ -24,10 +24,6 @@ public class DemoController {
         return new ModelAndView("contact");
     }
 
-    @GetMapping("/destinations")
-    public ModelAndView viewDestinations() {
-        return new ModelAndView("destinations");
-    }
 
 
 
@@ -40,24 +36,6 @@ public class DemoController {
     public ModelAndView about() {
         return new ModelAndView("about");
     }
-
-
-    @GetMapping("/destination-add")
-    public ModelAndView addDestination() {
-        return new ModelAndView("destination-add");
-    }
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
