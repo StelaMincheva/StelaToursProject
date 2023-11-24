@@ -9,8 +9,8 @@ import java.util.List;
 @Table(name = "destinations")
 public class Destination extends BaseEntity {
 
-    @OneToOne(optional = false)
-    private Country country;
+   @Column(name = "country", nullable = false, unique = true)
+    private String country;
     @ManyToOne(optional = false)
     private Image destinationImage;
     @OneToMany
@@ -19,11 +19,11 @@ public class Destination extends BaseEntity {
     public Destination() {
     }
 
-    public Country getCountry() {
+    public String  getCountry() {
         return country;
     }
 
-    public void setCountry(Country country) {
+    public void setCountry(String country) {
         this.country = country;
     }
 

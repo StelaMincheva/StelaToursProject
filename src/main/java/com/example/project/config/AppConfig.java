@@ -1,8 +1,5 @@
 package com.example.project.config;
 
-import com.example.project.model.dto.DestinationAddDto;
-import com.example.project.model.entity.Country;
-import com.example.project.model.entity.Image;
 import org.modelmapper.ModelMapper;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -15,24 +12,17 @@ public class AppConfig {
     public ModelMapper modelMapper() {
         ModelMapper modelMapper = new ModelMapper();
 
-        modelMapper
-                .createTypeMap(Image.class, DestinationAddDto.class)
-                .addMappings(mapper -> mapper
-                        .map(Image::getUrl, DestinationAddDto::setUrl));
+       //modelMapper
+                //.createTypeMap(Image.class, DestinationAddDto.class)
+                //.addMappings(mapper -> mapper
+                        //.map(Image::getUrl, DestinationAddDto::setUrl));
 
-        modelMapper
-                .createTypeMap(Country.class, DestinationAddDto.class)
-                .addMappings(mapper -> mapper
-                        .map(Country::getCountryName, DestinationAddDto::setCountryName));
+        //modelMapper
+                //.createTypeMap(Country.class, DestinationAddDto.class)
+                //.addMappings(mapper -> mapper
+                        //.map(Country::getCountryName, DestinationAddDto::setCountry));
 
         return modelMapper;
-
-
     }
-
-
-
-
-
 
 }

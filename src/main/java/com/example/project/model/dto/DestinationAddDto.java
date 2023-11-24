@@ -6,27 +6,27 @@ import org.springframework.web.multipart.MultipartFile;
 public class DestinationAddDto {
 
     @NotNull(message = "Enter a country!")
-    private String countryName;
+    private String country;
 
     @NotNull(message = "Enter an image!")
-    private String url;
+    private MultipartFile destinationImage;
 
     public DestinationAddDto() {
     }
 
-    public String getCountryName() {
-        return countryName;
+    public String getCountry() {
+        return country;
     }
 
-    public void setCountryName(String countryName) {
-        this.countryName = countryName;
+    public void setCountry(String country) {
+        this.country = country;
     }
 
-    public String getUrl() {
-        return url;
+    public MultipartFile getDestinationImage() {
+        return destinationImage;
     }
 
-    public void setUrl(String url) {
-        this.url = url;
+    public void setDestinationImage(MultipartFile destinationImage) {
+        this.destinationImage = destinationImage;
     }
 }
