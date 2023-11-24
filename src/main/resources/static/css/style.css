@@ -583,6 +583,22 @@ border-top: 1px solid #d6d6d6;
     padding-bottom: 50px;
     padding-top: 80px;
 }
+
+#destination-add-sec form {
+    font-family:Roboto,sans-serif;
+    background-color: lightgoldenrodyellow;
+    border-style: solid;
+    border-color: grey;
+    border-width: 1px;
+    margin: 20px auto auto auto;
+    text-align: center;
+    box-shadow: 2px 5px 5px 2px #eee;
+    max-width: 440px;
+    padding-top: 40px;
+    height: 420px;
+
+}
+
 #destination-add-sec .heading {
     color: black;
 }
@@ -676,10 +692,16 @@ label {
     cursor: text;
 }
 
-.country {
-    color: black;
+.add-destination-button {
+    margin-top: 30px;
+    padding-right: 26px;
+    padding-left: 26px;
+    border: 1px solid grey;
+    border-radius: 2px;
     font-weight: bold;
 }
+
+
 
 
 
