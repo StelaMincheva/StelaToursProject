@@ -22,7 +22,11 @@
             </div>
 
             <div class="col-sm-12 form-group">
-                <input type="text" name="country" id="country" class="form-control"/>
+                <input type="text" name="country" id="country" class="form-control"
+                       th:field="*{country}"
+                       th:errorclass="bg-danger"/>
+                <small th:if="${#fields.hasErrors('country')}"
+                       th:errors="*{country}" class="text-danger">Country error message</small>
             </div>
 
             <div class="col-sm-12">
@@ -33,7 +37,11 @@
                 <div class="col-sm-5 control-fileupload">
                    <label for="file"></label>
                 </div>
-                <input type="file" name="file" id="file" class="form-control">
+                <input type="file" name="file" id="file" class="form-control" accept="image/*"
+                       th:field="*{destinationImage}"
+                       th:errorclass="bg-danger" />
+                <small th:if="${#fields.hasErrors('destinationImage')}"
+                       th:errors="*{destinationImage}" class="text-danger">Image error message</small>
             </div>
 
             <div class="col-sm-12">

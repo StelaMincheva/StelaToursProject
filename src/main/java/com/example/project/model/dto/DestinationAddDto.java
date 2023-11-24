@@ -1,26 +1,32 @@
 package com.example.project.model.dto;
 
+import jakarta.validation.constraints.NotNull;
+import org.springframework.web.multipart.MultipartFile;
+
 public class DestinationAddDto {
 
-    private CountryDto country;
-    private ImageDto destinationImage;
+    @NotNull(message = "Enter a country!")
+    private String countryName;
+
+    @NotNull(message = "Enter an image!")
+    private String url;
 
     public DestinationAddDto() {
     }
 
-    public CountryDto getCountry() {
-        return country;
+    public String getCountryName() {
+        return countryName;
     }
 
-    public void setCountry(CountryDto country) {
-        this.country = country;
+    public void setCountryName(String countryName) {
+        this.countryName = countryName;
     }
 
-    public ImageDto getDestinationImage() {
-        return destinationImage;
+    public String getUrl() {
+        return url;
     }
 
-    public void setDestinationImage(ImageDto destinationImage) {
-        this.destinationImage = destinationImage;
+    public void setUrl(String url) {
+        this.url = url;
     }
 }

@@ -16,28 +16,15 @@ import java.util.Optional;
 public class DestinationServiceImpl implements DestinationService {
 
     private final DestinationRepository destinationRepository;
-    private final CountryRepository countryRepository;
-    private final ImageRepository imageRepository;
 
-    public DestinationServiceImpl(DestinationRepository destinationRepository, CountryRepository countryRepository, ImageRepository imageRepository) {
+
+    public DestinationServiceImpl(DestinationRepository destinationRepository) {
         this.destinationRepository = destinationRepository;
-        this.countryRepository = countryRepository;
-        this.imageRepository = imageRepository;
     }
 
     @Override
     public void addDestination(DestinationAddDto destinationAddDto) {
-        Country country = countryRepository.findByCountryName(destinationAddDto.getCountry().getCountryName());
-        Image image = imageRepository.findByUrl(destinationAddDto.getDestinationImage().getUrl());
-        Optional<Destination> destinationByCountry = destinationRepository
-                .findByCountry(country);
-        if (destinationByCountry.isEmpty()) {
-            Destination destination = new Destination();
-            destination.setCountry(country);
-            destination.setDestinationImage(image);
 
-            destinationRepository.save(destination);
-        }
     }
 
 

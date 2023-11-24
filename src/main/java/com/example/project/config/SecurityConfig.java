@@ -1,5 +1,6 @@
 package com.example.project.config;
 
+import com.example.project.model.enums.UserRole;
 import com.example.project.repository.UserRepository;
 import com.example.project.service.AppUserDetailsService;
 import org.springframework.boot.autoconfigure.security.servlet.PathRequest;
@@ -25,6 +26,7 @@ public class SecurityConfig {
                         //allow anyone to see the pages
                         .requestMatchers("/", "/home", "/about", "/destinations", "/contacts",
                                 "/register", "/login", "/fonts/**", "/plugins/**", "/login-error").permitAll()
+                        .requestMatchers("/destination-add").hasRole(UserRole.ADMIN.name())
                         //all other requests are authenticated
                         .anyRequest().authenticated()
         ).formLogin(
