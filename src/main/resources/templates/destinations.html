@@ -18,7 +18,7 @@
                        <h4><i class="fa fa-thumbs-up"></i> <u>Top Offers</u></h4>
                             <p>
                                 We always try to offer the best quality service at a good price.
-                                With us you can always find a variety of top destinations with rich itineraries.
+                                With us, you can always find a variety of top destinations with rich itineraries.
                             </p>
                     </div>
                     <div class="col-md-4 col-sm-4 alert-success">
@@ -34,6 +34,17 @@
                                 Our regular customers can take advantage of our special discounts through the bonus
                                 points they receive. Every booking earns points.
                             </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row go-marg">
+                <div th:each="destination : ${viewDestinations.destinations}" class="col-md-4 col-sm-4">
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <img th:src="@{'images/' + ${destination.url}}" class="img-responsive">
+                            <a th:text="${destination.country}" href="" class="label label-info"></a>
+                        </div>
                     </div>
                 </div>
             </div>

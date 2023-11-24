@@ -1,5 +1,6 @@
 package com.example.project.web;
 
+import com.example.project.model.dto.AllDestinationsDto;
 import com.example.project.model.dto.DestinationAddDto;
 import com.example.project.service.DestinationService;
 import jakarta.validation.Valid;
@@ -22,7 +23,8 @@ public class DestinationController {
 
     @GetMapping("/destinations")
     public ModelAndView viewDestinations() {
-        return new ModelAndView("destinations");
+        AllDestinationsDto allDestinations = destinationService.getAllDestinations();
+        return new ModelAndView("destinations", "viewDestinations", allDestinations);
     }
 
     @GetMapping("/destination-add")

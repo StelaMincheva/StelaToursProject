@@ -1,6 +1,8 @@
 package com.example.project.service.impl;
 
+import com.example.project.model.dto.AllDestinationsDto;
 import com.example.project.model.dto.DestinationAddDto;
+import com.example.project.model.dto.DestinationDto;
 import com.example.project.model.entity.Destination;
 import com.example.project.model.entity.Image;
 import com.example.project.repository.DestinationRepository;
@@ -10,6 +12,9 @@ import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
+import java.util.ArrayList;
+import java.util.List;
+
 
 @Service
 public class DestinationServiceImpl implements DestinationService {
@@ -18,7 +23,7 @@ public class DestinationServiceImpl implements DestinationService {
 
     private final DestinationRepository destinationRepository;
     private final ImageService imageService;
-    
+
     private final ModelMapper modelMapper;
 
 
@@ -42,6 +47,19 @@ public class DestinationServiceImpl implements DestinationService {
 
 
         destinationRepository.save(destination);
+    }
+
+    @Override
+    public AllDestinationsDto getAllDestinations() {
+        List<Destination> allDestinations = destinationRepository.findAll();
+
+        List<DestinationDto> destinations = new ArrayList<>();
+
+        for(Destination destination : allDestinations) {
+            destinations.add(new DestinationDto(destination));
+        }
+
+        return new AllDestinationsDto(destinations);
     }
 
 
