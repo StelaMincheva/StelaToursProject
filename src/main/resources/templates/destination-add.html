@@ -38,7 +38,7 @@
                 <div class="col-sm-5 control-fileupload">
                    <label for="file"></label>
                 </div>
-                <input type="file" name="file" id="file" class="form-control" accept="image/*"
+                <input type="file" name="file" id="file" accept="image/*"
                        th:name="destinationImage"
                        th:field="*{destinationImage}"/>
                 <small th:if="${#fields.hasErrors('destinationImage')}"

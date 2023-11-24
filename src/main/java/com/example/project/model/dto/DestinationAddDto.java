@@ -1,14 +1,16 @@
 package com.example.project.model.dto;
 
+import com.example.project.validation.ImageAnnotation;
+import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import org.springframework.web.multipart.MultipartFile;
 
 public class DestinationAddDto {
 
-    @NotNull(message = "Enter a country!")
+    @NotBlank(message = "Enter a country!")
     private String country;
 
-    @NotNull(message = "Enter an image!")
+    @ImageAnnotation(contentTypes = {"image/jpeg", "image/png"})
     private MultipartFile destinationImage;
 
     public DestinationAddDto() {
