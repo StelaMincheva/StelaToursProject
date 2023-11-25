@@ -13,7 +13,7 @@ public class OfferAddDto {
     @NotNull
     private String title;
     @ImageAnnotation(contentTypes = {"image/jpeg", "image/png"})
-    private List<MultipartFile> offerImages;
+    private MultipartFile offerImage;
     @NotBlank(message = "Enter an info!")
     private String info;
     @NotBlank(message = "Enter a program!")
@@ -34,12 +34,12 @@ public class OfferAddDto {
         this.title = title;
     }
 
-    public List<MultipartFile> getOfferImages() {
-        return offerImages;
+    public MultipartFile getOfferImages() {
+        return offerImage;
     }
 
-    public void setOfferImages(List<MultipartFile> offerImages) {
-        this.offerImages = offerImages;
+    public void setOfferImage(MultipartFile offerImage) {
+        this.offerImage = offerImage;
     }
 
     public String getInfo() {

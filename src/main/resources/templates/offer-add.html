@@ -9,9 +9,68 @@
 <!--END NAV SECTION -->
 
 <!--OFFER ADD SECTION -->
+<section id="offer-add-sec">
+    <!---heading---->
+    <header class="heading">Add Offer</header><hr></hr>
+    <!---Form starting---->
+    <form
+            th:method="POST"
+            th:action="@{/offer-add}"
+            th:object="${offerAddDto}">
+        <!--- For Name---->
+        <div class="col-sm-12 form-group">
+            <div class="col-sm-5">
+                <label class="offer-title" for="offer-title">Title: </label>
+            </div>
+
+            <input type="text" name="offer-title" id="offer-title" class="form-control" />
+        </div>
 
 
+        <div class="col-sm-12 form-group">
+            <div class="col-sm-5">
+                <label class="offer-info" for="offer-info">Info: </label>
+            </div>
+            <input type="text" name="offer-info" id="offer-info" class="form-control"/>
+        </div>
 
+        <div class="col-sm-12 form-group">
+            <div class="col-sm-5">
+                <label class="offer-program" for="offer-program">Program: </label>
+            </div>
+            <input type="text" name="offer-program"  id="offer-program" class="form-control"/>
+        </div>
+
+        <div class="col-sm-12 form-group">
+            <div class="col-sm-5">
+                <label class="offer-price" for="offer-price">Price: </label>
+            </div>
+            <input type="number" name="offer-price" id="offer-price" class="form-control"/>
+        </div>
+
+        <div class="col-sm-12 form-group">
+            <div class="col-sm-5">
+                <label class="offer-description" for="offer-description">Description: </label>
+            </div>
+            <input type="text" name="offer-description" id="offer-description" class="form-control"/>
+        </div>
+
+        <div class="col-sm-12">
+            <p class="text-label">Image: </p>
+        </div>
+        <div class="col-sm-12 form-group">
+            <div class="col-sm-5 control-fileupload">
+                <label for="file"></label>
+            </div>
+            <input type="file" name="file" id="file" accept="image/*"/>
+        </div>
+
+        <div class="col-sm-12 text-center">
+            <button type="submit" class="btn add-offer-button">Add</button>
+        </div>
+
+    </form>
+</section>
 
 <!-- END OFFER ADD SECTION -->
 

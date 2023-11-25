@@ -14,8 +14,8 @@ public class Offer extends BaseEntity {
     @Length(min = 3, max = 70)
     @Column(name = "title", nullable = false)
     private String title;
-    @OneToMany
-    private List<Image> offerImages;
+    @ManyToOne
+    private Image offerImage;
     @Column(name = "info", columnDefinition = "TEXT", nullable = false)
     private String info;
     @Column(name = "program", columnDefinition = "MEDIUMTEXT", nullable = false)
@@ -36,12 +36,12 @@ public class Offer extends BaseEntity {
         this.title = title;
     }
 
-    public List<Image> getOfferImages() {
-        return offerImages;
+    public Image getOfferImage() {
+        return offerImage;
     }
 
-    public void setOfferImages(List<Image> offerImages) {
-        this.offerImages = offerImages;
+    public void setOfferImage(Image offerImage) {
+        this.offerImage = offerImage;
     }
 
     public String getInfo() {

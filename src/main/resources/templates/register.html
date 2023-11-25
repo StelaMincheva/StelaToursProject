@@ -20,7 +20,7 @@
         <!--- For Name---->
         <div class="col-sm-12 form-group">
                 <div class="col-sm-5">
-                    <label class="firstname">First Name:</label>
+                    <label class="firstname" for="fname">First Name:</label>
                 </div>
 
                     <input type="text" name="fname" id="fname" placeholder="Enter your First Name" class="form-control"
@@ -33,7 +33,7 @@
 
         <div class="col-sm-12 form-group">
                 <div class="col-sm-5">
-                    <label class="lastname">Last Name:</label>
+                    <label class="lastname" for="lname">Last Name:</label>
                 </div>
                     <input type="text" name="lname" id="lname" placeholder="Enter your Last Name" class="form-control last"
                      th:field="*{lastName}"
@@ -44,7 +44,7 @@
         <!-----For email---->
         <div class="col-sm-12 form-group">
                 <div class="col-sm-5">
-                    <label class="mail">Email:</label>
+                    <label class="mail" for="email">Email:</label>
                 </div>
                     <input type="email" name="email"  id="email"placeholder="Enter your Email" class="form-control"
                      th:field="*{email}"
@@ -55,7 +55,7 @@
         <!-----For Password and confirm password---->
         <div class="col-sm-12 form-group">
                 <div class="col-sm-5">
-                    <label class="pass">Password:</label>
+                    <label class="pass" for="password">Password:</label>
                 </div>
                     <input type="password" name="password" id="password" placeholder="Enter your Password" class="form-control"
                      th:field="*{password}"
@@ -66,7 +66,7 @@
 
         <div class="col-sm-12 form-group">
                 <div class="col-sm-5">
-                    <label class="pass">Password confirm:</label>
+                    <label class="pass" for="cpassword">Password confirm:</label>
                 </div>
                     <input type="password" name="cpassword" id="cpassword" placeholder="Confirm your Password" class="form-control"
                      th:field="*{passwordConfirm}"
