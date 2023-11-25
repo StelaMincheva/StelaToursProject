@@ -19,6 +19,7 @@ public class OfferAddDto {
     @NotBlank(message = "Enter a program!")
     private String program;
     @DecimalMin(value = "0.0", inclusive = false, message = "Price must be greater then zero!")
+    @NotNull(message = "Enter a price!")
     private BigDecimal price;
     @NotBlank(message = "Enter a description!")
     private String description;
@@ -34,7 +35,7 @@ public class OfferAddDto {
         this.title = title;
     }
 
-    public MultipartFile getOfferImages() {
+    public MultipartFile getOfferImage() {
         return offerImage;
     }
 

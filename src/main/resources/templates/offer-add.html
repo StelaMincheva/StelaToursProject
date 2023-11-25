@@ -13,7 +13,7 @@
     <!---heading---->
     <header class="heading">Add Offer</header><hr></hr>
     <!---Form starting---->
-    <form
+    <form enctype="multipart/form-data"
             th:method="POST"
             th:action="@{/offer-add}"
             th:object="${offerAddDto}">
@@ -23,7 +23,12 @@
                 <label class="offer-title" for="offer-title">Title: </label>
             </div>
 
-            <input type="text" name="offer-title" id="offer-title" class="form-control" />
+            <input type="text" name="offer-title" id="offer-title" class="form-control"
+                   th:name="title"
+                   th:field="*{title}"
+                   th:errorclass="bg-danger"/>
+            <small th:if="${#fields.hasErrors('title')}"
+                   th:errors="*{title}" class="text-danger">Title error message</small>
         </div>
 
 
@@ -31,28 +36,48 @@
             <div class="col-sm-5">
                 <label class="offer-info" for="offer-info">Info: </label>
             </div>
-            <input type="text" name="offer-info" id="offer-info" class="form-control"/>
+            <input type="text" name="offer-info" id="offer-info" class="form-control"
+                   th:name="info"
+                   th:field="*{info}"
+                   th:errorclass="bg-danger"/>
+            <small th:if="${#fields.hasErrors('info')}"
+                   th:errors="*{info}" class="text-danger">Info error message</small>
         </div>
 
         <div class="col-sm-12 form-group">
             <div class="col-sm-5">
                 <label class="offer-program" for="offer-program">Program: </label>
             </div>
-            <input type="text" name="offer-program"  id="offer-program" class="form-control"/>
+            <input type="text" name="offer-program"  id="offer-program" class="form-control"
+                   th:name="program"
+                   th:field="*{program}"
+                   th:errorclass="bg-danger"/>
+            <small th:if="${#fields.hasErrors('program')}"
+                   th:errors="*{program}" class="text-danger">Program error message</small>
         </div>
 
         <div class="col-sm-12 form-group">
             <div class="col-sm-5">
                 <label class="offer-price" for="offer-price">Price: </label>
             </div>
-            <input type="number" name="offer-price" id="offer-price" class="form-control"/>
+            <input type="number" name="offer-price" id="offer-price" class="form-control"
+                   th:name="price"
+                   th:field="*{price}"
+                   th:errorclass="bg-danger"/>
+            <small th:if="${#fields.hasErrors('price')}"
+                   th:errors="*{price}" class="text-danger">Price error message</small>
         </div>
 
         <div class="col-sm-12 form-group">
             <div class="col-sm-5">
                 <label class="offer-description" for="offer-description">Description: </label>
             </div>
-            <input type="text" name="offer-description" id="offer-description" class="form-control"/>
+            <input type="text" name="offer-description" id="offer-description" class="form-control"
+                   th:name="description"
+                   th:field="*{description}"
+                   th:errorclass="bg-danger"/>
+            <small th:if="${#fields.hasErrors('description')}"
+                   th:errors="*{description}" class="text-danger">Description error message</small>
         </div>
 
         <div class="col-sm-12">
@@ -62,7 +87,11 @@
             <div class="col-sm-5 control-fileupload">
                 <label for="file"></label>
             </div>
-            <input type="file" name="file" id="file" accept="image/*"/>
+            <input type="file" name="file" id="file" accept="image/*"
+                   th:name="offerImage"
+                   th:field="*{offerImage}"/>
+            <small th:if="${#fields.hasErrors('offerImage')}"
+                   th:errors="*{offerImage}" class="text-danger">Image error message</small>
         </div>
 
         <div class="col-sm-12 text-center">
