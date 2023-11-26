@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments/commons::head}"></head>
+<body>
+
+<!-- NAV SECTION -->
+<header th:replace="~{fragments/commons::header}"></header>
+<!--END NAV SECTION -->
+
+<!--SPECIAL OFFER ADD SECTION-->
+<section id="special-offer-add-sec">
+  <!---heading---->
+  <header class="heading">Add Special Offer</header><hr></hr>
+  <!---Form starting---->
+  <form enctype="multipart/form-data"
+        th:method="POST"
+        th:action="@{/special-offer-add}"
+        th:object="${specialOfferAddDto}">
+    <!--- For Name---->
+    <div class="col-sm-12 form-group">
+      <div class="col-sm-5">
+        <label class="special-offer-title" for="special-offer-title">Title: </label>
+      </div>
+      <input type="text" name="special-offer-title" id="special-offer-title" class="form-control"/>
+    </div>
+
+
+    <div class="col-sm-12 form-group">
+      <div class="col-sm-5">
+        <label class="special-offer-info" for="special-offer-info">Info: </label>
+      </div>
+      <input type="text" name="special-offer-info" id="special-offer-info" class="form-control"/>
+    </div>
+
+    <div class="col-sm-12 form-group">
+      <div class="col-sm-5">
+        <label class="special-offer-program" for="special-offer-program">Program: </label>
+      </div>
+      <input type="text" name="special-offer-program"  id="special-offer-program" class="form-control"/>
+    </div>
+
+    <div class="col-sm-12 form-group">
+      <div class="col-sm-5">
+        <label class="special-offer-price" for="special-offer-price">Price: </label>
+      </div>
+      <input type="number" name="special-offer-price" id="special-offer-price" class="form-control"/>
+    </div>
+
+    <div class="col-sm-12 form-group">
+      <div class="col-sm-5">
+        <label class="special-offer-price-includes-title" for="special-offer-price-includes-title">Price includes title: </label>
+      </div>
+      <input type="text" name="special-offer-price-includes-title" id="special-offer-price-includes-title" class="form-control"/>
+    </div>
+
+    <div class="col-sm-12 form-group">
+      <div class="col-sm-5">
+        <label class="special-offer-price-includes-info" for="special-offer-price-includes-info">Price includes info: </label>
+      </div>
+      <input type="text" name="special-offer-price-includes-info" id="special-offer-price-includes-info" class="form-control"/>
+    </div>
+
+    <div class="col-sm-12 form-group">
+      <div class="col-sm-5">
+        <label class="special-offer-price-not-includes-title" for="special-offer-price-not-includes-title">Price not includes title: </label>
+      </div>
+      <input type="text" name="special-offer-price-not-includes-title" id="special-offer-price-not-includes-title" class="form-control"/>
+    </div>
+
+    <div class="col-sm-12 form-group">
+      <div class="col-sm-5">
+        <label class="special-offer-price-not-includes-info" for="special-offer-price-not-includes-info">Price not includes info: </label>
+      </div>
+      <input type="text" name="special-offer-price-not-includes-info" id="special-offer-price-not-includes-info" class="form-control"/>
+    </div>
+
+    <div class="col-sm-12 form-group">
+      <div class="col-sm-5">
+        <label class="special-offer-required-documents-title" for="special-offer-required-documents-title">Required documents title: </label>
+      </div>
+      <input type="text" name="special-offer-required-documents-title" id="special-offer-required-documents-title" class="form-control"/>
+    </div>
+
+    <div class="col-sm-12 form-group">
+      <div class="col-sm-5">
+        <label class="special-offer-required-documents-info" for="special-offer-required-documents-info">Required documents info: </label>
+      </div>
+      <input type="text" name="special-offer-required-documents-info" id="special-offer-required-documents-info" class="form-control"/>
+    </div>
+
+    <div class="col-sm-12 form-group">
+      <div class="col-sm-5">
+        <label class="special-offer-method-of-payment-title" for="special-offer-method-of-payment-title">Method of payment title: </label>
+      </div>
+      <input type="text" name="special-offer-method-of-payment-title" id="special-offer-method-of-payment-title" class="form-control"/>
+    </div>
+
+    <div class="col-sm-12 form-group">
+      <div class="col-sm-5">
+        <label class="special-offer-method-of-payment-info" for="special-offer-method-of-payment-info">Method of payment info: </label>
+      </div>
+      <input type="text" name="special-offer-method-of-payment-info" id="special-offer-method-of-payment-info" class="form-control"/>
+    </div>
+
+    <div class="col-sm-12 form-group">
+      <div class="col-sm-5">
+        <label class="special-offer-min-number-of-tourists-title" for="special-offer-min-number-of-tourists-title">Minimum number of tourists title: </label>
+      </div>
+      <input type="text" name="special-offer-min-number-of-tourists-title" id="special-offer-min-number-of-tourists-title" class="form-control"/>
+    </div>
+
+    <div class="col-sm-12 form-group">
+      <div class="col-sm-5">
+        <label class="special-offer-min-number-of-tourists-info" for="special-offer-min-number-of-tourists-info">Minimum number of tourists info: </label>
+      </div>
+      <input type="text" name="special-offer-min-number-of-tourists-info" id="special-offer-min-number-of-tourists-info" class="form-control"/>
+    </div>
+
+    <div class="col-sm-12 form-group">
+      <div class="col-sm-5">
+        <label class="special-offer-seasonal-destination" for="special-offer-seasonal-destination">Destination: </label>
+      </div>
+      <select id="special-offer-seasonal-destination" name="special-offer-seasonal-destination" class="form-control">
+        <option>SELECT</option>
+        <option></option>
+      </select>
+    </div>
+
+    <div class="col-sm-12">
+      <p class="text-label">Image: </p>
+    </div>
+    <div class="col-sm-12 form-group">
+      <div class="col-sm-5 control-fileupload">
+        <label for="file"></label>
+      </div>
+      <input type="file" name="file" id="file" accept="image/*"/>
+    </div>
+
+    <div class="col-sm-12 text-center">
+      <button type="submit" class="btn add-special-offer-button">Add</button>
+    </div>
+
+  </form>
+</section>
+
+
+<!--END SPECIAL OFFER ADD SECTION-->
+
+<!--FOOTER SECTION -->
+<footer th:replace="~{fragments/commons::footer}"></footer>
+<!-- END FOOTER SECTION -->
+
+</body>
+</html>

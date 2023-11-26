@@ -1,49 +1,53 @@
-package com.example.project.model.entity;
+package com.example.project.model.dto;
 
-import jakarta.persistence.*;
-import org.hibernate.validator.constraints.Length;
+import com.example.project.model.entity.SeasonalDestination;
+import com.example.project.validation.ImageAnnotation;
+import jakarta.validation.constraints.DecimalMin;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Size;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.math.BigDecimal;
 
-@Entity
-@Table(name = "special_offers")
-public class SpecialOffer extends BaseEntity {
+public class SpecialOfferAddDto {
 
-    @Length(min = 3, max = 70)
-    @Column(name = "title", nullable = false)
+    @Size(min = 3, max = 70, message = "Title length must be between 3 and 70 characters!")
+    @NotNull
     private String title;
-    @ManyToOne(optional = false)
-    private Image specialOfferImage;
-    @Column(name = "info", columnDefinition = "TEXT", nullable = false)
+    @ImageAnnotation(contentTypes = {"image/jpeg", "image/png"})
+    private MultipartFile specialOfferImage;
+    @NotBlank(message = "Enter an info!")
     private String info;
-    @Column(name = "program", columnDefinition = "MEDIUMTEXT", nullable = false)
+    @NotBlank(message = "Enter a program!")
     private String program;
-    @Column(name = "price", nullable = false)
+    @DecimalMin(value = "0.0", inclusive = false, message = "Price must be greater then zero!")
+    @NotNull(message = "Enter a price!")
     private BigDecimal price;
-    @Column(name = "price_includes_title", nullable = false)
+    @NotBlank(message = "Enter a title!")
     private String priceIncludesTitle;
-    @Column(name = "price_includes_info", nullable = false)
+    @NotBlank(message = "Enter an info!")
     private String priceIncludesInfo;
-    @Column(name = "price_not_includes_title", nullable = false)
+    @NotBlank(message = "Enter a title!")
     private String priceNotIncludesTitle;
-    @Column(name = "price_not_includes_info", nullable = false)
+    @NotBlank(message = "Enter an info!")
     private String priceNotIncludesInfo;
-    @Column(name = "required_documents_title", nullable = false)
+    @NotBlank(message = "Enter a title!")
     private String requiredDocumentsTitle;
-    @Column(name = "required_documents_info", nullable = false)
+    @NotBlank(message = "Enter an info!")
     private String requiredDocumentsInfo;
-    @Column(name = "method_of_payment_title", nullable = false)
+    @NotBlank(message = "Enter a title!")
     private String methodOfPaymentTitle;
-    @Column(name = "method_of_payment_info", nullable = false)
+    @NotBlank(message = "Enter an info!")
     private String methodOfPaymentInfo;
-    @Column(name = "min_number_of_tourists_title", nullable = false)
+    @NotBlank(message = "Enter a title!")
     private String minNumberOfTouristsTitle;
-    @Column(name = "min_number_of_tourists_info", nullable = false)
+    @NotBlank(message = "Enter an info!")
     private String minNumberOfTouristsInfo;
-    @ManyToOne(optional = false)
+    @NotNull(message = "Select a seasonal destination!")
     private SeasonalDestination seasonalDestination;
 
-    public SpecialOffer() {
+    public SpecialOfferAddDto() {
     }
 
     public String getTitle() {
@@ -54,11 +58,11 @@ public class SpecialOffer extends BaseEntity {
         this.title = title;
     }
 
-    public Image getSpecialOfferImage() {
+    public MultipartFile getSpecialOfferImage() {
         return specialOfferImage;
     }
 
-    public void setSpecialOfferImage(Image specialOfferImage) {
+    public void setSpecialOfferImage(MultipartFile specialOfferImage) {
         this.specialOfferImage = specialOfferImage;
     }
 

@@ -27,7 +27,8 @@ public class SecurityConfig {
                         .requestMatchers("/", "/home", "/about", "/destinations", "/contacts",
                                 "/register", "/login", "/offers", "/offer-details", "/fonts/**",
                                 "/plugins/**", "/login-error").permitAll()
-                        .requestMatchers("/destination-add", "/offer-add").hasRole(UserRole.ADMIN.name())
+                        .requestMatchers("/destination-add", "/offer-add", "/seasonal-destination-add",
+                                "/special-offer-add").hasRole(UserRole.ADMIN.name())
                         //all other requests are authenticated
                         .anyRequest().authenticated()
         ).formLogin(
