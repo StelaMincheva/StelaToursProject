@@ -80,6 +80,16 @@
                    th:errors="*{description}" class="text-danger">Description error message</small>
         </div>
 
+        <div class="col-sm-12 form-group">
+            <div class="col-sm-5">
+                <label class="offer-destination" for="offer-destination">Destination: </label>
+            </div>
+            <select th:field="*{destination.id}" id="offer-destination" name="offer-destination" class="form-control">
+                <option th:value="null">SELECT</option>
+                <option th:each="destination: ${destinations}" th:value="${destination.id}" th:text="${destination.country}"></option>
+            </select>
+        </div>
+
         <div class="col-sm-12">
             <p class="text-label">Image: </p>
         </div>

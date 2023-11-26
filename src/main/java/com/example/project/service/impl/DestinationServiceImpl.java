@@ -40,7 +40,7 @@ public class DestinationServiceImpl implements DestinationService {
 
 
         MultipartFile imageToGet = destinationAddDto.getDestinationImage();
-        String pathFile = imageService.getPath(FOLDER_PATH, destination.getCountry(), imageToGet);
+        String pathFile = imageService.getPath(FOLDER_PATH, destinationAddDto.getDestinationImage().getOriginalFilename(), imageToGet);
 
         Image image = imageService.create(imageToGet, pathFile);
         destination.setDestinationImage(image);

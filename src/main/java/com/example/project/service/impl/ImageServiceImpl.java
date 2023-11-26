@@ -45,9 +45,7 @@ public class ImageServiceImpl implements ImageService {
 
     @Override
     public String getPath(String folderName, String fileName, MultipartFile image) {
-        String[] imageName = image.getOriginalFilename().split("\\.");
-        String extension = imageName[imageName.length - 1];
-        String pathPattern = "%s%s.%s";
-        return String.format(pathPattern, folderName, fileName, extension);
+        String pathPattern = "%s%s";
+        return String.format(pathPattern, folderName, fileName);
     }
 }

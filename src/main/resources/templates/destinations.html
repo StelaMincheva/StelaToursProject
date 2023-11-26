@@ -43,7 +43,7 @@
                     <div class="panel panel-default">
                         <div class="panel-body">
                             <img th:src="@{'images/' + ${destination.url}}" class="img-responsive">
-                            <a th:text="${destination.country}" th:href="@{/offers}" class="label label-info"></a>
+                            <a th:text="${destination.country}" th:href="@{/offers/{country}(country=${destination.getCountry()})}" class="label label-info"></a>
                         </div>
                     </div>
                 </div>

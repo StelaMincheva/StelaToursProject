@@ -4,7 +4,6 @@ import jakarta.persistence.*;
 
 import java.util.List;
 
-
 @Entity
 @Table(name = "destinations")
 public class Destination extends BaseEntity {
@@ -13,7 +12,7 @@ public class Destination extends BaseEntity {
     private String country;
     @ManyToOne(optional = false)
     private Image destinationImage;
-    @OneToMany
+    @OneToMany(mappedBy = "destination")
     private List<Offer> offers;
 
     public Destination() {

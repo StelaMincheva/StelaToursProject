@@ -12,6 +12,19 @@
     <section  id="offers-sec">
         <div class="container">
 
+            <div class="row go-marg">
+                <div th:each="offer : ${viewOffers.offers}" class="col-md-4 col-sm-4">
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <a th:href="@{/offer-details/{id}(id=${offer.getId()})}"><h4 class="adjst"><i class="fa fa-plane"></i> <strong th:text="${offer.title}">
+                            </strong></h4></a>
+                            <p th:text="${offer.info}"></p>
+                            <span class="label label-info" th:text="'from ' + ${offer.price} + ' BGN'">from 799 BGN</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
 
 
         </div>

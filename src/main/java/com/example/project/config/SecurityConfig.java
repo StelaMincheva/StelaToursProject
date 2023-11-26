@@ -25,7 +25,8 @@ public class SecurityConfig {
                         .requestMatchers(PathRequest.toStaticResources().atCommonLocations()).permitAll()
                         //allow anyone to see the pages
                         .requestMatchers("/", "/home", "/about", "/destinations", "/contacts",
-                                "/register", "/login", "/offers", "/fonts/**", "/plugins/**", "/login-error").permitAll()
+                                "/register", "/login", "/offers", "/offer-details", "/fonts/**",
+                                "/plugins/**", "/login-error").permitAll()
                         .requestMatchers("/destination-add", "/offer-add").hasRole(UserRole.ADMIN.name())
                         //all other requests are authenticated
                         .anyRequest().authenticated()

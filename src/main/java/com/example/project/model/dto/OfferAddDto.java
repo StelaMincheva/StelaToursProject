@@ -1,11 +1,11 @@
 package com.example.project.model.dto;
 
+import com.example.project.model.entity.Destination;
 import com.example.project.validation.ImageAnnotation;
 import jakarta.validation.constraints.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.math.BigDecimal;
-import java.util.List;
 
 public class OfferAddDto {
 
@@ -23,6 +23,8 @@ public class OfferAddDto {
     private BigDecimal price;
     @NotBlank(message = "Enter a description!")
     private String description;
+    @NotNull(message = "Select a destination!")
+    private Destination destination;
 
     public OfferAddDto() {
     }
@@ -73,5 +75,13 @@ public class OfferAddDto {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public Destination getDestination() {
+        return destination;
+    }
+
+    public void setDestination(Destination destination) {
+        this.destination = destination;
     }
 }

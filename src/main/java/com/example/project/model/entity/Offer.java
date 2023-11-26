@@ -4,8 +4,6 @@ import jakarta.persistence.*;
 import org.hibernate.validator.constraints.Length;
 
 import java.math.BigDecimal;
-import java.util.List;
-
 
 @Entity
 @Table(name = "offers")
@@ -24,6 +22,8 @@ public class Offer extends BaseEntity {
     private BigDecimal price;
     @Column(name = "description", columnDefinition = "MEDIUMTEXT", nullable = false)
     private String description;
+    @ManyToOne(optional = false)
+    private Destination destination;
 
     public Offer() {
     }
@@ -76,4 +76,11 @@ public class Offer extends BaseEntity {
         this.description = description;
     }
 
+    public Destination getDestination() {
+        return destination;
+    }
+
+    public void setDestination(Destination destination) {
+        this.destination = destination;
+    }
 }

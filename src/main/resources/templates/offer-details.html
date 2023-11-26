@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments/commons::head}"></head>
+<body>
+
+<!-- NAV SECTION -->
+<header th:replace="~{fragments/commons::header}"></header>
+<!--END NAV SECTION -->
+
+<!--OFFER DETAILS SECTION -->
+<footer th:replace="~{fragments/commons::footer}"></footer>
+<!-- END OFFER DETAILS SECTION -->
+
+<section class="offer-details-sec">
+    <div class="container">
+
+        <div class="row">
+            <div class="col-sm-8">
+
+                <div>
+                    <img class="img-responsive" th:src="@{'/images/' + ${offerDto.url}}">
+                </div>
+
+                <div class="text-start">
+                    <h3 th:text="${offerDto.title}">Title</h3>
+                    <p  th:text="${offerDto.info}" style="line-height: 20px">
+                        The Bucharest Christmas Market resembles German Christmas markets,
+                        bringing together 65 wooden stalls with beautiful handmade items and ornaments.
+                        <br/>
+                        At the bazaar you can find traditional food and drinks: cheeses, smoked bacon, sausages,
+                        mulled wine, brandy.
+                        The square will be decorated with a 17-meter Christmas tree, you will find an open carousel,
+                        local folklore, traditional concerts.
+                        <br/>
+                        For the little tourists, there will be a meeting with Santa Claus, who comes from distant Lapland.
+                    </p>
+                </div>
+
+                <div class="text-start">
+                    <h4 style="color:#6f42c1;">Program:</h4>
+                    <p  th:text="${offerDto.program}" style="line-height: 20px">
+                        Departure from Varna at 05:00 from "Antim I" Street, from Shumen at 06:00 from the Billa parking lot,
+                        from Razgrad at 06:45 from the Petrol gas station on the road to Ruse,
+                        from Ruse at 08:30 from the Central Railway Station parking lot.
+                        <br/>
+                        Arrival in Bucharest around 10:30 am. Panoramic bus tour of the city with a guide: Patriarchal Cathedral,
+                        Metropolitan Hill, Unirii Square, 21st December Square, National Theater, Revolution Square, Royal Palace,
+                        Senate, University Library, Athena Temple of Music, Romagna Square, Victoria Square and the Arc de Triomphe.
+                        <br/>
+                        After lunch - a walking tour in the Old Town. You will see the Old Princely Court of Vlad the Impaler.
+                        Here is also the largest bookstore in Romania - "Carturesti Carusel" - translated as "Carousel of Light".
+                        You will also see the old princely church - the oldest building in Bucharest,
+                        as well as the former "Louis Manuk" inn - currently a luxury hotel-restaurant.
+                        <br/>
+                        In the late afternoon you will have free time for the Christmas market. In the evening we travel
+                        back to Bulgaria. Arrival in Ruse around 20:00, in Shumen around 21:00, in Varna around 22:00.
+                    </p>
+                </div>
+
+                <div class="text-start">
+                    <h4 style="color:#6f42c1;">Price:</h4>
+
+                    <div class="table-responsive">
+                        <table class="table table-bordered">
+                            <tbody class="text-nowrap">
+                            <tr>
+                                <th class="warning bold-italic col-sm-2" scope="row">from </th>
+                                <th th:text="${offerDto.price} + ' BGN'" class="warning bold-italic col-sm-2" scope="row">50 BGN</th>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="text-start">
+                    <h4 style="color:#6f42c1;">The package price is in BGN per person and includes:</h4>
+                    <ul class="list-style-type: disc">
+                        <li><div class="item">transport by licensed bus (air conditioning, TV)</div></li>
+                        <li><div class="item">panoramic and walking tour in Bucharest</div></li>
+                        <li><div class="item">a visit to the Christmas market in Bucharest</div></li>
+                        <li><div class="item">medical insurance for persons up to 65 years of age</div></li>
+                        <li><div class="item">all transfers under the program</div></li>
+                        <li><div class="item">tolls</div></li>
+                        <li><div class="item">tour guide service</div></li>
+                    </ul>
+                </div>
+
+                <div class="text-start">
+                    <h4 style="color:#6f42c1;">The price does not include:</h4>
+                    <ul class="list-style-type: disc">
+                        <li><div class="item">medical insurance with a limit of EUR 5000, for persons 65-79
+                            years old - surcharge BGN 4</div></li>
+                        <li><div class="item">entrance fee to the Parliament - 40 lei for adults, 20 lei for students,
+                            10 lei for students and persons aged 7-17, free for children under 7</div></li>
+                        <li><div class="item">personal expenses</div></li>
+                    </ul>
+                    <br/>
+                </div>
+
+                <div class="text-start">
+                    <p style="line-height: 20px">
+                        <strong><u>Required documents: </u></strong>
+                        <br/>
+                        Valid identity document: international passport or identity card; for persons under the age of
+                        18 traveling alone unaccompanied by their parents or traveling with one of their parents -
+                        in addition to a valid identity document, a notarized declaration of consent /respectively from
+                        one or both parents - depending on the case/ that they agree for their child to travel abroad -
+                        original and copy and birth certificate - copy. The original declaration of parental permission,
+                        its copy and the copy of the child's birth certificate should be carried during the trip.
+                    </p>
+
+                    <p style="line-height: 20px">
+                        <strong><u>Method of payment: </u></strong>
+                        <br/>
+                        Depositing 30% of the price as a deposit when concluding a contract for an
+                        organized tourist trip, with the complete set of documents for the trip provided after full payment
+                        for the services; the additional payment is made no later than 5 days before the departure date
+                    </p>
+
+                    <p style="line-height: 20px">
+                        <strong><u>Minimum number of tourists to make the trip: </u></strong>
+                        <br/>
+                        35 full-paying tourists
+                    </p>
+
+                    <p style="line-height: 20px">
+                        <strong><u>Deadline for notification by the agency about not carrying out the trip due to not having
+                            collected the minimum number of tourists: </u></strong>
+                        <br/>
+                        3 days before the departure date
+                    </p>
+                </div>
+            </div>
+
+
+            <div class="col-sm-4">
+                <p class="p-favor">Add to favorites
+                    <button type="button" class="btn btn-danger btn-circle btn-lg"><i class="glyphicon glyphicon-heart"></i></button>
+                </p>
+
+                <div class="text-start p-info">
+                    <p style="line-height: 20px">
+                        <strong><i class="fa fa-plane"></i> Type of transport: </strong>A bus
+                        <br/>
+                    </p>
+
+                    <p style="line-height: 20px">
+                        <strong><i class="fa fa-clock-o"></i> Duration: </strong>4 days / 2 nights
+                        <br/>
+                    </p>
+
+                    <p style="line-height: 20px">
+                        <strong><i class="fa fa-calendar"></i> Dates: </strong> 07.12.2023, 14.12.2023
+                        <br/>
+                    </p>
+                </div>
+
+                <div class="flex-container center-center">
+                    <a th:href="@{/reservation-form}" class="bnt btn-info btn-lg btn-block text-center"
+                       style="text-decoration:none; color:lightyellow">Reservation</a>
+                </div>
+
+            </div>
+
+
+        </div>
+    </div>
+</section>
+
+<!--FOOTER SECTION -->
+<footer th:replace="~{fragments/commons::footer}"></footer>
+<!-- END FOOTER SECTION -->
+
+</body>
+</html>
