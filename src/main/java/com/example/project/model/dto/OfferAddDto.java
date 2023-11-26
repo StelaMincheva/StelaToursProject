@@ -21,8 +21,26 @@ public class OfferAddDto {
     @DecimalMin(value = "0.0", inclusive = false, message = "Price must be greater then zero!")
     @NotNull(message = "Enter a price!")
     private BigDecimal price;
-    @NotBlank(message = "Enter a description!")
-    private String description;
+    @NotBlank(message = "Enter a title!")
+    private String priceIncludesTitle;
+    @NotBlank(message = "Enter an info!")
+    private String priceIncludesInfo;
+    @NotBlank(message = "Enter a title!")
+    private String priceNotIncludesTitle;
+    @NotBlank(message = "Enter an info!")
+    private String priceNotIncludesInfo;
+    @NotBlank(message = "Enter a title!")
+    private String requiredDocumentsTitle;
+    @NotBlank(message = "Enter an info!")
+    private String requiredDocumentsInfo;
+    @NotBlank(message = "Enter a title!")
+    private String methodOfPaymentTitle;
+    @NotBlank(message = "Enter an info!")
+    private String methodOfPaymentInfo;
+    @NotBlank(message = "Enter a title!")
+    private String minNumberOfTouristsTitle;
+    @NotBlank(message = "Enter an info!")
+    private String minNumberOfTouristsInfo;
     @NotNull(message = "Select a destination!")
     private Destination destination;
 
@@ -69,12 +87,84 @@ public class OfferAddDto {
         this.price = price;
     }
 
-    public String getDescription() {
-        return description;
+    public String getPriceIncludesTitle() {
+        return priceIncludesTitle;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public void setPriceIncludesTitle(String priceIncludesTitle) {
+        this.priceIncludesTitle = priceIncludesTitle;
+    }
+
+    public String getPriceIncludesInfo() {
+        return priceIncludesInfo;
+    }
+
+    public void setPriceIncludesInfo(String priceIncludesInfo) {
+        this.priceIncludesInfo = priceIncludesInfo;
+    }
+
+    public String getPriceNotIncludesTitle() {
+        return priceNotIncludesTitle;
+    }
+
+    public void setPriceNotIncludesTitle(String priceNotIncludesTitle) {
+        this.priceNotIncludesTitle = priceNotIncludesTitle;
+    }
+
+    public String getPriceNotIncludesInfo() {
+        return priceNotIncludesInfo;
+    }
+
+    public void setPriceNotIncludesInfo(String priceNotIncludesInfo) {
+        this.priceNotIncludesInfo = priceNotIncludesInfo;
+    }
+
+    public String getRequiredDocumentsTitle() {
+        return requiredDocumentsTitle;
+    }
+
+    public void setRequiredDocumentsTitle(String requiredDocumentsTitle) {
+        this.requiredDocumentsTitle = requiredDocumentsTitle;
+    }
+
+    public String getRequiredDocumentsInfo() {
+        return requiredDocumentsInfo;
+    }
+
+    public void setRequiredDocumentsInfo(String requiredDocumentsInfo) {
+        this.requiredDocumentsInfo = requiredDocumentsInfo;
+    }
+
+    public String getMethodOfPaymentTitle() {
+        return methodOfPaymentTitle;
+    }
+
+    public void setMethodOfPaymentTitle(String methodOfPaymentTitle) {
+        this.methodOfPaymentTitle = methodOfPaymentTitle;
+    }
+
+    public String getMethodOfPaymentInfo() {
+        return methodOfPaymentInfo;
+    }
+
+    public void setMethodOfPaymentInfo(String methodOfPaymentInfo) {
+        this.methodOfPaymentInfo = methodOfPaymentInfo;
+    }
+
+    public String getMinNumberOfTouristsTitle() {
+        return minNumberOfTouristsTitle;
+    }
+
+    public void setMinNumberOfTouristsTitle(String minNumberOfTouristsTitle) {
+        this.minNumberOfTouristsTitle = minNumberOfTouristsTitle;
+    }
+
+    public String getMinNumberOfTouristsInfo() {
+        return minNumberOfTouristsInfo;
+    }
+
+    public void setMinNumberOfTouristsInfo(String minNumberOfTouristsInfo) {
+        this.minNumberOfTouristsInfo = minNumberOfTouristsInfo;
     }
 
     public Destination getDestination() {

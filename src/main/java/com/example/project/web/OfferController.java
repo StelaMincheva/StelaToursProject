@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import java.util.Arrays;
 import java.util.List;
 
 @Controller
@@ -62,8 +63,13 @@ public class OfferController {
         ModelAndView modelAndView = new ModelAndView("offer-details");
 
         OfferDto offerDto = offerService.findById(id);
-
         modelAndView.addObject(offerDto);
+
+        List<String> priceIncludesInfoPoints = Arrays.stream(offerDto.getPriceIncludesInfo().split(". ")).toList();
+        modelAndView.addObject("priceIncludesInfoPoints", priceIncludesInfoPoints);
+
+        List<String> priceNotIncludesInfoPoints = Arrays.stream(offerDto.getPriceNotIncludesInfo().split(". ")).toList();
+        modelAndView.addObject("priceNotIncludesInfoPoints", priceNotIncludesInfoPoints);
 
         return modelAndView;
     }
