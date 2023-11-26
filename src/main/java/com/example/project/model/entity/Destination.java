@@ -12,7 +12,7 @@ public class Destination extends BaseEntity {
     private String country;
     @ManyToOne(optional = false)
     private Image destinationImage;
-    @OneToMany(mappedBy = "destination")
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "destination")
     private List<Offer> offers;
 
     public Destination() {

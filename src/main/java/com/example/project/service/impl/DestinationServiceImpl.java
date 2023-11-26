@@ -3,6 +3,7 @@ package com.example.project.service.impl;
 import com.example.project.model.dto.AllDestinationsDto;
 import com.example.project.model.dto.DestinationAddDto;
 import com.example.project.model.dto.DestinationDto;
+import com.example.project.model.dto.OfferDto;
 import com.example.project.model.entity.Destination;
 import com.example.project.model.entity.Image;
 import com.example.project.repository.DestinationRepository;
@@ -56,7 +57,9 @@ public class DestinationServiceImpl implements DestinationService {
         List<DestinationDto> destinations = new ArrayList<>();
 
         for(Destination destination : allDestinations) {
-            destinations.add(new DestinationDto(destination));
+            DestinationDto destinationDto = modelMapper.map(destination, DestinationDto.class);
+            destinationDto.setUrl(destination.getDestinationImage().getUrl());
+            destinations.add(destinationDto);
         }
 
         return new AllDestinationsDto(destinations);

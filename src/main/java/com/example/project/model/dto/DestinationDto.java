@@ -12,11 +12,7 @@ public class DestinationDto {
     private String url;
     private List<OfferDto> offers;
 
-    public DestinationDto(Destination destination) {
-        id = destination.getId();
-        country = destination.getCountry();
-        url = destination.getDestinationImage().getUrl();
-        offers = new ArrayList<>();
+    public DestinationDto() {
     }
 
     public Long getId() {
