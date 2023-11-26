@@ -55,7 +55,7 @@ public class OfferController {
         }
 
         offerService.addOffer(offerAddDto);
-        return new ModelAndView("redirect:/offers");
+        return new ModelAndView("redirect:/destinations");
     }
 
     @GetMapping("/offer-details/{id}")

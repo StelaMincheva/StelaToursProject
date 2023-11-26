@@ -24,49 +24,22 @@
 
                 <div class="text-start">
                     <h3 th:text="${offerDto.title}">Title</h3>
-                    <p  th:text="${offerDto.info}" style="line-height: 20px">
-                        The Bucharest Christmas Market resembles German Christmas markets,
-                        bringing together 65 wooden stalls with beautiful handmade items and ornaments.
-                        <br/>
-                        At the bazaar you can find traditional food and drinks: cheeses, smoked bacon, sausages,
-                        mulled wine, brandy.
-                        The square will be decorated with a 17-meter Christmas tree, you will find an open carousel,
-                        local folklore, traditional concerts.
-                        <br/>
-                        For the little tourists, there will be a meeting with Santa Claus, who comes from distant Lapland.
-                    </p>
+                    <p  th:text="${offerDto.info}" style="line-height: 20px">Info</p>
                 </div>
 
                 <div class="text-start">
                     <h4 style="color:#6f42c1;">Program:</h4>
-                    <p  th:text="${offerDto.program}" style="line-height: 20px">
-                        Departure from Varna at 05:00 from "Antim I" Street, from Shumen at 06:00 from the Billa parking lot,
-                        from Razgrad at 06:45 from the Petrol gas station on the road to Ruse,
-                        from Ruse at 08:30 from the Central Railway Station parking lot.
-                        <br/>
-                        Arrival in Bucharest around 10:30 am. Panoramic bus tour of the city with a guide: Patriarchal Cathedral,
-                        Metropolitan Hill, Unirii Square, 21st December Square, National Theater, Revolution Square, Royal Palace,
-                        Senate, University Library, Athena Temple of Music, Romagna Square, Victoria Square and the Arc de Triomphe.
-                        <br/>
-                        After lunch - a walking tour in the Old Town. You will see the Old Princely Court of Vlad the Impaler.
-                        Here is also the largest bookstore in Romania - "Carturesti Carusel" - translated as "Carousel of Light".
-                        You will also see the old princely church - the oldest building in Bucharest,
-                        as well as the former "Louis Manuk" inn - currently a luxury hotel-restaurant.
-                        <br/>
-                        In the late afternoon you will have free time for the Christmas market. In the evening we travel
-                        back to Bulgaria. Arrival in Ruse around 20:00, in Shumen around 21:00, in Varna around 22:00.
-                    </p>
+                    <p  th:text="${offerDto.program}" style="line-height: 20px"></p>
                 </div>
 
                 <div class="text-start">
                     <h4 style="color:#6f42c1;">Price:</h4>
-
                     <div class="table-responsive">
                         <table class="table table-bordered">
                             <tbody class="text-nowrap">
                             <tr>
                                 <th class="warning bold-italic col-sm-2" scope="row">from </th>
-                                <th th:text="${offerDto.price} + ' BGN'" class="warning bold-italic col-sm-2" scope="row">50 BGN</th>
+                                <th th:text="${offerDto.price} + ' BGN'" class="warning bold-italic col-sm-2" scope="row"></th>
                             </tr>
                             </tbody>
                         </table>
@@ -74,45 +47,34 @@
                 </div>
 
                 <div class="text-start">
-                    <h4  th:text="${offerDto.priceIncludesTitle}" style="color:#6f42c1;">The package price is in BGN per person and includes:</h4>
+                    <h4  th:text="${offerDto.priceIncludesTitle} + ':'" style="color:#6f42c1;"></h4>
                     <ul th:each="item: ${priceIncludesInfoPoints}" class="list-style-type: disc">
-                        <li th:text="${item}"><div class="item">transport by licensed bus (air conditioning, TV)</div></li>
+                        <li th:text="${item}"><div class="item"></div></li>
                     </ul>
                 </div>
 
                 <div class="text-start">
-                    <h4  th:text="${offerDto.priceNotIncludesTitle}" style="color:#6f42c1;">The price does not include:</h4>
+                    <h4  th:text="${offerDto.priceNotIncludesTitle} + ':'" style="color:#6f42c1;"></h4>
                     <ul th:each="item: ${priceNotIncludesInfoPoints}" class="list-style-type: disc">
-                        <li th:text="${item}"><div class="item">medical insurance with a limit of EUR 5000, for persons 65-79
-                            years old - surcharge BGN 4</div></li>
+                        <li th:text="${item}"><div class="item"></div></li>
                     </ul>
                     <br/>
                 </div>
 
                 <div class="text-start">
-                    <strong th:text="${offerDto.requiredDocumentsTitle}"><u>Required documents: </u></strong>
+                    <strong th:text="${offerDto.requiredDocumentsTitle} + ':'"><u></u></strong>
                     <p th:text="${offerDto.requiredDocumentsInfo}" style="line-height: 20px">
                         <br/>
-                        Valid identity document: international passport or identity card; for persons under the age of
-                        18 traveling alone unaccompanied by their parents or traveling with one of their parents -
-                        in addition to a valid identity document, a notarized declaration of consent /respectively from
-                        one or both parents - depending on the case/ that they agree for their child to travel abroad -
-                        original and copy and birth certificate - copy. The original declaration of parental permission,
-                        its copy and the copy of the child's birth certificate should be carried during the trip.
                     </p>
 
-                    <strong th:text="${offerDto.methodOfPaymentTitle}"><u>Method of payment: </u></strong>
+                    <strong th:text="${offerDto.methodOfPaymentTitle} + ':'"><u></u></strong>
                     <p th:text="${offerDto.methodOfPaymentInfo}" style="line-height: 20px">
                         <br/>
-                        Depositing 30% of the price as a deposit when concluding a contract for an
-                        organized tourist trip, with the complete set of documents for the trip provided after full payment
-                        for the services; the additional payment is made no later than 5 days before the departure date
                     </p>
 
-                    <strong th:text="${offerDto.minNumberOfTouristsTitle}"><u>Minimum number of tourists to make the trip: </u></strong>
+                    <strong th:text="${offerDto.minNumberOfTouristsTitle} + ':'"><u></u></strong>
                     <p th:text="${offerDto.minNumberOfTouristsInfo}" style="line-height: 20px">
                         <br/>
-                        35 full-paying tourists
                     </p>
                 </div>
             </div>

@@ -2,6 +2,8 @@ package com.example.project.model.entity;
 
 import jakarta.persistence.*;
 
+import java.util.List;
+
 
 @Entity
 @Table(name = "seasonal_destinations")
@@ -10,6 +12,8 @@ public class SeasonalDestination extends BaseEntity {
     private String title;
     @ManyToOne(optional = false)
     private Image seasonalImage;
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "seasonalDestination")
+    private List<SpecialOffer> specialOffers;
 
     public SeasonalDestination() {
     }
@@ -28,5 +32,13 @@ public class SeasonalDestination extends BaseEntity {
 
     public void setSeasonalImage(Image seasonalImage) {
         this.seasonalImage = seasonalImage;
+    }
+
+    public List<SpecialOffer> getSpecialOffers() {
+        return specialOffers;
+    }
+
+    public void setSpecialOffers(List<SpecialOffer> specialOffers) {
+        this.specialOffers = specialOffers;
     }
 }

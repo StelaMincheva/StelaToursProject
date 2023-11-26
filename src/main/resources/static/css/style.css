@@ -582,13 +582,13 @@ border-top: 1px solid #d6d6d6;
 /*------------------------------------
      ADD DESTINATION SECTION
 ------------------------------------*/
-#destination-add-sec, #offer-add-sec {
+#destination-add-sec, #seasonal-destination-add-sec, #offer-add-sec {
     background-color: whitesmoke;
     padding-bottom: 50px;
     padding-top: 80px;
 }
 
-#destination-add-sec form, #offer-add-sec form {
+#destination-add-sec form, #seasonal-destination-add-sec form, #offer-add-sec form {
     font-family:Roboto,sans-serif;
     background-color: lightgoldenrodyellow;
     border-style: solid;
@@ -602,11 +602,11 @@ border-top: 1px solid #d6d6d6;
 
 }
 
-#destination-add-sec .heading, #offer-add-sec .heading {
+#destination-add-sec .heading, #seasonal-destination-add-sec .heading, #offer-add-sec .heading {
     color: black;
 }
 
-#destination-add-sec p, #offer-add-sec p {
+#destination-add-sec p, #seasonal-destination-add-sec p, #offer-add-sec p {
     font-weight: bold;
     margin-bottom: 2px;
     font-size: 14px;
@@ -618,7 +618,7 @@ input[type = file] {
     display: inline-block;
 }
 
-.add-destination-button, .add-offer-button{
+.add-destination-button, .add-seasonal-destination-button .add-offer-button{
     margin-top: 26px;
     padding: 8px 38px!important;
     border: 1px solid grey;

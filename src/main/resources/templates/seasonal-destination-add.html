@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments/commons::head}"></head>
+<body>
+
+<!-- NAV SECTION -->
+<header th:replace="~{fragments/commons::header}"></header>
+<!-- END NAV SECTION -->
+
+<!-- SEASONAL DESTINATION ADD SECTION -->
+<section id="seasonal-destination-add-sec">
+  <div class="container">
+    <header class="heading">Add New Seasonal Destination</header><hr></hr>
+    <form enctype="multipart/form-data"
+          th:method="POST"
+          th:action="@{/seasonal-destination-add}"
+          th:object="${seasonalDestinationAddDto}">
+
+      <div class="col-sm-12">
+        <p class="text-label ctext">Title: </p>
+      </div>
+
+      <div class="col-sm-12 form-group">
+        <input type="text" name="title" id="title" class="form-control"
+               th:name="title"
+               th:field="*{title}"
+               th:errorclass="bg-danger"/>
+        <small th:if="${#fields.hasErrors('title')}"
+               th:errors="*{title}" class="text-danger">Title error message</small>
+      </div>
+
+      <div class="col-sm-12">
+        <p class="text-label">Choose an image: </p>
+      </div>
+
+      <div class="col-sm-12 form-group">
+        <div class="col-sm-5 control-fileupload">
+          <label for="file"></label>
+        </div>
+        <input type="file" name="file" id="file" accept="image/*"
+               th:name="seasonalImage"
+               th:field="*{seasonalImage}"/>
+        <small th:if="${#fields.hasErrors('seasonalImage')}"
+               th:errors="*{seasonalImage}" class="text-danger">Image error message</small>
+      </div>
+
+      <div class="col-sm-12 text-center">
+        <button type="submit" class="btn add-seasonal-destination-button">Add</button>
+      </div>
+
+    </form>
+  </div>
+</section>
+<!-- END SEASONAL DESTINATION ADD SECTION -->
+
+<!--FOOTER SECTION -->
+<footer th:replace="~{fragments/commons::footer}"></footer>
+<!-- END FOOTER SECTION -->
+
+</body>
+</html>
