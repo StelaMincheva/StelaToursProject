@@ -22,7 +22,12 @@
       <div class="col-sm-5">
         <label class="special-offer-title" for="special-offer-title">Title: </label>
       </div>
-      <input type="text" name="special-offer-title" id="special-offer-title" class="form-control"/>
+      <input type="text" name="special-offer-title" id="special-offer-title" class="form-control"
+             th:name="title"
+             th:field="*{title}"
+             th:errorclass="bg-danger"/>
+      <small th:if="${#fields.hasErrors('title')}"
+             th:errors="*{title}" class="text-danger">Title error message</small>
     </div>
 
 
@@ -30,100 +35,165 @@
       <div class="col-sm-5">
         <label class="special-offer-info" for="special-offer-info">Info: </label>
       </div>
-      <input type="text" name="special-offer-info" id="special-offer-info" class="form-control"/>
+      <input type="text" name="special-offer-info" id="special-offer-info" class="form-control"
+             th:name="info"
+             th:field="*{info}"
+             th:errorclass="bg-danger"/>
+      <small th:if="${#fields.hasErrors('info')}"
+             th:errors="*{info}" class="text-danger">Info error message</small>
     </div>
 
     <div class="col-sm-12 form-group">
       <div class="col-sm-5">
         <label class="special-offer-program" for="special-offer-program">Program: </label>
       </div>
-      <input type="text" name="special-offer-program"  id="special-offer-program" class="form-control"/>
+      <input type="text" name="special-offer-program"  id="special-offer-program" class="form-control"
+             th:name="program"
+             th:field="*{program}"
+             th:errorclass="bg-danger"/>
+      <small th:if="${#fields.hasErrors('program')}"
+             th:errors="*{program}" class="text-danger">Program error message</small>
     </div>
 
     <div class="col-sm-12 form-group">
       <div class="col-sm-5">
         <label class="special-offer-price" for="special-offer-price">Price: </label>
       </div>
-      <input type="number" name="special-offer-price" id="special-offer-price" class="form-control"/>
+      <input type="number" name="special-offer-price" id="special-offer-price" class="form-control"
+             th:name="price"
+             th:field="*{price}"
+             th:errorclass="bg-danger"/>
+      <small th:if="${#fields.hasErrors('price')}"
+             th:errors="*{price}" class="text-danger">Price error message</small>
     </div>
 
     <div class="col-sm-12 form-group">
       <div class="col-sm-5">
         <label class="special-offer-price-includes-title" for="special-offer-price-includes-title">Price includes title: </label>
       </div>
-      <input type="text" name="special-offer-price-includes-title" id="special-offer-price-includes-title" class="form-control"/>
+      <input type="text" name="special-offer-price-includes-title" id="special-offer-price-includes-title" class="form-control"
+             th:name="priceIncludesTitle"
+             th:field="*{priceIncludesTitle}"
+             th:errorclass="bg-danger"/>
+      <small th:if="${#fields.hasErrors('priceIncludesTitle')}"
+             th:errors="*{priceIncludesTitle}" class="text-danger">Price includes title error message</small>
     </div>
 
     <div class="col-sm-12 form-group">
       <div class="col-sm-5">
         <label class="special-offer-price-includes-info" for="special-offer-price-includes-info">Price includes info: </label>
       </div>
-      <input type="text" name="special-offer-price-includes-info" id="special-offer-price-includes-info" class="form-control"/>
+      <input type="text" name="special-offer-price-includes-info" id="special-offer-price-includes-info" class="form-control"
+             th:name="priceIncludesInfo"
+             th:field="*{priceIncludesInfo}"
+             th:errorclass="bg-danger"/>
+      <small th:if="${#fields.hasErrors('priceIncludesInfo')}"
+             th:errors="*{priceIncludesInfo}" class="text-danger">Price includes info error message</small>
     </div>
 
     <div class="col-sm-12 form-group">
       <div class="col-sm-5">
         <label class="special-offer-price-not-includes-title" for="special-offer-price-not-includes-title">Price not includes title: </label>
       </div>
-      <input type="text" name="special-offer-price-not-includes-title" id="special-offer-price-not-includes-title" class="form-control"/>
+      <input type="text" name="special-offer-price-not-includes-title" id="special-offer-price-not-includes-title" class="form-control"
+             th:name="priceNotIncludesTitle"
+             th:field="*{priceNotIncludesTitle}"
+             th:errorclass="bg-danger"/>
+      <small th:if="${#fields.hasErrors('priceNotIncludesTitle')}"
+             th:errors="*{priceNotIncludesTitle}" class="text-danger">Price not includes title error message</small>
     </div>
 
     <div class="col-sm-12 form-group">
       <div class="col-sm-5">
         <label class="special-offer-price-not-includes-info" for="special-offer-price-not-includes-info">Price not includes info: </label>
       </div>
-      <input type="text" name="special-offer-price-not-includes-info" id="special-offer-price-not-includes-info" class="form-control"/>
+      <input type="text" name="special-offer-price-not-includes-info" id="special-offer-price-not-includes-info" class="form-control"
+             th:name="priceNotIncludesInfo"
+             th:field="*{priceNotIncludesInfo}"
+             th:errorclass="bg-danger"/>
+      <small th:if="${#fields.hasErrors('priceNotIncludesInfo')}"
+             th:errors="*{priceNotIncludesInfo}" class="text-danger">Price not includes info error message</small>
     </div>
 
     <div class="col-sm-12 form-group">
       <div class="col-sm-5">
         <label class="special-offer-required-documents-title" for="special-offer-required-documents-title">Required documents title: </label>
       </div>
-      <input type="text" name="special-offer-required-documents-title" id="special-offer-required-documents-title" class="form-control"/>
+      <input type="text" name="special-offer-required-documents-title" id="special-offer-required-documents-title" class="form-control"
+             th:name="requiredDocumentsTitle"
+             th:field="*{requiredDocumentsTitle}"
+             th:errorclass="bg-danger"/>
+      <small th:if="${#fields.hasErrors('requiredDocumentsTitle')}"
+             th:errors="*{requiredDocumentsTitle}" class="text-danger">Required documents title error message</small>
     </div>
 
     <div class="col-sm-12 form-group">
       <div class="col-sm-5">
         <label class="special-offer-required-documents-info" for="special-offer-required-documents-info">Required documents info: </label>
       </div>
-      <input type="text" name="special-offer-required-documents-info" id="special-offer-required-documents-info" class="form-control"/>
+      <input type="text" name="special-offer-required-documents-info" id="special-offer-required-documents-info" class="form-control"
+             th:name="requiredDocumentsInfo"
+             th:field="*{requiredDocumentsInfo}"
+             th:errorclass="bg-danger"/>
+      <small th:if="${#fields.hasErrors('requiredDocumentsInfo')}"
+             th:errors="*{requiredDocumentsInfo}" class="text-danger">Required documents info error message</small>
     </div>
 
     <div class="col-sm-12 form-group">
       <div class="col-sm-5">
         <label class="special-offer-method-of-payment-title" for="special-offer-method-of-payment-title">Method of payment title: </label>
       </div>
-      <input type="text" name="special-offer-method-of-payment-title" id="special-offer-method-of-payment-title" class="form-control"/>
+      <input type="text" name="special-offer-method-of-payment-title" id="special-offer-method-of-payment-title" class="form-control"
+             th:name="methodOfPaymentTitle"
+             th:field="*{methodOfPaymentTitle}"
+             th:errorclass="bg-danger"/>
+      <small th:if="${#fields.hasErrors('methodOfPaymentTitle')}"
+             th:errors="*{methodOfPaymentTitle}" class="text-danger">Method of payment title error message</small>
     </div>
 
     <div class="col-sm-12 form-group">
       <div class="col-sm-5">
         <label class="special-offer-method-of-payment-info" for="special-offer-method-of-payment-info">Method of payment info: </label>
       </div>
-      <input type="text" name="special-offer-method-of-payment-info" id="special-offer-method-of-payment-info" class="form-control"/>
+      <input type="text" name="special-offer-method-of-payment-info" id="special-offer-method-of-payment-info" class="form-control"
+             th:name="methodOfPaymentInfo"
+             th:field="*{methodOfPaymentInfo}"
+             th:errorclass="bg-danger"/>
+      <small th:if="${#fields.hasErrors('methodOfPaymentInfo')}"
+             th:errors="*{methodOfPaymentInfo}" class="text-danger">Method of payment info error message</small>
     </div>
 
     <div class="col-sm-12 form-group">
       <div class="col-sm-5">
         <label class="special-offer-min-number-of-tourists-title" for="special-offer-min-number-of-tourists-title">Minimum number of tourists title: </label>
       </div>
-      <input type="text" name="special-offer-min-number-of-tourists-title" id="special-offer-min-number-of-tourists-title" class="form-control"/>
+      <input type="text" name="special-offer-min-number-of-tourists-title" id="special-offer-min-number-of-tourists-title" class="form-control"
+             th:name="minNumberOfTouristsTitle"
+             th:field="*{minNumberOfTouristsTitle}"
+             th:errorclass="bg-danger"/>
+      <small th:if="${#fields.hasErrors('minNumberOfTouristsTitle')}"
+             th:errors="*{minNumberOfTouristsTitle}" class="text-danger">Min number of tourists title error message</small>
     </div>
 
     <div class="col-sm-12 form-group">
       <div class="col-sm-5">
         <label class="special-offer-min-number-of-tourists-info" for="special-offer-min-number-of-tourists-info">Minimum number of tourists info: </label>
       </div>
-      <input type="text" name="special-offer-min-number-of-tourists-info" id="special-offer-min-number-of-tourists-info" class="form-control"/>
+      <input type="text" name="special-offer-min-number-of-tourists-info" id="special-offer-min-number-of-tourists-info" class="form-control"
+             th:name="minNumberOfTouristsInfo"
+             th:field="*{minNumberOfTouristsInfo}"
+             th:errorclass="bg-danger"/>
+      <small th:if="${#fields.hasErrors('minNumberOfTouristsInfo')}"
+             th:errors="*{minNumberOfTouristsInfo}" class="text-danger">Min number of tourists info error message</small>
     </div>
 
     <div class="col-sm-12 form-group">
       <div class="col-sm-5">
         <label class="special-offer-seasonal-destination" for="special-offer-seasonal-destination">Destination: </label>
       </div>
-      <select id="special-offer-seasonal-destination" name="special-offer-seasonal-destination" class="form-control">
-        <option>SELECT</option>
-        <option></option>
+      <select th:field="*{seasonalDestination.id}" id="special-offer-seasonal-destination" name="special-offer-seasonal-destination" class="form-control">
+        <option th:value="null">SELECT</option>
+        <option th:each="seasonalDestination: ${seasonalDestinations}" th:value="${seasonalDestination.id}" th:text="${seasonalDestination.title}"></option>
       </select>
     </div>
 
@@ -134,7 +204,11 @@
       <div class="col-sm-5 control-fileupload">
         <label for="file"></label>
       </div>
-      <input type="file" name="file" id="file" accept="image/*"/>
+      <input type="file" name="file" id="file" accept="image/*"
+             th:name="specialOfferImage"
+             th:field="*{specialOfferImage}"/>
+      <small th:if="${#fields.hasErrors('specialOfferImage')}"
+             th:errors="*{specialOfferImage}" class="text-danger">Image error message</small>
     </div>
 
     <div class="col-sm-12 text-center">

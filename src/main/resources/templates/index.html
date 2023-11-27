@@ -53,7 +53,7 @@
                 <div th:each="seasonalDestination : ${viewSeasonalDestinations.seasonalDestinations}" class="col-md-4 col-sm-4">
                     <div class="panel panel-default">
                         <div class="panel-body">
-                            <a th:text="${seasonalDestination.title}" href="" class="link-dark">Christmas trips</a>
+                            <a th:text="${seasonalDestination.title}" th:href="@{/special-offers/{title}(title=${seasonalDestination.getTitle()})}" class="link-dark">Christmas trips</a>
                             <img th:src="@{'images/' + ${seasonalDestination.url}}" class="img-responsive img-bg">
                         </div>
                     </div>

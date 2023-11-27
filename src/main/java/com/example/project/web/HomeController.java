@@ -43,6 +43,11 @@ public class HomeController {
         return new ModelAndView("profile");
     }
 
+    @GetMapping("/reservation-form")
+    public ModelAndView reservation() {
+        return new ModelAndView("reservation-form");
+    }
+
 
 
 

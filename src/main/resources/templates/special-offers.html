@@ -12,19 +12,16 @@
 <section  id="special-offers-sec">
   <div class="container">
 
-    <div class="row go-marg">
-      <div class="col-md-4 col-sm-4">
+    <div class="row">
+      <div th:each="specialOffer : ${viewSpecialOffers.specialOffers}" class="col-sm-4">
         <div class="panel panel-default">
           <div class="panel-body">
-            <a><h4 class="adjst"><i class="fa fa-plane"></i> <strong>
-            </strong></h4></a>
-            <p></p>
-            <span class="label label-info">from 799 BGN</span>
+            <img th:src="@{'/images/' + ${specialOffer.url}}" class="img-responsive" src="">
+            <a th:href="@{/special-offer-details/{id}(id=${specialOffer.getId()})}" th:text="${specialOffer.title}" class="link-dark"></a>
           </div>
         </div>
       </div>
     </div>
-
 
 
   </div>

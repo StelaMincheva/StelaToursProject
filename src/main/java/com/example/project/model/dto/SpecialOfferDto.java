@@ -1,51 +1,36 @@
-package com.example.project.model.entity;
-
-import jakarta.persistence.*;
-import org.hibernate.validator.constraints.Length;
+package com.example.project.model.dto;
 
 import java.math.BigDecimal;
 
-@Entity
-@Table(name = "offers")
-public class Offer extends BaseEntity {
+public class SpecialOfferDto {
 
-    @Length(min = 3, max = 70)
-    @Column(name = "title", nullable = false)
+    private Long id;
     private String title;
-    @ManyToOne
-    private Image offerImage;
-    @Column(name = "info", columnDefinition = "TEXT", nullable = false)
+    private String url;
     private String info;
-    @Column(name = "program", columnDefinition = "MEDIUMTEXT", nullable = false)
     private String program;
-    @Column(name = "price", nullable = false)
     private BigDecimal price;
-    @Column(name = "price_includes_title", nullable = false)
     private String priceIncludesTitle;
-    @Column(name = "price_includes_info", nullable = false)
     private String priceIncludesInfo;
-    @Column(name = "price_not_includes_title", nullable = false)
     private String priceNotIncludesTitle;
-    @Column(name = "price_not_includes_info", nullable = false)
     private String priceNotIncludesInfo;
-    @Column(name = "required_documents_title", nullable = false)
     private String requiredDocumentsTitle;
-    @Column(name = "required_documents_info", nullable = false)
     private String requiredDocumentsInfo;
-    @Column(name = "method_of_payment_title", nullable = false)
     private String methodOfPaymentTitle;
-    @Column(name = "method_of_payment_info", nullable = false)
     private String methodOfPaymentInfo;
-    @Column(name = "min_number_of_tourists_title", nullable = false)
     private String minNumberOfTouristsTitle;
-    @Column(name = "min_number_of_tourists_info", nullable = false)
     private String minNumberOfTouristsInfo;
-    @ManyToOne(optional = false)
-    private Destination destination;
+    private Long seasonalDestinationId;
 
+    public SpecialOfferDto() {
+    }
 
+    public Long getId() {
+        return id;
+    }
 
-    public Offer() {
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getTitle() {
@@ -56,12 +41,12 @@ public class Offer extends BaseEntity {
         this.title = title;
     }
 
-    public Image getOfferImage() {
-        return offerImage;
+    public String getUrl() {
+        return url;
     }
 
-    public void setOfferImage(Image offerImage) {
-        this.offerImage = offerImage;
+    public void setUrl(String url) {
+        this.url = url;
     }
 
     public String getInfo() {
@@ -168,11 +153,11 @@ public class Offer extends BaseEntity {
         this.minNumberOfTouristsInfo = minNumberOfTouristsInfo;
     }
 
-    public Destination getDestination() {
-        return destination;
+    public Long getSeasonalDestinationId() {
+        return seasonalDestinationId;
     }
 
-    public void setDestination(Destination destination) {
-        this.destination = destination;
+    public void setSeasonalDestinationId(Long seasonalDestinationId) {
+        this.seasonalDestinationId = seasonalDestinationId;
     }
 }
