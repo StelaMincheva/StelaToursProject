@@ -1,6 +1,5 @@
 package com.example.project.model.entity;
 
-import com.example.project.model.enums.HotelCategory;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Future;
 
@@ -17,13 +16,14 @@ public class Reservation extends BaseEntity {
     @Future
     @Column(name = "date", nullable = false)
     private LocalDate date;
-    @Enumerated(EnumType.STRING)
     @Column(name = "hotel_category", nullable = false)
-    private HotelCategory hotelCategory;
+    private String hotelCategory;
     @Column(name = "number_of_insurances", nullable = false)
     private int numberOfInsurances;
     @ManyToOne(optional = false)
     private Offer offer;
+    @ManyToOne
+    private User reservedBy;
 
     public Reservation() {
     }
@@ -52,11 +52,11 @@ public class Reservation extends BaseEntity {
         this.date = date;
     }
 
-    public HotelCategory getHotelCategory() {
+    public String getHotelCategory() {
         return hotelCategory;
     }
 
-    public void setHotelCategory(HotelCategory hotelCategory) {
+    public void setHotelCategory(String hotelCategory) {
         this.hotelCategory = hotelCategory;
     }
 
@@ -74,5 +74,13 @@ public class Reservation extends BaseEntity {
 
     public void setOffer(Offer offer) {
         this.offer = offer;
+    }
+
+    public User getReservedBy() {
+        return reservedBy;
+    }
+
+    public void setReservedBy(User reservedBy) {
+        this.reservedBy = reservedBy;
     }
 }

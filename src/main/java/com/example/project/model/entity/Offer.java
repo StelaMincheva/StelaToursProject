@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import org.hibernate.validator.constraints.Length;
 
 import java.math.BigDecimal;
+import java.util.List;
 
 @Entity
 @Table(name = "offers")
@@ -42,8 +43,8 @@ public class Offer extends BaseEntity {
     private String minNumberOfTouristsInfo;
     @ManyToOne(optional = false)
     private Destination destination;
-
-
+    @OneToMany(mappedBy = "offer")
+    private List<Reservation> reservations;
 
     public Offer() {
     }
@@ -174,5 +175,13 @@ public class Offer extends BaseEntity {
 
     public void setDestination(Destination destination) {
         this.destination = destination;
+    }
+
+    public List<Reservation> getReservations() {
+        return reservations;
+    }
+
+    public void setReservations(List<Reservation> reservations) {
+        this.reservations = reservations;
     }
 }
