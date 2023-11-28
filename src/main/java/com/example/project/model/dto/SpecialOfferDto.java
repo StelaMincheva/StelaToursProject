@@ -1,6 +1,7 @@
 package com.example.project.model.dto;
 
 import java.math.BigDecimal;
+import java.time.LocalDate;
 
 public class SpecialOfferDto {
 
@@ -10,16 +11,14 @@ public class SpecialOfferDto {
     private String info;
     private String program;
     private BigDecimal price;
-    private String priceIncludesTitle;
-    private String priceIncludesInfo;
-    private String priceNotIncludesTitle;
-    private String priceNotIncludesInfo;
-    private String requiredDocumentsTitle;
-    private String requiredDocumentsInfo;
-    private String methodOfPaymentTitle;
-    private String methodOfPaymentInfo;
-    private String minNumberOfTouristsTitle;
-    private String minNumberOfTouristsInfo;
+    private String priceIncludes;
+    private String priceNotIncludes;
+    private String requiredDocuments;
+    private String methodOfPayment;
+    private String minNumberOfTourists;
+    private String typeOfTransport;
+    private String duration;
+    private LocalDate date;
     private Long seasonalDestinationId;
 
     public SpecialOfferDto() {
@@ -73,84 +72,69 @@ public class SpecialOfferDto {
         this.price = price;
     }
 
-    public String getPriceIncludesTitle() {
-        return priceIncludesTitle;
+    public String getPriceIncludes() {
+        return priceIncludes;
     }
 
-    public void setPriceIncludesTitle(String priceIncludesTitle) {
-        this.priceIncludesTitle = priceIncludesTitle;
+    public void setPriceIncludes(String priceIncludes) {
+        this.priceIncludes = priceIncludes;
     }
 
-    public String getPriceIncludesInfo() {
-        return priceIncludesInfo;
+    public String getPriceNotIncludes() {
+        return priceNotIncludes;
     }
 
-    public void setPriceIncludesInfo(String priceIncludesInfo) {
-        this.priceIncludesInfo = priceIncludesInfo;
+    public void setPriceNotIncludes(String priceNotIncludes) {
+        this.priceNotIncludes = priceNotIncludes;
     }
 
-    public String getPriceNotIncludesTitle() {
-        return priceNotIncludesTitle;
+    public String getRequiredDocuments() {
+        return requiredDocuments;
     }
 
-    public void setPriceNotIncludesTitle(String priceNotIncludesTitle) {
-        this.priceNotIncludesTitle = priceNotIncludesTitle;
+    public void setRequiredDocuments(String requiredDocuments) {
+        this.requiredDocuments = requiredDocuments;
     }
 
-    public String getPriceNotIncludesInfo() {
-        return priceNotIncludesInfo;
+
+    public String getMethodOfPayment() {
+        return methodOfPayment;
     }
 
-    public void setPriceNotIncludesInfo(String priceNotIncludesInfo) {
-        this.priceNotIncludesInfo = priceNotIncludesInfo;
+    public void setMethodOfPayment(String methodOfPayment) {
+        this.methodOfPayment = methodOfPayment;
     }
 
-    public String getRequiredDocumentsTitle() {
-        return requiredDocumentsTitle;
+    public String getMinNumberOfTourists() {
+        return minNumberOfTourists;
     }
 
-    public void setRequiredDocumentsTitle(String requiredDocumentsTitle) {
-        this.requiredDocumentsTitle = requiredDocumentsTitle;
+    public void setMinNumberOfTourists(String minNumberOfTourists) {
+        this.minNumberOfTourists = minNumberOfTourists;
     }
 
-    public String getRequiredDocumentsInfo() {
-        return requiredDocumentsInfo;
+    public String getTypeOfTransport() {
+        return typeOfTransport;
     }
 
-    public void setRequiredDocumentsInfo(String requiredDocumentsInfo) {
-        this.requiredDocumentsInfo = requiredDocumentsInfo;
+    public void setTypeOfTransport(String typeOfTransport) {
+        this.typeOfTransport = typeOfTransport;
     }
 
-    public String getMethodOfPaymentTitle() {
-        return methodOfPaymentTitle;
+    public String getDuration() {
+        return duration;
     }
 
-    public void setMethodOfPaymentTitle(String methodOfPaymentTitle) {
-        this.methodOfPaymentTitle = methodOfPaymentTitle;
+    public void setDuration(String duration) {
+        this.duration = duration;
     }
 
-    public String getMethodOfPaymentInfo() {
-        return methodOfPaymentInfo;
+    public LocalDate getDate() {
+        return date;
     }
 
-    public void setMethodOfPaymentInfo(String methodOfPaymentInfo) {
-        this.methodOfPaymentInfo = methodOfPaymentInfo;
-    }
-
-    public String getMinNumberOfTouristsTitle() {
-        return minNumberOfTouristsTitle;
-    }
-
-    public void setMinNumberOfTouristsTitle(String minNumberOfTouristsTitle) {
-        this.minNumberOfTouristsTitle = minNumberOfTouristsTitle;
-    }
-
-    public String getMinNumberOfTouristsInfo() {
-        return minNumberOfTouristsInfo;
-    }
-
-    public void setMinNumberOfTouristsInfo(String minNumberOfTouristsInfo) {
-        this.minNumberOfTouristsInfo = minNumberOfTouristsInfo;
+    public void setDate(LocalDate date) {
+        this.date = date;
     }
 
     public Long getSeasonalDestinationId() {

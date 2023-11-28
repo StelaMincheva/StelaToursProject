@@ -15,13 +15,20 @@
     <div class="row">
       <div class="col-sm-8">
         <div class="reservation-form">
-          <form action="" method="">
+          <form th:action="@{reservation-form}"
+                th:method="POST"
+                th:object="${reservationAddDto}">
 
             <div class="col1">Number of passengers</div>
             <div class="col2">
               <div class="select-dropdown-box">
                 <div class="select-dropdown">
-                  <input type="number" name="adult" class="form-control" />
+                  <input type="number" name="adult" class="form-control"
+                         th:name="numberOfAdults"
+                         th:field="*{numberOfAdults}"
+                         th:errorclass="bg-danger"/>
+                  <small th:if="${#fields.hasErrors('numberOfAdults')}"
+                         th:errors="*{numberOfAdults}" class="text-danger">Number of adults error message</small>
                 </div>
               </div>
             </div>
@@ -30,7 +37,12 @@
               <div class="col2">
               <div class="select-dropdown-box">
                 <div class="select-dropdown">
-                  <input type="number" name="child" class="form-control" />
+                  <input type="number" name="child" class="form-control"
+                         th:name="numberOfKids"
+                         th:field="*{numberOfKids}"
+                         th:errorclass="bg-danger"/>
+                  <small th:if="${#fields.hasErrors('numberOfKids')}"
+                         th:errors="*{numberOfKids}" class="text-danger">Number of kids error message</small>
                 </div>
                 <div>*select number of children up to 17 years old</div>
               </div>
@@ -39,19 +51,29 @@
             <div class="col1">Date</div>
             <div class="col2">
               <div class="select-dropdown" style="width: 85%">
-                <input type="date" name="trip_id" class="form-control" />
+                <input type="date" name="trip_id" class="form-control"
+                       th:name="date"
+                       th:field="*{date}"
+                       th:errorclass="bg-danger"/>
+                <small th:if="${#fields.hasErrors('date')}"
+                       th:errors="*{date}" class="text-danger">Date error message</small>
               </div>
             </div>
 
             <div class="col1">Hotel category</div>
             <div class="col2">
               <div class="select-dropdown" style="width: 85%">
-                <select name="accommodationid" class="form-control">
+                <select name="accommodationid" class="form-control"
+                        th:name="hotelCategory"
+                        th:field="*{hotelCategory}"
+                        th:errorclass="bg-danger">
                   <option value="0"></option>
                   <option value="1">Accommodation in 2* or 3*</option>
                   <option value="2">Accommodation in 4*</option>
                   <option value="3">Accommodation in 5*</option>
                 </select>
+                <small th:if="${#fields.hasErrors('hotelCategory')}"
+                       th:errors="*{hotelCategory}" class="text-danger">Hotel category error message</small>
               </div>
             </div>
 
@@ -74,7 +96,12 @@
                   <td data-title="Number">
                     <div class="select-dropdown-box">
                       <div class="select-dropdown">
-                        <input type="number" name="ins_count" class="form-control" />
+                        <input type="number" name="ins_count" class="form-control"
+                               th:name="numberOfInsurances"
+                               th:field="*{numberOfInsurances}"
+                               th:errorclass="bg-danger"/>
+                        <small th:if="${#fields.hasErrors('numberOfInsurances')}"
+                               th:errors="*{numberOfInsurances}" class="text-danger">Number of insurances error message</small>
                       </div>
                     </div>
                   </td>
@@ -90,7 +117,7 @@
               Medical insurance is mandatory when traveling abroad.
             </div>
             <div class="res-btn text-center">
-              <button type="button" class="btn btn-info">Make a reservation</button>
+              <button type="submit" class="btn btn-info">Make a reservation</button>
             </div>
           </form>
         </div>

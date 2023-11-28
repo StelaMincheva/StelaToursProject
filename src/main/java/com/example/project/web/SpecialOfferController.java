@@ -63,10 +63,10 @@ public class SpecialOfferController {
         SpecialOfferDto specialOfferDto = specialOfferService.findById(id);
         modelAndView.addObject(specialOfferDto);
 
-        List<String> priceIncludesInfoPoints = Arrays.stream(specialOfferDto.getPriceIncludesInfo().split(". ")).toList();
+        List<String> priceIncludesInfoPoints = Arrays.stream(specialOfferDto.getPriceIncludes().split(". ")).toList();
         modelAndView.addObject("priceIncludesInfoPoints", priceIncludesInfoPoints);
 
-        List<String> priceNotIncludesInfoPoints = Arrays.stream(specialOfferDto.getPriceNotIncludesInfo().split(". ")).toList();
+        List<String> priceNotIncludesInfoPoints = Arrays.stream(specialOfferDto.getPriceNotIncludes().split(". ")).toList();
         modelAndView.addObject("priceNotIncludesInfoPoints", priceNotIncludesInfoPoints);
 
         return modelAndView;

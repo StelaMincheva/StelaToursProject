@@ -32,11 +32,11 @@ public class User extends BaseEntity {
     private LocalDate birthDate;
     @ManyToMany(fetch = FetchType.EAGER)
     private List<Role> roles;
-    @OneToMany
+    @ManyToMany
     private List<Offer> favorites;
-    @OneToMany
+    @ManyToMany
     private List<Reservation> upcomingBookings;
-    @OneToMany
+    @ManyToMany
     private List<Reservation> pastBookings;
     @Column(name = "bonus_points")
     private int bonusPoints;

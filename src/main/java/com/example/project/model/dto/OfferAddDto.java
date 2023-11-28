@@ -3,9 +3,11 @@ package com.example.project.model.dto;
 import com.example.project.model.entity.Destination;
 import com.example.project.validation.ImageAnnotation;
 import jakarta.validation.constraints.*;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.math.BigDecimal;
+import java.time.LocalDate;
 
 public class OfferAddDto {
 
@@ -21,26 +23,24 @@ public class OfferAddDto {
     @DecimalMin(value = "0.0", inclusive = false, message = "Price must be greater then zero!")
     @NotNull(message = "Enter a price!")
     private BigDecimal price;
-    @NotBlank(message = "Enter a title!")
-    private String priceIncludesTitle;
-    @NotBlank(message = "Enter an info!")
-    private String priceIncludesInfo;
-    @NotBlank(message = "Enter a title!")
-    private String priceNotIncludesTitle;
-    @NotBlank(message = "Enter an info!")
-    private String priceNotIncludesInfo;
-    @NotBlank(message = "Enter a title!")
-    private String requiredDocumentsTitle;
-    @NotBlank(message = "Enter an info!")
-    private String requiredDocumentsInfo;
-    @NotBlank(message = "Enter a title!")
-    private String methodOfPaymentTitle;
-    @NotBlank(message = "Enter an info!")
-    private String methodOfPaymentInfo;
-    @NotBlank(message = "Enter a title!")
-    private String minNumberOfTouristsTitle;
-    @NotBlank(message = "Enter an info!")
-    private String minNumberOfTouristsInfo;
+    @NotBlank(message = "Enter an item!")
+    private String priceIncludes;
+    @NotBlank(message = "Enter an item!")
+    private String priceNotIncludes;
+    @NotBlank(message = "Enter a document!")
+    private String requiredDocuments;
+    @NotBlank(message = "Enter a method of payment!")
+    private String methodOfPayment;
+    @NotBlank(message = "Enter a number!")
+    private String minNumberOfTourists;
+    @NotBlank(message = "Enter a type of transport!")
+    private String typeOfTransport;
+    @NotBlank(message = "Enter a duration!")
+    private String duration;
+    @Future(message = "Select a future date!")
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    @NotNull(message = "Enter a date!")
+    private LocalDate date;
     @NotNull(message = "Select a destination!")
     private Destination destination;
 
@@ -87,84 +87,68 @@ public class OfferAddDto {
         this.price = price;
     }
 
-    public String getPriceIncludesTitle() {
-        return priceIncludesTitle;
+    public String getPriceIncludes() {
+        return priceIncludes;
     }
 
-    public void setPriceIncludesTitle(String priceIncludesTitle) {
-        this.priceIncludesTitle = priceIncludesTitle;
+    public void setPriceIncludes(String priceIncludes) {
+        this.priceIncludes = priceIncludes;
     }
 
-    public String getPriceIncludesInfo() {
-        return priceIncludesInfo;
+    public String getPriceNotIncludes() {
+        return priceNotIncludes;
     }
 
-    public void setPriceIncludesInfo(String priceIncludesInfo) {
-        this.priceIncludesInfo = priceIncludesInfo;
+    public void setPriceNotIncludes(String priceNotIncludes) {
+        this.priceNotIncludes = priceNotIncludes;
     }
 
-    public String getPriceNotIncludesTitle() {
-        return priceNotIncludesTitle;
+    public String getRequiredDocuments() {
+        return requiredDocuments;
     }
 
-    public void setPriceNotIncludesTitle(String priceNotIncludesTitle) {
-        this.priceNotIncludesTitle = priceNotIncludesTitle;
+    public void setRequiredDocuments(String requiredDocuments) {
+        this.requiredDocuments = requiredDocuments;
     }
 
-    public String getPriceNotIncludesInfo() {
-        return priceNotIncludesInfo;
+    public String getMethodOfPayment() {
+        return methodOfPayment;
     }
 
-    public void setPriceNotIncludesInfo(String priceNotIncludesInfo) {
-        this.priceNotIncludesInfo = priceNotIncludesInfo;
+    public void setMethodOfPayment(String methodOfPayment) {
+        this.methodOfPayment = methodOfPayment;
     }
 
-    public String getRequiredDocumentsTitle() {
-        return requiredDocumentsTitle;
+    public String getMinNumberOfTourists() {
+        return minNumberOfTourists;
     }
 
-    public void setRequiredDocumentsTitle(String requiredDocumentsTitle) {
-        this.requiredDocumentsTitle = requiredDocumentsTitle;
+    public void setMinNumberOfTourists(String minNumberOfTourists) {
+        this.minNumberOfTourists = minNumberOfTourists;
     }
 
-    public String getRequiredDocumentsInfo() {
-        return requiredDocumentsInfo;
+    public String getTypeOfTransport() {
+        return typeOfTransport;
     }
 
-    public void setRequiredDocumentsInfo(String requiredDocumentsInfo) {
-        this.requiredDocumentsInfo = requiredDocumentsInfo;
+    public void setTypeOfTransport(String typeOfTransport) {
+        this.typeOfTransport = typeOfTransport;
     }
 
-    public String getMethodOfPaymentTitle() {
-        return methodOfPaymentTitle;
+    public String getDuration() {
+        return duration;
     }
 
-    public void setMethodOfPaymentTitle(String methodOfPaymentTitle) {
-        this.methodOfPaymentTitle = methodOfPaymentTitle;
+    public void setDuration(String duration) {
+        this.duration = duration;
     }
 
-    public String getMethodOfPaymentInfo() {
-        return methodOfPaymentInfo;
+    public LocalDate getDate() {
+        return date;
     }
 
-    public void setMethodOfPaymentInfo(String methodOfPaymentInfo) {
-        this.methodOfPaymentInfo = methodOfPaymentInfo;
-    }
-
-    public String getMinNumberOfTouristsTitle() {
-        return minNumberOfTouristsTitle;
-    }
-
-    public void setMinNumberOfTouristsTitle(String minNumberOfTouristsTitle) {
-        this.minNumberOfTouristsTitle = minNumberOfTouristsTitle;
-    }
-
-    public String getMinNumberOfTouristsInfo() {
-        return minNumberOfTouristsInfo;
-    }
-
-    public void setMinNumberOfTouristsInfo(String minNumberOfTouristsInfo) {
-        this.minNumberOfTouristsInfo = minNumberOfTouristsInfo;
+    public void setDate(LocalDate date) {
+        this.date = date;
     }
 
     public Destination getDestination() {

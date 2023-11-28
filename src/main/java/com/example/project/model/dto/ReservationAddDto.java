@@ -1,27 +1,27 @@
-package com.example.project.model.entity;
+package com.example.project.model.dto;
 
-import jakarta.persistence.*;
-import jakarta.validation.constraints.Future;
+import jakarta.validation.constraints.*;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import java.time.LocalDate;
 
-@Entity
-@Table(name = "reservations")
-public class Reservation extends BaseEntity {
-
-    @Column(name = "number_of_adults", nullable = false)
+public class ReservationAddDto {
+    @Min(1)
+    @Max(value = 6, message = "The maximum number allowed is 6!")
+    @NotNull(message = "Enter a number!")
     private int numberOfAdults;
-    @Column(name = "number_of_kids")
+    @Max(value = 6, message = "The maximum number allowed is 6!")
     private int numberOfKids;
-    @Future
-    @Column(name = "date", nullable = false)
+    @Future(message = "Select a future date!")
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    @NotNull(message = "Enter a date!")
     private LocalDate date;
-    @Column(name = "hotel_category", nullable = false)
+    @NotNull(message = "Enter a hotel category!")
     private String hotelCategory;
-    @Column(name = "number_of_insurances", nullable = false)
+    @NotNull(message = "Enter a number!")
     private int numberOfInsurances;
 
-    public Reservation() {
+    public ReservationAddDto() {
     }
 
     public int getNumberOfAdults() {
@@ -63,6 +63,4 @@ public class Reservation extends BaseEntity {
     public void setNumberOfInsurances(int numberOfInsurances) {
         this.numberOfInsurances = numberOfInsurances;
     }
-
-
 }

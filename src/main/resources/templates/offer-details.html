@@ -44,14 +44,14 @@
                 </div>
 
                 <div class="text-start">
-                    <h4  th:text="${offerDto.priceIncludesTitle} + ':'" style="color:#6f42c1;"></h4>
+                    <h4 style="color:#6f42c1;">The package price is in BGN per person and includes: </h4>
                     <ul th:each="item: ${priceIncludesInfoPoints}" class="list-style-type: disc">
                         <li th:text="${item}"><div class="item"></div></li>
                     </ul>
                 </div>
 
                 <div class="text-start">
-                    <h4  th:text="${offerDto.priceNotIncludesTitle} + ':'" style="color:#6f42c1;"></h4>
+                    <h4 style="color:#6f42c1;">The price does not include:</h4>
                     <ul th:each="item: ${priceNotIncludesInfoPoints}" class="list-style-type: disc">
                         <li th:text="${item}"><div class="item"></div></li>
                     </ul>
@@ -59,18 +59,18 @@
                 </div>
 
                 <div class="text-start">
-                    <strong th:text="${offerDto.requiredDocumentsTitle} + ':'"><u></u></strong>
-                    <p th:text="${offerDto.requiredDocumentsInfo}" style="line-height: 20px">
+                    <strong><u>Required documents: </u></strong>
+                    <p th:text="${offerDto.requiredDocuments}" style="line-height: 20px">
                         <br/>
                     </p>
 
-                    <strong th:text="${offerDto.methodOfPaymentTitle} + ':'"><u></u></strong>
-                    <p th:text="${offerDto.methodOfPaymentInfo}" style="line-height: 20px">
+                    <strong><u>Method of payment: </u></strong>
+                    <p th:text="${offerDto.methodOfPayment}" style="line-height: 20px">
                         <br/>
                     </p>
 
-                    <strong th:text="${offerDto.minNumberOfTouristsTitle} + ':'"><u></u></strong>
-                    <p th:text="${offerDto.minNumberOfTouristsInfo}" style="line-height: 20px">
+                    <strong><u>Minimum number of tourists to make the trip: </u></strong>
+                    <p th:text="${offerDto.minNumberOfTourists}" style="line-height: 20px">
                         <br/>
                     </p>
                 </div>
@@ -83,18 +83,19 @@
                 </p>
 
                 <div class="text-start p-info">
-                    <p style="line-height: 20px">
-                        <strong><i class="fa fa-plane"></i> Type of transport: </strong>A bus
+                    <p th:text="${offerDto.typeOfTransport}" style="line-height: 20px">
+                        <strong><i class="fa fa-plane"></i> Type of transport: </strong>
+                        <br/>
+
+                    </p>
+
+                    <p th:text="${offerDto.duration}" style="line-height: 20px">
+                        <strong><i class="fa fa-clock-o"></i> Duration: </strong>
                         <br/>
                     </p>
 
-                    <p style="line-height: 20px">
-                        <strong><i class="fa fa-clock-o"></i> Duration: </strong>4 days / 2 nights
-                        <br/>
-                    </p>
-
-                    <p style="line-height: 20px">
-                        <strong><i class="fa fa-calendar"></i> Dates: </strong> 07.12.2023, 14.12.2023
+                    <p th:text="${offerDto.date}" style="line-height: 20px">
+                        <strong><i class="fa fa-calendar"></i> Dates: </strong>
                         <br/>
                     </p>
                 </div>
