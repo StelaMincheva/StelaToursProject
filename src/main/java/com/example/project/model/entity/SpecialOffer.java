@@ -42,8 +42,6 @@ public class SpecialOffer extends BaseEntity {
     private LocalDate date;
     @ManyToOne(optional = false)
     private SeasonalDestination seasonalDestination;
-    @ManyToMany
-    private List<Reservation> reservations;
 
     public SpecialOffer() {
     }
@@ -160,11 +158,4 @@ public class SpecialOffer extends BaseEntity {
         this.seasonalDestination = seasonalDestination;
     }
 
-    public List<Reservation> getReservations() {
-        return reservations;
-    }
-
-    public void setReservations(List<Reservation> reservations) {
-        this.reservations = reservations;
-    }
 }

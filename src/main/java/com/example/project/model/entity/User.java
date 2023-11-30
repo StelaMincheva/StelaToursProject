@@ -32,14 +32,6 @@ public class User extends BaseEntity {
     private LocalDate birthDate;
     @ManyToMany(fetch = FetchType.EAGER)
     private List<Role> roles;
-    @ManyToMany
-    private List<Offer> favorites;
-    @ManyToMany
-    private List<Reservation> upcomingBookings;
-    @ManyToMany
-    private List<Reservation> pastBookings;
-    @Column(name = "bonus_points")
-    private int bonusPoints;
 
     public User() {
         this.roles = new ArrayList<>();
@@ -99,38 +91,6 @@ public class User extends BaseEntity {
 
     public void setRoles(List<Role> roles) {
         this.roles = roles;
-    }
-
-    public List<Offer> getFavorites() {
-        return favorites;
-    }
-
-    public void setFavorites(List<Offer> favorites) {
-        this.favorites = favorites;
-    }
-
-    public List<Reservation> getUpcomingBookings() {
-        return upcomingBookings;
-    }
-
-    public void setUpcomingBookings(List<Reservation> upcomingBookings) {
-        this.upcomingBookings = upcomingBookings;
-    }
-
-    public List<Reservation> getPastBookings() {
-        return pastBookings;
-    }
-
-    public void setPastBookings(List<Reservation> pastBookings) {
-        this.pastBookings = pastBookings;
-    }
-
-    public int getBonusPoints() {
-        return bonusPoints;
-    }
-
-    public void setBonusPoints(int bonusPoints) {
-        this.bonusPoints = bonusPoints;
     }
 
     public void addRole(Role role) {

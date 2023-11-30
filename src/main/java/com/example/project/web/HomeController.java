@@ -1,8 +1,6 @@
 package com.example.project.web;
 
 import com.example.project.model.dto.AllSeasonalDestinationsDto;
-import com.example.project.model.dto.ReservationAddDto;
-import com.example.project.service.ReservationService;
 import com.example.project.service.SeasonalDestinationService;
 import jakarta.validation.Valid;
 import org.springframework.stereotype.Controller;
@@ -17,11 +15,8 @@ public class HomeController {
 
     private final SeasonalDestinationService seasonalDestinationService;
 
-    private final ReservationService reservationService;
-
-    public HomeController(SeasonalDestinationService seasonalDestinationService, ReservationService reservationService) {
+    public HomeController(SeasonalDestinationService seasonalDestinationService) {
         this.seasonalDestinationService = seasonalDestinationService;
-        this.reservationService = reservationService;
     }
 
     @GetMapping("/")
@@ -51,26 +46,6 @@ public class HomeController {
     public ModelAndView profile() {
         return new ModelAndView("profile");
     }
-
-    @GetMapping("/reservation-form")
-    public ModelAndView reservation(@ModelAttribute("reservationAddDto") ReservationAddDto reservationAddDto) {
-        return new ModelAndView("reservation-form");
-    }
-
-    @PostMapping("/reservation-form")
-    public ModelAndView reservation(@ModelAttribute("reservationAddDto") @Valid ReservationAddDto reservationAddDto,
-                                    BindingResult bindingResult) {
-
-        if(bindingResult.hasErrors()) {
-            return new ModelAndView("reservation-form");
-        }
-
-        reservationService.addReservation(reservationAddDto);
-        return new ModelAndView("redirect:/home");
-    }
-
-
-
 
 
 }
