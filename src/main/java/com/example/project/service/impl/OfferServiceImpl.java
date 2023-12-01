@@ -13,6 +13,7 @@ import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -24,7 +25,6 @@ public class OfferServiceImpl implements OfferService {
     private final OfferRepository offerRepository;
     private final ModelMapper modelMapper;
     private final ImageService imageService;
-
     private final DestinationRepository destinationRepository;
 
     public OfferServiceImpl(OfferRepository offerRepository, ModelMapper modelMapper,
@@ -70,5 +70,28 @@ public class OfferServiceImpl implements OfferService {
         }
 
         return new AllOffersDto(offers);
+    }
+
+    @Override
+    public Offer likeOffer(Long id) {
+        Offer offer = offerRepository.findById(id).orElse(null);
+
+        offer.setLikes(offer.getLikes() + 1);
+        return offerRepository.save(offer);
+    }
+
+    @Override
+    public void deletePastOffers() {
+        List<Offer> allOffers = offerRepository.findAll();
+        LocalDate today = LocalDate.now();
+
+        for(Offer offer : allOffers) {
+            LocalDate pastDate = offer.getDate();
+            int compareValue = today.compareTo(pastDate);
+
+            if (compareValue > 0) {
+                offerRepository.delete(offer);
+            }
+        }
     }
 }

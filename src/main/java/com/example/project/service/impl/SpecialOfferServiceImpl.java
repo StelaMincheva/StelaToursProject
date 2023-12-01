@@ -12,6 +12,7 @@ import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -66,6 +67,30 @@ public class SpecialOfferServiceImpl implements SpecialOfferService {
         }
 
         return new AllSpecialsOffersDto(specialOffers);
+    }
+
+    @Override
+    public SpecialOffer likeSpecialOffer(Long id) {
+        SpecialOffer specialOffer = specialOfferRepository.findById(id).orElse(null);
+
+        specialOffer.setLikes(specialOffer.getLikes() + 1);
+        return specialOfferRepository.save(specialOffer);
+    }
+
+    @Override
+    public void deletePastSpecialOffers() {
+        List<SpecialOffer> allSpecialOffers = specialOfferRepository.findAll();
+        LocalDate today = LocalDate.now();
+
+        for(SpecialOffer specialOffer : allSpecialOffers) {
+            LocalDate pastDate = specialOffer.getDate();
+            int compareValue = today.compareTo(pastDate);
+
+            if (compareValue > 0) {
+                specialOfferRepository.delete(specialOffer);
+            }
+        }
+
     }
 
 
