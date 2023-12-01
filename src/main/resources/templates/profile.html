@@ -22,35 +22,28 @@
           </th:block></span>
         </div>
       </div>
+
+      <div id="user-info" class="col-sm-5">
+        <div class="person-info">
+          <p th:text="'First Name: ' + ${userProfileDto.firstName}"></p>
+          <p th:text="'Last Name: ' + ${userProfileDto.lastName}"></p>
+          <p th:text="'Email: ' + ${userProfileDto.email}"></p>
+          <p th:text="${userProfileDto.phoneNumber != null} ? 'Phone Number: ' + ${userProfileDto.phoneNumber} : 'Phone Numer:' "></p>
+          <p th:text="${userProfileDto.birthdate != null} ? 'Birth Date: ' + ${userProfileDto.birthdate} : 'Birth Date:' "></p>
+        </div>
+      </div>
+
       <!--left sidebar-->
       <div class="col-sm-4">
         <div class="sidebar-left">
           <!--sidebar menu-->
           <ul class="list-unstyled sidebar-menu">
             <li>
-              <a class="sidebar-item" style="text-decoration: none" href="">
-                Profile
+              <form>
+              <a class="sidebar-item" style="text-decoration: none">
+                <button id="loadUserInfo" class="btn profile-btn">Change Profile</button>
               </a>
-            </li>
-            <li>
-              <a class="sidebar-item" style="text-decoration: none" href="">
-                Favorites
-              </a>
-            </li>
-            <li>
-              <a class="sidebar-item" style="text-decoration: none" href="">
-                Upcoming bookings
-              </a>
-            </li>
-            <li>
-              <a class="sidebar-item" style="text-decoration: none" href="">
-                Past bookings
-              </a>
-            </li>
-            <li>
-              <a class="sidebar-item" style="text-decoration: none" href="">
-                Bonus points
-              </a>
+              </form>
             </li>
             <li>
               <form th:action="@{/logout}" th:method="POST">

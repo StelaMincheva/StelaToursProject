@@ -434,7 +434,7 @@ border-top: 1px solid #d6d6d6;
     background-color: #fff;
 }
 
-.sign-out-btn {
+.sign-out-btn, .profile-btn {
     border: none!important;
     font-size: 28px!important;
     background-color: transparent!important;

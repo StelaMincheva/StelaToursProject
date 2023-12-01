@@ -1,22 +1,25 @@
 package com.example.project.web;
 
 import com.example.project.model.dto.AllSeasonalDestinationsDto;
+import com.example.project.model.dto.UserProfileDto;
+import com.example.project.repository.UserRepository;
 import com.example.project.service.SeasonalDestinationService;
-import jakarta.validation.Valid;
+import com.example.project.service.UserService;
 import org.springframework.stereotype.Controller;
-import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
+
+import java.security.Principal;
 
 @Controller
 public class HomeController {
 
     private final SeasonalDestinationService seasonalDestinationService;
+    private final UserService userService;
 
-    public HomeController(SeasonalDestinationService seasonalDestinationService) {
+    public HomeController(SeasonalDestinationService seasonalDestinationService, UserService userService) {
         this.seasonalDestinationService = seasonalDestinationService;
+        this.userService = userService;
     }
 
     @GetMapping("/")
@@ -43,9 +46,18 @@ public class HomeController {
 
 
     @GetMapping("/profile")
-    public ModelAndView profile() {
-        return new ModelAndView("profile");
+    public ModelAndView profile(Principal principal) {
+        ModelAndView modelAndView = new ModelAndView("profile");
+
+        UserProfileDto userProfileDto = userService.findUserByEmail(principal.getName());
+        modelAndView.addObject(userProfileDto);
+
+
+        return modelAndView;
     }
+
+
+
 
 
 }
