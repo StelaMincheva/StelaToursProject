@@ -14,6 +14,7 @@ import org.modelmapper.ModelMapper;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.Optional;
 
@@ -98,12 +99,27 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public void editUserByAdmin(UserDto userDto) {
+    public List<User> findAll() {
+        return userRepository.findAll();
+    }
 
+    @Override
+    public void editUserByAdmin(UserDto userDto) {
+        User user = userRepository.findById(userDto.getId()).orElse(null);
+
+        if (user != null) {
+            if (!userDto.getRoles().contains(roleRepository.findByUserRole(UserRole.USER))) {
+                userDto.getRoles().add(roleRepository.findByUserRole(UserRole.USER));
+            }
+
+            user.setRoles(userDto.getRoles());
+            userRepository.save(user);
+        }
     }
 
     @Override
     public void deleteUserByAdmin(Long id) {
+        userRepository.deleteById(id);
 
     }
 

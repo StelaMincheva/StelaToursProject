@@ -9,12 +9,52 @@
 <!--END NAV SECTION -->
 
 <!--PROFILE CHANGE ADMIN SECTION -->
-<section id="profile-change-sec">
-  <div class="container">
+<section id="profile-change-admin-sec">
+  <div class="container text-center">
 
+    <div class="row justify-content-center">
+      <h2 class="text-center admin-changes-title">All user profiles</h2>
+    </div>
+    <div class="table-responsive">
+      <table class="table table-bordered table-striped">
+        <thead>
+        <tr>
+          <th scope="col" class="col-sm-1">Id</th>
+          <th scope="col" class="col-sm-2">First Name</th>
+          <th scope="col" class="col-sm-2">Last Name</th>
+          <th scope="col" class="col-sm-2">Email</th>
+          <th scope="col" class="col-sm-2">Phone Number</th>
+          <th scope="col" class="col-sm-1">Birth Date</th>
+          <th scope="col" class="col-sm-1">Roles</th>
+          <th scope="col" class="col-sm-1">Delete</th>
+          <th scope="col" class="col-sm-1">Change</th>
+        </tr>
+        </thead>
 
+        <tbody>
+        <tr th:each="user: ${users}">
+          <td th:text="${user.id}"></td>
+          <td th:text="${user.firstName}"></td>
+          <td th:text="${user.lastName}"></td>
+          <td th:text="${user.email}"></td>
+          <td th:text="${user.phoneNumber}"></td>
+          <td th:text="${user.birthDate}"></td>
+          <td th:text="${user.roles}"></td>
 
-
+          <td>
+            <form th:unless="${user.id}==1"  th:method="DELETE" th:action="@{/profile-change-admin/delete-user/{id}(id=${user.id})}">
+              <button type="submit" class="btn delete-user-btn">Delete</button>
+            </form>
+          </td>
+          <td>
+            <form th:href="@{/user/update/{id}(id=${user.id})}">
+              <button type="button" class="btn change-user-btn">Change</button>
+            </form>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
 
   </div>
 </section>

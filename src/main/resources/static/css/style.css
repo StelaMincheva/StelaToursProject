@@ -746,6 +746,32 @@ input[type = file] {
 
 
 
+.admin-changes-title {
+    color: black;
+    font-size: 38px;
+    padding-bottom: 26px;
+}
+
+#profile-change-admin-sec {
+    background-color: whitesmoke;
+    padding-bottom: 270px;
+    padding-top: 80px;
+}
+
+#profile-change-admin-sec th {
+    text-align: center;
+}
+
+#profile-change-admin-sec .delete-user-btn {
+    background-color: #6ac7f3;
+    border: 1px solid black;
+}
+
+#profile-change-admin-sec .change-user-btn {
+    background-color: lightgoldenrodyellow;
+    border: 1px solid black;
+}
+
 
 
 
