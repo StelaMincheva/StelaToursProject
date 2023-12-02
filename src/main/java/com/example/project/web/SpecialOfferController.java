@@ -2,16 +2,15 @@ package com.example.project.web;
 
 import com.example.project.model.dto.*;
 import com.example.project.model.entity.Destination;
+import com.example.project.model.entity.Offer;
 import com.example.project.model.entity.SeasonalDestination;
+import com.example.project.model.entity.SpecialOffer;
 import com.example.project.repository.SeasonalDestinationRepository;
 import com.example.project.service.SpecialOfferService;
 import jakarta.validation.Valid;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.util.Arrays;
@@ -71,5 +70,10 @@ public class SpecialOfferController {
 
         return modelAndView;
     }
+
+    //@PostMapping("/api/special-offer/{id}/like")
+    //public SpecialOffer likeSpecialOffer(@PathVariable("id") Long id) {
+       // return specialOfferService.likeSpecialOffer(id);
+    //}
 
 }

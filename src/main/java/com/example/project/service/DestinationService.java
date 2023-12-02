@@ -7,4 +7,6 @@ public interface DestinationService {
 
     void addDestination(DestinationAddDto destinationAddDto);
     AllDestinationsDto getAllDestinations();
+
+    void deleteDestination(Long id);
 }

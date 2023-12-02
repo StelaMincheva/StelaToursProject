@@ -1,6 +1,7 @@
 ﻿<!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:th="http://www.thymeleaf.org">
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec='http://www.thymeleaf.org/extras/spring-security'>
 <head th:replace="~{fragments/commons::head}"></head>
 <body>
      <!-- NAV SECTION -->
@@ -56,6 +57,10 @@
                             <a th:text="${seasonalDestination.title}" th:href="@{/special-offers/{title}(title=${seasonalDestination.getTitle()})}" class="link-dark">Christmas trips</a>
                             <img th:src="@{'images/' + ${seasonalDestination.url}}" class="img-responsive img-bg">
                         </div>
+                        <form th:action="@{/api/}" sec:authorize="hasRole('ADMIN')" id="delete-seasonal-destination">
+                            <input type="hidden" name="id" th:value="${seasonalDestination.id}"/>
+                            <button type="submit" class="btn btn-primary delete-seasonal-btn">Delete</button>
+                        </form>
                     </div>
                 </div>
             </div>

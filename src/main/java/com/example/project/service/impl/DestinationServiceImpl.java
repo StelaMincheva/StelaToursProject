@@ -3,10 +3,11 @@ package com.example.project.service.impl;
 import com.example.project.model.dto.AllDestinationsDto;
 import com.example.project.model.dto.DestinationAddDto;
 import com.example.project.model.dto.DestinationDto;
-import com.example.project.model.dto.OfferDto;
 import com.example.project.model.entity.Destination;
 import com.example.project.model.entity.Image;
+import com.example.project.model.entity.Offer;
 import com.example.project.repository.DestinationRepository;
+import com.example.project.repository.OfferRepository;
 import com.example.project.service.DestinationService;
 import com.example.project.service.ImageService;
 import org.modelmapper.ModelMapper;
@@ -26,13 +27,15 @@ public class DestinationServiceImpl implements DestinationService {
     private final ImageService imageService;
 
     private final ModelMapper modelMapper;
+    private final OfferRepository offerRepository;
 
 
     public DestinationServiceImpl(DestinationRepository destinationRepository, ImageService imageService,
-                                 ModelMapper modelMapper) {
+                                  ModelMapper modelMapper, OfferRepository offerRepository) {
         this.destinationRepository = destinationRepository;
         this.imageService = imageService;
         this.modelMapper = modelMapper;
+        this.offerRepository = offerRepository;
     }
 
     @Override
@@ -63,6 +66,17 @@ public class DestinationServiceImpl implements DestinationService {
         }
 
         return new AllDestinationsDto(destinations);
+    }
+
+    @Override
+    public void deleteDestination(Long id) {
+        Destination destination = destinationRepository.findById(id).get();
+        List<Offer> offers = offerRepository.findByDestination_Country(destination.getCountry());
+        offerRepository.deleteAll(offers);
+        destination.setOffers(null);
+        destinationRepository.save(destination);
+
+        destinationRepository.delete(destination);
     }
 
 

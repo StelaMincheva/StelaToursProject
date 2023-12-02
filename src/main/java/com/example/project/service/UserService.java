@@ -9,4 +9,6 @@ public interface UserService {
 
     UserProfileDto findUserByEmail(String email);
 
+    void changeUserProfile(UserProfileDto userProfileDto);
+
 }

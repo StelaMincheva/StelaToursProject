@@ -42,6 +42,8 @@ public class SpecialOffer extends BaseEntity {
     private LocalDate date;
     @ManyToOne(optional = false)
     private SeasonalDestination seasonalDestination;
+    @Column(name = "likes")
+    private int likes;
 
     public SpecialOffer() {
     }
@@ -158,4 +160,11 @@ public class SpecialOffer extends BaseEntity {
         this.seasonalDestination = seasonalDestination;
     }
 
+    public int getLikes() {
+        return likes;
+    }
+
+    public void setLikes(int likes) {
+        this.likes = likes;
+    }
 }

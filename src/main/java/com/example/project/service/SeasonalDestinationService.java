@@ -8,4 +8,5 @@ public interface SeasonalDestinationService {
     void addSeasonalDestination(SeasonalDestinationAddDto seasonalDestinationAddDto);
 
     AllSeasonalDestinationsDto getAllSeasonalDestinations();
+    void deleteSeasonalDestination(Long id);
 }

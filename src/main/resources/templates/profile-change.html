@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec='http://www.thymeleaf.org/extras/spring-security'>
+<head th:replace="~{fragments/commons::head}"></head>
+<body>
+
+<!-- NAV SECTION -->
+<header th:replace="~{fragments/commons::header}"></header>
+<!--END NAV SECTION -->
+
+<!--PROFILE CHANGE SECTION -->
+<section id="profile-change-sec">
+  <div class="container">
+    <header class="heading">Profile Change</header><hr></hr>
+    <!---Form starting---->
+    <form th:action="@{/profile-change}"
+          th:method="POST"
+          th:object="${userProfileDto}">
+      <!--- For Name---->
+      <div class="col-sm-12 form-group">
+        <div class="col-sm-5">
+          <label class="user-first-name" for="user-first-name">First Name: </label>
+        </div>
+
+        <input type="text" name="user-first-name" id="user-first-name" class="form-control"
+               th:name="firstName"
+               th:field="*{firstName}"/>
+      </div>
+
+
+      <div class="col-sm-12 form-group">
+        <div class="col-sm-5">
+          <label class="user-last-name" for="user-last-name">Last Name: </label>
+        </div>
+        <input type="text" name="user-last-name" id="user-last-name" class="form-control"
+               th:name="lastName"
+               th:field="*{lastName}"/>
+      </div>
+
+      <div class="col-sm-12 form-group">
+        <div class="col-sm-5">
+          <label class="user-email" for="user-email">Email: </label>
+        </div>
+        <input type="email" name="user-email" id="user-email" class="form-control"
+               th:name="email"
+               th:field="*{email}"/>
+      </div>
+
+      <div class="col-sm-12 form-group">
+        <div class="col-sm-5">
+          <label class="user-phone-number" for="user-phone-number">Phone Number: </label>
+        </div>
+        <input type="text" name="user-phone-number"  id="user-phone-number" class="form-control"
+               th:name="phoneNumber"
+               th:field="*{phoneNumber}"/>
+      </div>
+
+      <div class="col-sm-12 form-group">
+        <div class="col-sm-5">
+          <label class="user-birth-date" for="user-birth-date">Birth Date: </label>
+        </div>
+        <input type="date" name="user-birth-date" id="user-birth-date" class="form-control"
+               th:name="birthDate"
+               th:field="*{birthdate}"/>
+      </div>
+
+      <div class="col-sm-12 text-center">
+        <button type="submit" class="btn change-profile-button">Save</button>
+      </div>
+    </form>
+  </div>
+</section>
+<!-- END PROFILE CHANGE SECTION -->
+
+<!--FOOTER SECTION -->
+<footer th:replace="~{fragments/commons::footer}"></footer>
+<!-- END FOOTER SECTION -->
+
+</body>
+</html>

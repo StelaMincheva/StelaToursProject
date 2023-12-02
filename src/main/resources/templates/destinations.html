@@ -1,6 +1,7 @@
 ﻿<!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:th="http://www.thymeleaf.org">
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec='http://www.thymeleaf.org/extras/spring-security'>
 <head th:replace="~{fragments/commons::head}"></head>
 <body>
      <!-- NAV SECTION -->
@@ -45,12 +46,13 @@
                             <img th:src="@{'images/' + ${destination.url}}" class="img-responsive">
                             <a th:text="${destination.country}" th:href="@{/offers/{country}(country=${destination.getCountry()})}" class="label label-info"></a>
                         </div>
+                        <form th:action="@{/api/destinations}" sec:authorize="hasRole('ADMIN')" id="delete-destination">
+                            <input type="hidden" name="id" th:value="${destination.id}"/>
+                            <button type="submit" class="btn btn-primary delete-btn">Delete</button>
+                        </form>
                     </div>
                 </div>
             </div>
-
-
-
 
         </div>
     </section>

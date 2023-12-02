@@ -582,13 +582,13 @@ border-top: 1px solid #d6d6d6;
 /*------------------------------------
      ADD DESTINATION SECTION
 ------------------------------------*/
-#destination-add-sec, #seasonal-destination-add-sec, #offer-add-sec, #special-offer-add-sec {
+#destination-add-sec, #seasonal-destination-add-sec, #offer-add-sec, #special-offer-add-sec, #profile-change-sec {
     background-color: whitesmoke;
     padding-bottom: 50px;
     padding-top: 80px;
 }
 
-#destination-add-sec form, #seasonal-destination-add-sec form, #offer-add-sec form, #special-offer-add-sec form {
+#destination-add-sec form, #seasonal-destination-add-sec form, #offer-add-sec form, #special-offer-add-sec form, #profile-change-sec form {
     font-family:Roboto,sans-serif;
     background-color: lightgoldenrodyellow;
     border-style: solid;
@@ -602,7 +602,7 @@ border-top: 1px solid #d6d6d6;
 
 }
 
-#destination-add-sec .heading, #seasonal-destination-add-sec .heading, #offer-add-sec .heading, #special-offer-add-sec .heading {
+#destination-add-sec .heading, #seasonal-destination-add-sec .heading, #offer-add-sec .heading, #special-offer-add-sec .heading, #profile-change-sec .heading {
     color: black;
 }
 
@@ -618,7 +618,7 @@ input[type = file] {
     display: inline-block;
 }
 
-.add-destination-button, .add-seasonal-destination-button, .add-offer-button, .add-special-offer-button{
+.add-destination-button, .add-seasonal-destination-button, .add-offer-button, .add-special-offer-button, .change-profile-button {
     margin-top: 26px;
     padding: 8px 38px!important;
     border: 1px solid grey;
@@ -742,150 +742,8 @@ input[type = file] {
     border: 1px solid white;
 }
 
-/*------------------------------------
-     RESERVATION FORM SECTION
-------------------------------------*/
-@media {
-    .reservation-form .col1 {
-        width: 100%;
-    }
-}
 
-.reservation-form .col1 {
-    text-transform: uppercase;
-    float: left;
-    font-weight: 700;
-    margin-top: 1rem;
-    padding: 2px 0;
 
-}
-
-@media {
-    .reservation-form .col2 {
-        width: 100%;
-    }
-}
-
-.reservation-form .col2 {
-    float: left;
-    margin-top: 2px;
-}
-
-.select-dropdown-box {
-    float: left;
-    width: 50%;
-    font-size: 14px;
-    overflow: hidden;
-}
-
-.reservation-form .select-dropdown {
-    margin-bottom: 0.5rem;
-    background-color: white;
-    float: left;
-    width: 98%;
-    border: 1px solid #6ac7f3;
-    margin-right: 2%;
-    overflow: hidden;
-}
-
-.select-dropdown select {
-    font-size: 14px;
-    color: black;
-    font-weight: 400;
-    width: 100%;
-    padding: 2px 24px 2px 10px;
-    border: none;
-    background-color: transparent;
-}
-
-option {
-    white-space: nowrap;
-}
-
-.info-dates {
-    width: 10%;
-    float: left;
-    text-align: center;
-}
-
-.info-dates img {
-    max-width: 100%;
-    height: auto;
-    width: auto;
-    border: none;
-    overflow-clip-margin: content-box;
-    overflow: clip;
-}
-
-.insurances-heading {
-    width: 100%;
-    float: left;
-    text-transform: uppercase;
-    font-weight: 700;
-    margin-top: 42px;
-    margin-bottom: 18px;
-    padding: 8px 1rem;
-    clear: left;
-    background: #6ac7f3;
-    color: whitesmoke;
-}
-
-.table {
-    width: 100%;
-    max-width: 100%;
-}
-
-.table thead tr th {
-    font-weight: 400;
-    color: grey;
-    vertical-align: bottom;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.12);
-    text-align: left;
-    padding: 1px;
-}
-
-.table tbody tr td {
-    text-align: left;
-    vertical-align: middle;
-    border-top: 0;
-    padding-left: 0;
-}
-
-.table-responsive-vertical .select-dropdown-box {
-    width: 100%;
-}
-
-.table-responsive-vertical .select-dropdown-box .select-dropdown {
-    width: 100%;
-}
-
-.table-responsive-vertical .select-dropdown-box .select-dropdown select {
-    padding: 1px;
-}
-
-.note-ens {
-    width: 100%;
-    clear: both;
-    background: rgba(255, 179, 0, .5);
-    padding: 0.5rem 1rem;
-    margin-top: 2px;
-    margin-bottom: 6px;
-    display: inline-block;
-}
-
-.note-ens img {
-    overflow-clip-margin: content-box;
-    overflow: clip;
-}
-
-.res-btn .btn {
-    margin-top: 12px;
-    margin-bottom: 14px;
-}
-
-.reservation-sec {
-    background-color: whitesmoke;
-}
 
 
 

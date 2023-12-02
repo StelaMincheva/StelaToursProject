@@ -13,6 +13,8 @@ import org.modelmapper.ModelMapper;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import java.util.NoSuchElementException;
+import java.util.Optional;
 
 
 @Service
@@ -69,6 +71,29 @@ public class UserServiceImpl implements UserService {
         UserProfileDto userProfileDto = modelMapper.map(user, UserProfileDto.class);
 
         return userProfileDto;
+    }
+
+    @Override
+    public void changeUserProfile(UserProfileDto userProfileDto) {
+        Optional<User> user = userRepository.findByEmail(userProfileDto.getEmail());
+
+        if (!userProfileDto.getFirstName().isEmpty()) {
+            user.get().setFirstName(userProfileDto.getFirstName());
+        }
+
+        if (!userProfileDto.getLastName().isEmpty()) {
+            user.get().setLastName(userProfileDto.getLastName());
+        }
+
+        if (!userProfileDto.getPhoneNumber().isEmpty()) {
+            user.get().setPhoneNumber(userProfileDto.getPhoneNumber());
+        }
+
+        if (userProfileDto.getBirthdate() != null) {
+            user.get().setBirthDate(userProfileDto.getBirthdate());
+        }
+
+        userRepository.save(user.get());
     }
 
 
