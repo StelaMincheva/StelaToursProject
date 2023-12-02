@@ -434,7 +434,7 @@ border-top: 1px solid #d6d6d6;
     background-color: #fff;
 }
 
-.sign-out-btn, .profile-btn {
+.sign-out-btn, .profile-btn, .ban-btn, .role-btn {
     border: none!important;
     font-size: 28px!important;
     background-color: transparent!important;
@@ -582,7 +582,7 @@ border-top: 1px solid #d6d6d6;
 /*------------------------------------
      ADD DESTINATION SECTION
 ------------------------------------*/
-#destination-add-sec, #seasonal-destination-add-sec, #offer-add-sec, #special-offer-add-sec, #profile-change-sec {
+#destination-add-sec, #seasonal-destination-add-sec, #offer-add-sec, #special-offer-add-sec, #profile-change-sec  {
     background-color: whitesmoke;
     padding-bottom: 50px;
     padding-top: 80px;
@@ -741,6 +741,12 @@ input[type = file] {
     font-size: 16px;
     border: 1px solid white;
 }
+
+
+
+
+
+
 
 
 

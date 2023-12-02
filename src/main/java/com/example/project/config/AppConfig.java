@@ -8,6 +8,7 @@ import com.example.project.model.entity.Offer;
 import org.modelmapper.ModelMapper;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.web.servlet.i18n.LocaleChangeInterceptor;
 
 
 @Configuration
@@ -25,5 +26,6 @@ public class AppConfig {
 
         return modelMapper;
     }
+
 
 }

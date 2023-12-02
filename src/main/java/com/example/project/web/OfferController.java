@@ -4,15 +4,13 @@ import com.example.project.model.dto.AllOffersDto;
 import com.example.project.model.dto.OfferAddDto;
 import com.example.project.model.dto.OfferDto;
 import com.example.project.model.entity.Destination;
+import com.example.project.model.entity.Offer;
 import com.example.project.repository.DestinationRepository;
 import com.example.project.service.OfferService;
 import jakarta.validation.Valid;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.util.Arrays;
@@ -72,4 +70,5 @@ public class OfferController {
 
         return modelAndView;
     }
+
 }

@@ -1,6 +1,7 @@
 package com.example.project.service.impl;
 
 import com.example.project.model.dto.OfferDto;
+import com.example.project.model.dto.UserDto;
 import com.example.project.model.dto.UserProfileDto;
 import com.example.project.model.dto.UserRegisterDto;
 import com.example.project.model.entity.Role;
@@ -94,6 +95,16 @@ public class UserServiceImpl implements UserService {
         }
 
         userRepository.save(user.get());
+    }
+
+    @Override
+    public void editUserByAdmin(UserDto userDto) {
+
+    }
+
+    @Override
+    public void deleteUserByAdmin(Long id) {
+
     }
 
 
