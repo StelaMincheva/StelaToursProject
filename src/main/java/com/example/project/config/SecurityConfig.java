@@ -25,12 +25,11 @@ public class SecurityConfig {
                         .requestMatchers(PathRequest.toStaticResources().atCommonLocations()).permitAll()
                         //allow anyone to see the pages
                         .requestMatchers("/", "/home", "/about", "/destinations", "/contacts",
-                                "/register", "/login", "/offers", "/offer-details", "/special-offers",
-                                "/special-offer-details", "/profile", "profile-change", "/fonts/**",
-                                "/plugins/**", "/login-error").permitAll()
-                        .requestMatchers("/destination-add", "/offer-add", "/seasonal-destination-add",
-                                "/special-offer-add", "/admin-user-management", "/profile-change-admin",
-                                "/profile-change-admin/delete-user", "/profile-change-admin-user").hasRole(UserRole.ADMIN.name())
+                                "/register", "/login", "/offers", "/offer-details", "/profile",
+                                "profile-change", "/fonts/**", "/plugins/**", "/login-error").permitAll()
+                        .requestMatchers("/destination-add", "/offer-add", "/admin-user-management",
+                                "/profile-change-admin", "/profile-change-admin/delete-user",
+                                "/profile-change-admin-user").hasRole(UserRole.ADMIN.name())
                         //all other requests are authenticated
                         .anyRequest().authenticated()
         ).formLogin(

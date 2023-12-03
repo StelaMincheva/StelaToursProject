@@ -50,22 +50,6 @@
                 </div>
             </div>
 
-            <div class="row go-marg">
-                <div th:each="seasonalDestination : ${viewSeasonalDestinations.seasonalDestinations}" class="col-md-4 col-sm-4">
-                    <div class="panel panel-default">
-                        <div class="panel-body">
-                            <a th:text="${seasonalDestination.title}" th:href="@{/special-offers/{title}(title=${seasonalDestination.getTitle()})}" class="link-dark">Christmas trips</a>
-                            <img th:src="@{'images/' + ${seasonalDestination.url}}" class="img-responsive img-bg">
-                        </div>
-                        <form th:action="@{/api/}" sec:authorize="hasRole('ADMIN')" id="delete-seasonal-destination">
-                            <input type="hidden" name="id" th:value="${seasonalDestination.id}"/>
-                            <button type="submit" class="btn btn-primary delete-seasonal-btn">Delete</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-
-
 
          </div>
     </section>
