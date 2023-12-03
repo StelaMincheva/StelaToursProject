@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments/commons::head}"></head>
+<body>
+
+<!-- NAV SECTION -->
+<header th:replace="~{fragments/commons::header}"></header>
+<!--END NAV SECTION -->
+
+<!--ERROR SECTION -->
+<section id="error-sec">
+  <div class="container text-center">
+    <div class="row">
+      <div class="col-sm-12">
+        <p class="error-text">You don`t have a permission to access this page!</p>
+        <img class="img-responsive" src="/images/403-page.png">
+      </div>
+    </div>
+  </div>
+</section>
+<!-- END ERROR SECTION -->
+
+<!--FOOTER SECTION -->
+<footer th:replace="~{fragments/commons::footer}"></footer>
+<!-- END FOOTER SECTION -->
+
+
+</body>
+</html>

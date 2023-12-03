@@ -41,18 +41,13 @@ h3 {
 h4 {
 
 line-height: 40px;
-padding-bottom: 0px;
+padding-bottom: 0;
 }
 
 p {
     font-weight:300;
     line-height:30px;
     padding-bottom:15px;
-}
-
-
-.space-free {
-    height:100px;
 }
 
 section {
@@ -703,12 +698,6 @@ input[type = file] {
     margin-bottom: 45px;
 }
 
-
-.center-center {
-    justify-content: center;
-    align-items: center;
-}
-
 .btn. btn-info .btn-lg .btn-block{
     font-weight: bold;
     font-size: 16px;
@@ -791,6 +780,24 @@ input[type = file] {
 .ok-btn {
     border: none;
     background-color: transparent;
+}
+
+
+
+
+
+
+#error-sec {
+    background-color: whitesmoke;
+}
+
+#error-sec .container {
+    padding-top: 30px;
+    padding-bottom: 50px;
+}
+
+.error-text {
+    font-size: 40px;
 }
 
 
