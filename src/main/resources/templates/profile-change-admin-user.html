@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments/commons::head}"></head>
+<body>
+
+<!-- NAV SECTION -->
+<header th:replace="~{fragments/commons::header}"></header>
+<!--END NAV SECTION -->
+
+<!--PROFILE CHANGE ADMIN USER SECTION -->
+<section id="profile-change-admin-user-sec">
+    <div class="container">
+        <div class="row text-center">
+            <div class="col-sm-12">
+                    <h3>Change User</h3>
+                    <form th:action="@{/profile-change-admin/save-change-user/{id}(id=${userDto.getId()})}"
+                          th:method="POST"
+                          th:object="${userDto}">
+                        <div class="row changes">
+                            <div class="col-sm-12 form-group">
+                                <div class="col-sm-3">
+                                    <label for="id">Id</label>
+                                    <input type="hidden" class="form-control" id="id"
+                                           th:text="': ' + *{id}"
+                                           th:name="id"
+                                           th:field="*{id}">
+                                </div>
+                            </div>
+
+                            <div class="col-sm-12 form-group">
+                                <div class="col-sm-3">
+                                    <label for="first-name">First Name</label>
+                                    <input class="form-control" id="first-name"
+                                           th:name="firstName"
+                                           th:field="*{firstName}">
+                                </div>
+                            </div>
+
+                            <div class="col-sm-12 form-group">
+                                <div class="col-sm-3">
+                                    <label for="last-name">Last Name</label>
+                                    <input class="form-control" id="last-name"
+                                           th:name="lastName"
+                                           th:field="*{lastName}">
+                                </div>
+                            </div>
+
+                            <div class="col-sm-12 form-group">
+                                <div class="col-sm-3">
+                                    <label for="email">Email</label>
+                                    <input type="hidden" class="form-control" id="email"
+                                           th:text="': ' + *{email}"
+                                           th:name="email"
+                                           th:field="*{email}">
+                                </div>
+                            </div>
+
+                            <div class="col-sm-12 form-group">
+                                <div class="col-sm-3">
+                                    <label for="phone-number">Phone Number</label>
+                                    <input class="form-control" id="phone-number"
+                                           th:name="phoneNumber"
+                                           th:field="*{phoneNumber}">
+                                </div>
+                            </div>
+
+                            <div class="col-sm-12 form-group">
+                                <div class="col-sm-3">
+                                    <label for="birth-date">Birth Date</label>
+                                    <input type="date" class="form-control" id="birth-date"
+                                           th:name="birthDate"
+                                           th:field="*{birthDate}">
+                                </div>
+                            </div>
+
+                            <div class="col-sm-12 form-group">
+                                <div class="col-sm-3">
+                                    <label for="role">Roles: </label>
+                                    <div type="text" class="form-control" id="role">
+                                        <th:block th:each="role : ${roles}">
+                                            <input th:if="${userDto.id}==1" type="hidden" th:field="*{roles}"
+                                                   th:text="${role.userRole}" th:value="${role.id}"/>
+
+                                            <input th:unless="${userDto.id}==1" type="checkbox" th:field="*{roles}"
+                                                   th:text="${role.userRole}" th:value="${role.id}"/>
+                                        </th:block>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-sm-12 form-group">
+                                <div class="col-sm-6">
+                                    <button th:href="@{/profile-change-admin}" class="btn back-btn">Back</button>
+
+                                    <button type="submit" class="btn save-changes-btn">Save Changes</button>
+                                </div>
+                            </div>
+
+                        </div>
+                    </form>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- END PROFILE CHANGE ADMIN USER SECTION -->
+
+<!--FOOTER SECTION -->
+<footer th:replace="~{fragments/commons::footer}"></footer>
+<!-- END FOOTER SECTION -->
+
+</body>
+</html>

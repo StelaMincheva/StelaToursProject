@@ -47,8 +47,8 @@
             </form>
           </td>
           <td>
-            <form th:href="@{/user/update/{id}(id=${user.id})}">
-              <button type="button" class="btn change-user-btn">Change</button>
+            <form th:action="@{/profile-change-admin/change-user/{id}(id=${user.id})}">
+              <button type="submit" class="btn change-user-btn">Change</button>
             </form>
           </td>
         </tr>

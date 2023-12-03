@@ -74,10 +74,19 @@
                   <li><a th:href="@{/profile-change-admin}">Make changes</a></li>
                 </ul>
               </li>
+
+              <li class="dropdown-submenu">
+                <a tabindex="-1" th:href="@{/}" class="dropdown-submenu-toggle">Sign out<b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                  <form th:action="@{/logout}" th:method="POST">
+                  <li><button type="submit" class="ok-btn">OK</button></li>
+                  </form>
+                </ul>
+              </li>
             </ul>
           </li>
           <li sec:authorize="!isAuthenticated()"><a th:href="@{/register}">REGISTER</a></li>
-          <li sec:authorize="isAuthenticated()"><a th:href="@{/profile}">MY PROFILE</a></li>
+          <li sec:authorize="!hasRole('ADMIN') && isAuthenticated()"><a th:href="@{/profile}">MY PROFILE</a></li>
           <li sec:authorize="!isAuthenticated()"><a th:href="@{/login}">LOGIN</a></li>
         </ul>
       </div>

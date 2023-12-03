@@ -29,7 +29,8 @@ public class SecurityConfig {
                                 "/special-offer-details", "/profile", "profile-change", "/fonts/**",
                                 "/plugins/**", "/login-error").permitAll()
                         .requestMatchers("/destination-add", "/offer-add", "/seasonal-destination-add",
-                                "/special-offer-add", "/admin-user-management").hasRole(UserRole.ADMIN.name())
+                                "/special-offer-add", "/admin-user-management", "/profile-change-admin",
+                                "/profile-change-admin/delete-user", "/profile-change-admin-user").hasRole(UserRole.ADMIN.name())
                         //all other requests are authenticated
                         .anyRequest().authenticated()
         ).formLogin(

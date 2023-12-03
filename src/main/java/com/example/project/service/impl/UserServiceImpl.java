@@ -99,6 +99,13 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    public UserDto findById(Long id) {
+        User user = userRepository.findById(id).orElse(null);
+        UserDto userDto = modelMapper.map(user, UserDto.class);
+        return  userDto;
+    }
+
+    @Override
     public List<User> findAll() {
         return userRepository.findAll();
     }
@@ -113,6 +120,10 @@ public class UserServiceImpl implements UserService {
             }
 
             user.setRoles(userDto.getRoles());
+            user.setFirstName(userDto.getFirstName());
+            user.setLastName(userDto.getLastName());
+            user.setPhoneNumber(userDto.getPhoneNumber());
+            user.setBirthDate(userDto.getBirthDate());
             userRepository.save(user);
         }
     }
