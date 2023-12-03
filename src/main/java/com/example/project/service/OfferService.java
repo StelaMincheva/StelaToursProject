@@ -13,7 +13,5 @@ public interface OfferService {
 
     AllOffersDto getAllOffersByCountry(String country);
 
-    Offer likeOffer(Long id);
-
     void deletePastOffers();
 }

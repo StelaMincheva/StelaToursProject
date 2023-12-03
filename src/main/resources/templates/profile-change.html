@@ -42,7 +42,8 @@
         <div class="col-sm-5">
           <label class="user-email" for="user-email">Email: </label>
         </div>
-        <input type="email" name="user-email" id="user-email" class="form-control"
+        <input type="hidden" name="user-email" id="user-email" class="form-control"
+               th:text="*{email}"
                th:name="email"
                th:field="*{email}"/>
       </div>

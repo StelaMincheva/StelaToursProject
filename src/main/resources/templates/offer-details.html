@@ -14,7 +14,6 @@
 
         <div class="row">
             <div class="col-sm-8">
-
                 <div>
                     <img class="img-responsive" th:src="@{'/images/' + ${offerDto.url}}">
                 </div>
@@ -74,34 +73,20 @@
                         <br/>
                     </p>
                 </div>
-            </div>
-
-
-            <div class="col-sm-4">
-                    <p class="p-favor" id="like-counts">0 Likes
-                        <button class="btn btn-danger btn-circle btn-lg" id="like-button"><i class="glyphicon glyphicon-heart"></i></button>
-                    </p>
-
-
                 <div class="text-start p-info">
-                    <p th:text="${offerDto.typeOfTransport}" style="line-height: 20px">
-                        <strong><i class="fa fa-plane"></i> Type of transport: </strong>
-                        <br/>
+                    <i class="fa fa-plane"></i><p th:text="'Type of transport: ' + ${offerDto.typeOfTransport}" style="line-height: 20px">
+                    <br/>
+                </p>
 
-                    </p>
+                    <i class="fa fa-clock-o"></i><p th:text="'Duration: ' + ${offerDto.duration}" style="line-height: 20px">
+                    <br/>
+                </p>
 
-                    <p th:text="${offerDto.duration}" style="line-height: 20px">
-                        <strong><i class="fa fa-clock-o"></i> Duration: </strong>
-                        <br/>
-                    </p>
-
-                    <p th:text="${offerDto.date}" style="line-height: 20px">
-                        <strong><i class="fa fa-calendar"></i> Dates: </strong>
-                        <br/>
-                    </p>
+                    <i class="fa fa-calendar"></i><p th:text="'Dates: ' + ${offerDto.date}" style="line-height: 20px">
+                    <br/>
+                </p>
                 </div>
             </div>
-
 
         </div>
     </div>

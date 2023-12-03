@@ -42,8 +42,6 @@ public class Offer extends BaseEntity {
     private LocalDate date;
     @ManyToOne(optional = false)
     private Destination destination;
-    @Column(name = "likes")
-    private int likes;
 
     public Offer() {
     }
@@ -160,11 +158,4 @@ public class Offer extends BaseEntity {
         this.destination = destination;
     }
 
-    public int getLikes() {
-        return likes;
-    }
-
-    public void setLikes(int likes) {
-        this.likes = likes;
-    }
 }

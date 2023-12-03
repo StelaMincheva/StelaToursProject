@@ -74,29 +74,18 @@
                     <br/>
                 </p>
             </div>
-        </div>
-
-
-        <div class="col-sm-4">
-            <p class="p-favor" id="like-counts">0 Likes
-                <button type="button" class="btn btn-danger btn-circle btn-lg" id ="like-button"><i class="glyphicon glyphicon-heart"></i></button>
+            <div class="text-start p-info">
+                <i class="fa fa-plane"></i><p th:text="'Type of transport: ' + ${specialOfferDto.typeOfTransport}" style="line-height: 20px">
+                <br/>
             </p>
 
-            <div class="text-start p-info">
-                <p th:text="${specialOfferDto.typeOfTransport}" style="line-height: 20px">
-                    <strong><i class="fa fa-plane"></i> Type of transport: </strong>
-                    <br/>
-                </p>
+                <i class="fa fa-clock-o"></i><p th:text="'Duration: ' + ${specialOfferDto.duration}" style="line-height: 20px">
+                <br/>
+            </p>
 
-                <p th:text="${specialOfferDto.duration}" style="line-height: 20px">
-                    <strong><i class="fa fa-clock-o"></i> Duration: </strong>
-                    <br/>
-                </p>
-
-                <p th:text="${specialOfferDto.date}" style="line-height: 20px">
-                    <strong><i class="fa fa-calendar"></i> Dates: </strong>
-                    <br/>
-                </p>
+                <i class="fa fa-calendar"></i><p th:text="'Dates: ' + ${specialOfferDto.date}" style="line-height: 20px">
+                <br/>
+            </p>
             </div>
         </div>
 

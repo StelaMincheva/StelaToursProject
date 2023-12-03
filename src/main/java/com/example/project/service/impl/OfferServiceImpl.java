@@ -73,14 +73,6 @@ public class OfferServiceImpl implements OfferService {
     }
 
     @Override
-    public Offer likeOffer(Long id) {
-        Offer offer = offerRepository.findById(id).orElse(null);
-
-        offer.setLikes(offer.getLikes() + 1);
-        return offerRepository.save(offer);
-    }
-
-    @Override
     public void deletePastOffers() {
         List<Offer> allOffers = offerRepository.findAll();
         LocalDate today = LocalDate.now();
