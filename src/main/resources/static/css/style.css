@@ -676,10 +676,6 @@ input[type = file] {
     margin-top: 50px;
 }
 
-#offers-sec .panel-body {
-    background: rgb(251,249,63);
-    background: linear-gradient(96deg, rgba(251,249,63,0.891281512605042) 0%, rgb(163, 197, 196) 36%);
-}
 
 #offers-sec p {
     line-height: 20px;
