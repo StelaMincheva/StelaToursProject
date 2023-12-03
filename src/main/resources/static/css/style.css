@@ -583,13 +583,13 @@ border-top: 1px solid #d6d6d6;
 /*------------------------------------
      ADD DESTINATION SECTION
 ------------------------------------*/
-#destination-add-sec, #seasonal-destination-add-sec, #offer-add-sec, #special-offer-add-sec, #profile-change-sec  {
+#destination-add-sec, #offer-add-sec, #profile-change-sec  {
     background-color: whitesmoke;
     padding-bottom: 50px;
     padding-top: 80px;
 }
 
-#destination-add-sec form, #seasonal-destination-add-sec form, #offer-add-sec form, #special-offer-add-sec form, #profile-change-sec form {
+#destination-add-sec form, #offer-add-sec form, #profile-change-sec form {
     font-family:Roboto,sans-serif;
     background-color: lightgoldenrodyellow;
     border-style: solid;
@@ -603,11 +603,11 @@ border-top: 1px solid #d6d6d6;
 
 }
 
-#destination-add-sec .heading, #seasonal-destination-add-sec .heading, #offer-add-sec .heading, #special-offer-add-sec .heading, #profile-change-sec .heading {
+#destination-add-sec .heading, #offer-add-sec .heading, #profile-change-sec .heading {
     color: black;
 }
 
-#destination-add-sec p, #seasonal-destination-add-sec p, #offer-add-sec p, #special-offer-add-sec p {
+#destination-add-sec p, #offer-add-sec p {
     font-weight: bold;
     margin-bottom: 2px;
     font-size: 14px;
@@ -619,7 +619,7 @@ input[type = file] {
     display: inline-block;
 }
 
-.add-destination-button, .add-seasonal-destination-button, .add-offer-button, .add-special-offer-button, .change-profile-button {
+.add-destination-button, .add-offer-button, .change-profile-button {
     margin-top: 26px;
     padding: 8px 38px!important;
     border: 1px solid grey;
@@ -631,16 +631,16 @@ input[type = file] {
      ADD OFFER SECTION
 ------------------------------------*/
 
-#offer-add-sec form, #special-offer-add-sec form {
+#offer-add-sec form {
     height: 1450px;
 }
 
-#offer-add-sec p. #special-offer-add-sec p {
+#offer-add-sec p {
     line-height: 6px;
     margin-top: 6px;
 }
 
-.add-offer-button, .add-special-offer-button {
+.add-offer-button {
     margin-top: 20px;
 }
 
