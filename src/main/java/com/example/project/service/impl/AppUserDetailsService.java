@@ -1,4 +1,4 @@
-package com.example.project.service;
+package com.example.project.service.impl;
 
 import com.example.project.model.entity.Role;
 import com.example.project.model.entity.User;

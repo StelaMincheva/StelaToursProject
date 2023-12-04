@@ -2,7 +2,7 @@ package com.example.project.config;
 
 import com.example.project.model.enums.UserRole;
 import com.example.project.repository.UserRepository;
-import com.example.project.service.AppUserDetailsService;
+import com.example.project.service.impl.AppUserDetailsService;
 import org.springframework.boot.autoconfigure.security.servlet.PathRequest;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
