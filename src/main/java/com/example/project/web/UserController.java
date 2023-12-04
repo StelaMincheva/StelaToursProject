@@ -41,6 +41,19 @@ public class UserController {
         return new ModelAndView("redirect:/login");
     }
 
+    @GetMapping("/login")
+    public ModelAndView login() {
+        return new ModelAndView("login");
+    }
+
+    @PostMapping("/login-error")
+    public ModelAndView onFailure() {
+        ModelAndView modelAndView = new ModelAndView("login");
+        modelAndView.addObject("bad_credentials", true);
+
+        return modelAndView;
+    }
+
 
 
 }
