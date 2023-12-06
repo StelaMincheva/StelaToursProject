@@ -44,7 +44,7 @@ public class HomeController {
         ModelAndView modelAndView = new ModelAndView("profile");
 
         UserProfileDto userProfileDto = userService.findUserByEmail(principal.getName());
-        modelAndView.addObject(userProfileDto);
+        modelAndView.addObject("userProfileDto", userProfileDto);
 
 
         return modelAndView;
