@@ -93,6 +93,11 @@ public class OfferServiceImplTest {
         offers.add(furureOffer);
         offers.add(pastOffer1);
 
+        when(mockOfferRepository.findAll())
+                .thenReturn(offers);
+
+        offerServiceToTest.deletePastOffers();
+
 
 
 
