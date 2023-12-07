@@ -1,20 +1,29 @@
 package com.example.project.web;
 
 import com.example.project.model.dto.UserProfileDto;
+import com.example.project.model.entity.Role;
+import com.example.project.model.entity.User;
+import com.example.project.model.enums.UserRole;
+import com.example.project.repository.RoleRepository;
 import com.example.project.repository.UserRepository;
 import com.example.project.service.UserService;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.security.test.context.support.WithMockUser;
 import org.springframework.test.web.servlet.MockMvc;
 
 
 
 import java.security.Principal;
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.Optional;
 
+import static org.mockito.Mockito.doNothing;
 import static org.mockito.Mockito.when;
 import static org.springframework.security.test.web.servlet.request.SecurityMockMvcRequestPostProcessors.csrf;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
@@ -32,6 +41,12 @@ public class HomeControllerTestIT {
     private UserService userServiceToTest;
     @Autowired
     private UserRepository userRepositoryToTest;
+
+    @Autowired
+    private RoleRepository roleRepositoryToTest;
+
+    @Autowired
+    private ObjectMapper objectMapper;
 
 
     @Test
@@ -64,6 +79,22 @@ public class HomeControllerTestIT {
                 .perform(get("/"))
                 .andExpect(status().isOk())
                 .andExpect(view().name("index"));
+    }
+
+    @Test
+    @WithMockUser(username = "test@email", roles = {"USER"})
+    void testProfile() throws Exception {
+        UserProfileDto userProfileDto = new UserProfileDto();
+        userProfileDto.setFirstName("test");
+        userProfileDto.setLastName("test");
+        userProfileDto.setEmail("test@email");
+        userProfileDto.setPhoneNumber("123456");
+        userProfileDto.setBirthdate(LocalDate.parse("1989-10-10"));
+
+
+
+
+
     }
 
 
