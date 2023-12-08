@@ -24,8 +24,6 @@ public class DestinationRestController {
         HttpHeaders headers = new HttpHeaders();
         headers.setLocation(URI.create("/destinations"));
         return new ResponseEntity<>(headers, HttpStatus.MOVED_PERMANENTLY);
-
     }
-
 
 }

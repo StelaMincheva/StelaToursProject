@@ -81,21 +81,7 @@ public class HomeControllerTestIT {
                 .andExpect(view().name("index"));
     }
 
-    @Test
-    @WithMockUser(username = "test@email", roles = {"USER"})
-    void testProfile() throws Exception {
-        UserProfileDto userProfileDto = new UserProfileDto();
-        userProfileDto.setFirstName("test");
-        userProfileDto.setLastName("test");
-        userProfileDto.setEmail("test@email");
-        userProfileDto.setPhoneNumber("123456");
-        userProfileDto.setBirthdate(LocalDate.parse("1989-10-10"));
-
-
-
-
-
-    }
+ 
 
 
 

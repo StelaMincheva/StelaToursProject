@@ -1,6 +1,5 @@
 package com.example.project.model.dto;
 
-import com.example.project.model.entity.Offer;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;

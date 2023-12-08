@@ -1,14 +1,10 @@
 package com.example.project.service.impl;
 
-import com.example.project.model.dto.AllDestinationsDto;
 import com.example.project.model.entity.Destination;
-import com.example.project.model.entity.Image;
 import com.example.project.model.entity.Offer;
 import com.example.project.repository.DestinationRepository;
 import com.example.project.repository.OfferRepository;
-import com.example.project.service.DestinationService;
 import com.example.project.service.ImageService;
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -16,12 +12,10 @@ import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.modelmapper.ModelMapper;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 
-import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
 @ExtendWith(MockitoExtension.class)

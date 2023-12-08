@@ -65,11 +65,6 @@ public class DestinationControllerTestIT {
                 .andExpect(view().name("destination-add"));
     }
 
-    @Test
-    @WithMockUser(roles = {"ADMIN"})
-    void testAddDestination() {
-
-    }
 
 
 

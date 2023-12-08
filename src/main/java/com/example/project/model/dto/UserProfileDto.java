@@ -1,9 +1,7 @@
 package com.example.project.model.dto;
 
-import com.example.project.model.entity.Offer;
 
 import java.time.LocalDate;
-import java.util.List;
 
 public class UserProfileDto {
 

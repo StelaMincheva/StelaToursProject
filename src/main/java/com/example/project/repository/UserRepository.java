@@ -1,7 +1,5 @@
 package com.example.project.repository;
 
-import com.example.project.model.dto.UserDto;
-import com.example.project.model.dto.UserProfileDto;
 import com.example.project.model.entity.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;

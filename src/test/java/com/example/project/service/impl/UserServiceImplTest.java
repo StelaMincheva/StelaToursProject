@@ -100,12 +100,7 @@ public class UserServiceImplTest {
         userDto.setBirthDate(LocalDate.parse("1989-12-12"));
         userDto.setRoles(roles);
 
-        User user = new User();
-        user.setId(1L);
-        user.setFirstName("test");
-        user.setLastName("test");
-        user.setPhoneNumber("123123");
-        user.setBirthDate(LocalDate.parse("1989-10-10"));
+        User user = createUser();
 
         when(mockUserRepository.findById(1L))
                 .thenReturn(Optional.of(user));
@@ -124,12 +119,7 @@ public class UserServiceImplTest {
 
     @Test
     void testRegisterSuccess() {
-        UserRegisterDto userRegisterDto = new UserRegisterDto();
-        userRegisterDto.setFirstName("firstName");
-        userRegisterDto.setLastName("lastName");
-        userRegisterDto.setEmail("test@email");
-        userRegisterDto.setPassword("test");
-        userRegisterDto.setPasswordConfirm("test");
+        UserRegisterDto userRegisterDto = createUserRegisterDto();
 
         when(mockUserRepository.existsByEmail(userRegisterDto.getEmail()))
                 .thenReturn(false);
@@ -155,12 +145,7 @@ public class UserServiceImplTest {
 
     @Test
     void testRegisterUserAlreadyExist() {
-        UserRegisterDto userRegisterDto = new UserRegisterDto();
-        userRegisterDto.setFirstName("firstName");
-        userRegisterDto.setLastName("lastName");
-        userRegisterDto.setEmail("test@email");
-        userRegisterDto.setPassword("test");
-        userRegisterDto.setPasswordConfirm("test");
+        UserRegisterDto userRegisterDto = createUserRegisterDto();
 
         when(mockUserRepository.existsByEmail(userRegisterDto.getEmail()))
                 .thenReturn(true);
@@ -172,12 +157,7 @@ public class UserServiceImplTest {
 
     @Test
     void testChangeUserProfile() {
-        UserProfileDto userProfileDto = new UserProfileDto();
-        userProfileDto.setEmail("test@email");
-        userProfileDto.setFirstName("firstName");
-        userProfileDto.setLastName("lastName");
-        userProfileDto.setPhoneNumber("123456");
-        userProfileDto.setBirthdate(LocalDate.parse("1989-10-10"));
+        UserProfileDto userProfileDto = createUserProfileDto();
 
         User existingUser = new User();
         existingUser.setEmail("test@email");
@@ -191,8 +171,36 @@ public class UserServiceImplTest {
         Assertions.assertEquals("lastName", existingUser.getLastName());
         Assertions.assertEquals("123456", existingUser.getPhoneNumber());
         Assertions.assertEquals(userProfileDto.getBirthdate(), existingUser.getBirthDate());
+    }
 
+    private UserProfileDto createUserProfileDto() {
+        UserProfileDto userProfileDto = new UserProfileDto();
+        userProfileDto.setEmail("test@email");
+        userProfileDto.setFirstName("firstName");
+        userProfileDto.setLastName("lastName");
+        userProfileDto.setPhoneNumber("123456");
+        userProfileDto.setBirthdate(LocalDate.parse("1989-10-10"));
+        return userProfileDto;
+    }
 
+    private UserRegisterDto createUserRegisterDto() {
+        UserRegisterDto userRegisterDto = new UserRegisterDto();
+        userRegisterDto.setFirstName("firstName");
+        userRegisterDto.setLastName("lastName");
+        userRegisterDto.setEmail("test@email");
+        userRegisterDto.setPassword("test");
+        userRegisterDto.setPasswordConfirm("test");
+        return userRegisterDto;
+    }
+
+    private User createUser() {
+        User user = new User();
+        user.setId(1L);
+        user.setFirstName("test");
+        user.setLastName("test");
+        user.setPhoneNumber("123123");
+        user.setBirthDate(LocalDate.parse("1989-10-10"));
+        return user;
     }
 
 

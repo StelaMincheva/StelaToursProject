@@ -41,7 +41,4 @@ public class DestinationController {
         return new ModelAndView("redirect:/destinations");
     }
 
-
-
-
 }

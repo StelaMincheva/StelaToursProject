@@ -1,6 +1,5 @@
 package com.example.project.service.impl;
 
-import com.example.project.model.dto.OfferDto;
 import com.example.project.model.dto.UserDto;
 import com.example.project.model.dto.UserProfileDto;
 import com.example.project.model.dto.UserRegisterDto;
@@ -15,7 +14,6 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.NoSuchElementException;
 import java.util.Optional;
 
 
@@ -131,8 +129,6 @@ public class UserServiceImpl implements UserService {
     @Override
     public void deleteUserByAdmin(Long id) {
         userRepository.deleteById(id);
-
     }
-
 
 }

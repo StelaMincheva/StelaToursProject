@@ -2,7 +2,6 @@ package com.example.project.model.dto;
 
 import com.example.project.validation.ImageAnnotation;
 import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotNull;
 import org.springframework.web.multipart.MultipartFile;
 
 public class DestinationAddDto {

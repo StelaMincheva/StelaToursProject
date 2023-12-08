@@ -59,11 +59,7 @@ public class AdminControllerTestIT {
     @Test
     @WithMockUser(username = "test@email", roles = {"ADMIN", "USER"})
     void testDeleteUser() throws Exception {
-        User testUser = new User();
-        testUser.setFirstName("firstName");
-        testUser.setLastName("lastName");
-        testUser.setEmail("test@email");
-        testUser.setPassword("password");
+        User testUser = createUser();
 
         userRepositoryToTest.saveAndFlush(testUser);
 
@@ -77,11 +73,7 @@ public class AdminControllerTestIT {
     @Test
     @WithMockUser(username = "test@email", roles = {"ADMIN", "USER"})
     void testChangeUser() throws Exception {
-        User testUser = new User();
-        testUser.setFirstName("firstName");
-        testUser.setLastName("lastName");
-        testUser.setEmail("test@email");
-        testUser.setPassword("password");
+        User testUser = createUser();
 
         userRepositoryToTest.saveAndFlush(testUser);
 
@@ -91,6 +83,17 @@ public class AdminControllerTestIT {
                 .andExpect(view().name("profile-change-admin-user"));
 
     }
+
+    private User createUser() {
+        User user = new User();
+        user.setFirstName("firstName");
+        user.setLastName("lastName");
+        user.setEmail("test@email");
+        user.setPassword("password");
+        return user;
+
+    }
+
 
 
 

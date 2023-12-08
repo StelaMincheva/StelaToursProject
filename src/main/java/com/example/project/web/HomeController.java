@@ -46,7 +46,6 @@ public class HomeController {
         UserProfileDto userProfileDto = userService.findUserByEmail(principal.getName());
         modelAndView.addObject("userProfileDto", userProfileDto);
 
-
         return modelAndView;
     }
 
@@ -56,18 +55,12 @@ public class HomeController {
         UserProfileDto userProfileDto = userService.findUserByEmail(principal.getName());
         modelAndView.addObject(userProfileDto);
         return modelAndView;
-
     }
 
     @PostMapping("/profile-change")
     public ModelAndView changeUserProfile(@ModelAttribute("userProfileDto") UserProfileDto userProfileDto) {
         userService.changeUserProfile(userProfileDto);
         return new ModelAndView("redirect:/profile");
-
     }
-
-
-
-
 
 }

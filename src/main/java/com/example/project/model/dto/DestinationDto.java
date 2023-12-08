@@ -1,8 +1,5 @@
 package com.example.project.model.dto;
 
-import com.example.project.model.entity.Destination;
-
-import java.util.ArrayList;
 import java.util.List;
 
 public class DestinationDto {

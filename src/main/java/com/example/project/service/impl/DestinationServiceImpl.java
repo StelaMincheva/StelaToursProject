@@ -42,13 +42,12 @@ public class DestinationServiceImpl implements DestinationService {
     public void addDestination(DestinationAddDto destinationAddDto) {
         Destination destination = modelMapper.map(destinationAddDto, Destination.class);
 
-
         MultipartFile imageToGet = destinationAddDto.getDestinationImage();
-        String pathFile = imageService.getPath(FOLDER_PATH, destinationAddDto.getDestinationImage().getOriginalFilename(), imageToGet);
+        String pathFile = imageService.getPath(FOLDER_PATH,
+                destinationAddDto.getDestinationImage().getOriginalFilename(), imageToGet);
 
         Image image = imageService.create(imageToGet, pathFile);
         destination.setDestinationImage(image);
-
 
         destinationRepository.save(destination);
     }
@@ -78,6 +77,5 @@ public class DestinationServiceImpl implements DestinationService {
 
         destinationRepository.delete(destination);
     }
-
 
 }
