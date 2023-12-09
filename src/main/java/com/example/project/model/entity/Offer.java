@@ -22,9 +22,9 @@ public class Offer extends BaseEntity {
     private String program;
     @Column(name = "price", nullable = false)
     private BigDecimal price;
-    @Column(name = "price_includes", nullable = false)
+    @Column(name = "price_includes", columnDefinition = "TEXT", nullable = false)
     private String priceIncludes;
-    @Column(name = "price_not_includes", nullable = false)
+    @Column(name = "price_not_includes", columnDefinition = "TEXT", nullable = false)
     private String priceNotIncludes;
     @Column(name = "required_documents", nullable = false)
     private String requiredDocuments;
