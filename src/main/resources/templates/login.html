@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:th="http://www.thymeleaf.org"
-      xmlns:sec='http://www.thymeleaf.org/extras/spring-security'>
+      xmlns:th="http://www.thymeleaf.org">
 <head th:replace="~{fragments/commons::head}"></head>
 <body>
 
@@ -11,26 +10,23 @@
 
 <!-- LOGIN SECTION -->
 <section class="login-sec">
-    <!---heading---->
     <header class="heading">Login</header><hr></hr>
-    <!---Form starting---->
     <form th:action="@{/login}"
           th:method="POST">
-      <!-----For email---->
       <div class="col-sm-12 form-group">
           <div class="col-sm-5">
             <label class="mail-login" for="email-login">Email:</label>
           </div>
-            <input type="email" name="email" id="email-login"placeholder="Enter your email" class="form-control">
+            <input type="email" name="email" id="email-login" placeholder="Enter your email" class="form-control">
       </div>
-      <!-----For Password and confirm password---->
+
       <div class="col-sm-12 form-group">
           <div class="col-sm-5">
             <label class="pass-login" for="password-login">Password:</label>
           </div>
             <input type="password" name="password" id="password-login" placeholder="Enter your Password" class="form-control">
       </div>
-      <!-----------Remember me-------->
+
       <div class="col-sm-12 form-group">
         <div class="col-sm-5">
           <div class="checkbox">
@@ -38,15 +34,14 @@
           </div>
         </div>
       </div>
-        <!-----------Login-error-------->
+
       <small th:if="${bad_credentials}" class="errors alert alert-danger">
           Invalid Email or password!
       </small>
-      <!-----------For Phone number-------->
+
       <div class="col-sm-12 text-center">
             <button type="submit" class="btn btn-warning login-btn">Login</button>
       </div>
-
     </form>
 </section>
 

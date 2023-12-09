@@ -10,14 +10,11 @@
 
 <!--OFFER ADD SECTION -->
 <section id="offer-add-sec">
-    <!---heading---->
     <header class="heading">Add Offer</header><hr></hr>
-    <!---Form starting---->
     <form enctype="multipart/form-data"
             th:method="POST"
             th:action="@{/offer-add}"
             th:object="${offerAddDto}">
-        <!--- For Name---->
         <div class="col-sm-12 form-group">
             <div class="col-sm-5">
                 <label class="offer-title" for="offer-title">Title: </label>
@@ -191,7 +188,6 @@
         <div class="col-sm-12 text-center">
             <button type="submit" class="btn add-offer-button">Add</button>
         </div>
-
     </form>
 </section>
 

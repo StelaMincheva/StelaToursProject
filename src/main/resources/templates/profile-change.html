@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:th="http://www.thymeleaf.org"
-      xmlns:sec='http://www.thymeleaf.org/extras/spring-security'>
+      xmlns:th="http://www.thymeleaf.org">
 <head th:replace="~{fragments/commons::head}"></head>
 <body>
 
@@ -13,11 +12,9 @@
 <section id="profile-change-sec">
   <div class="container">
     <header class="heading">Profile Change</header><hr></hr>
-    <!---Form starting---->
     <form th:action="@{/profile-change}"
           th:method="POST"
           th:object="${userProfileDto}">
-      <!--- For Name---->
       <div class="col-sm-12 form-group">
         <div class="col-sm-5">
           <label class="user-first-name" for="user-first-name">First Name: </label>

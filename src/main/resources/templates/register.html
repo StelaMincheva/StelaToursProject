@@ -10,9 +10,7 @@
 
 <!--REGISTER SECTION-->
 <section class="register-sec">
-    <!---heading---->
     <header class="heading">Registration</header><hr></hr>
-    <!---Form starting---->
     <form
      th:method="POST"
      th:action="@{/register}"
@@ -30,7 +28,6 @@
                            th:errors="*{firstName}" class="text-danger">First name error message</small>
         </div>
 
-
         <div class="col-sm-12 form-group">
                 <div class="col-sm-5">
                     <label class="lastname" for="lname">Last Name:</label>
@@ -41,7 +38,7 @@
                     <small th:if="${#fields.hasErrors('lastName')}"
                            th:errors="*{lastName}" class="text-danger">Last name error message</small>
         </div>
-        <!-----For email---->
+
         <div class="col-sm-12 form-group">
                 <div class="col-sm-5">
                     <label class="mail" for="email">Email:</label>
@@ -52,7 +49,7 @@
                     <small th:if="${#fields.hasErrors('email')}"
                            th:errors="*{email}" class="text-danger">Email error message</small>
         </div>
-        <!-----For Password and confirm password---->
+
         <div class="col-sm-12 form-group">
                 <div class="col-sm-5">
                     <label class="pass" for="password">Password:</label>
@@ -75,7 +72,6 @@
                            th:errors="*{passwordConfirm}" class="text-danger">Password confirm error message</small>
         </div>
 
-        <!-----------For Phone number-------->
         <div class="col-sm-12 text-center">
             <button type="submit" class="btn btn-warning">Register</button>
         </div>

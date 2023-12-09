@@ -27,6 +27,7 @@ public class SecurityConfig {
                         .requestMatchers("/", "/home", "/about", "/destinations", "/contacts",
                                 "/register", "/login", "/offers", "/offer-details", "/profile",
                                 "profile-change", "/fonts/**", "/plugins/**", "/login-error").permitAll()
+                        .requestMatchers("/maintenance").permitAll()
                         .requestMatchers("/destination-add", "/offer-add", "/admin-user-management",
                                 "/profile-change-admin", "/profile-change-admin/delete-user",
                                 "/profile-change-admin-user").hasRole(UserRole.ADMIN.name())

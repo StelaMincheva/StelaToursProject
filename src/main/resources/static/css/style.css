@@ -70,7 +70,7 @@ font-size: 18px;
 }
 
 #home-sec {
-background: url(../images/2.jpg) no-repeat 50% 50%;
+background: url(../images/homepage-image.jpg) no-repeat 50% 50%;
     filter: brightness(80%);
 background-attachment: fixed;
 -webkit-background-size: cover;
@@ -195,7 +195,7 @@ border-top: 1px solid #d6d6d6;
     REGISTER SECTION
 ==================================================*/
 .register-sec {
-    background-image:url(../images/3.jpg);
+    background-image:url(../images/form-image.jpg);
     background-repeat:no-repeat;
     background-size:cover;
     width:100%;
@@ -219,7 +219,7 @@ border-top: 1px solid #d6d6d6;
     padding-top: 10px;
     height: 500px;
 }
-/*--- for label of first and last name---*/
+
 .lastname{
     margin-left: 1px;
     font-family: sans-serif;
@@ -242,7 +242,6 @@ border-top: 1px solid #d6d6d6;
     color: black;
 }
 
-/*---for heading-----*/
 .heading{
     font-weight: bold;
     text-align : center;
@@ -259,14 +258,12 @@ border-top: 1px solid #d6d6d6;
 .register-sec .form-group {
     margin-bottom: 5px;
 }
-/*-------for email----------*/
-/*------label----*/
+
 #email{
     margin-top: 5px;
     color: black;
 }
-/*-----------for Password--------*/
-/*-------label-----*/
+
 .mail{
     margin-left: 1px;
     font-family: sans-serif;
@@ -296,7 +293,6 @@ border-top: 1px solid #d6d6d6;
     margin-top: 2px;
 }
 
-/*------------For submit button---------*/
 .btn.btn-warning {
     color: black;
     font-weight: bold;
@@ -315,14 +311,12 @@ border-top: 1px solid #d6d6d6;
 }
 
 
-
 /*=======================================
     LOGIN SECTION
 ==================================================*/
 
-
 .login-sec {
-    background-image:url(../images/3.jpg);
+    background-image:url(../images/form-image.jpg);
     background-repeat:no-repeat;
     background-size:cover;
     width:100%;
@@ -350,8 +344,7 @@ border-top: 1px solid #d6d6d6;
     margin-top: 5px;
     color: black;
 }
-/*-----------for Password--------*/
-/*-------label-----*/
+
 .mail-login{
     margin-left: 1px;
     font-family: sans-serif;
@@ -393,7 +386,6 @@ border-top: 1px solid #d6d6d6;
     color: white;
     text-align: left;
 }
-
 
 #destination-sec {
     background-color: whitesmoke;
@@ -507,7 +499,7 @@ border-top: 1px solid #d6d6d6;
 }
 
 
-/* NEW 2nd-Level Dropdown CSS START */
+
 .dropdown-submenu {
     position: relative;
 }
@@ -572,7 +564,7 @@ border-top: 1px solid #d6d6d6;
         background-color:#fff;
     }
 }
-/* NEW 2nd-Level Dropdown CSS END */
+
 
 
 /*------------------------------------
@@ -681,12 +673,6 @@ input[type = file] {
 /*------------------------------------
      OFFER DETAILS SECTION
 ------------------------------------*/
-
-
-
-
-
-
 
 .text-start.p-info {
     font-size: 14px;
