@@ -26,7 +26,7 @@ public class Offer extends BaseEntity {
     private String priceIncludes;
     @Column(name = "price_not_includes", columnDefinition = "TEXT", nullable = false)
     private String priceNotIncludes;
-    @Column(name = "required_documents", nullable = false)
+    @Column(name = "required_documents",  columnDefinition = "TEXT", nullable = false)
     private String requiredDocuments;
     @Column(name = "method_of_payment", nullable = false)
     private String methodOfPayment;

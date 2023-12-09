@@ -13,21 +13,21 @@
         <div class="container">
             <div class="row ">
                 <div class="text-center g-pad-bottom">
-                   <div class="col-md-4 col-sm-4 alert-info">
+                   <div class="col-sm-4 alert-info">
                        <h4><i class="fa fa-thumbs-up"></i> <u>Top Offers</u></h4>
                             <p>
                                 We always try to offer the best quality service at a good price.
                                 With us, you can always find a variety of top destinations with rich itineraries.
                             </p>
                     </div>
-                    <div class="col-md-4 col-sm-4 alert-success">
+                    <div class="col-sm-4 alert-success">
                         <h4><i class="fa fa-shield"></i> <u>100% security</u></h4>
                             <p>
                                 We are a licensed tour operator specializing in organizing tours and holidays abroad.
                                 Many of our customers travel regularly with our company.
                             </p>
                     </div>
-                    <div class="col-md-4 col-sm-4 alert-danger">
+                    <div class="col-sm-4 alert-danger">
                         <h4><i class="fa fa-gift"></i> <u>Loyal customer program</u></h4>
                             <p>
                                 Our regular customers can take advantage of our special discounts through the bonus
@@ -38,7 +38,7 @@
             </div>
 
             <div class="row go-marg">
-                <div th:each="destination : ${viewDestinations.destinations}" class="col-md-4 col-sm-4">
+                <div th:each="destination : ${viewDestinations.destinations}" class="col-sm-4">
                     <div class="panel panel-default">
                         <div class="panel-body">
                             <img th:src="@{'images/' + ${destination.url}}" class="img-responsive">

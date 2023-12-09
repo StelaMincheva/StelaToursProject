@@ -22,8 +22,8 @@ spring:
       static-locations[1]: "classpath:/static/"
   servlet:
    multipart:
-    max-file-size: 6MB
-    max-request-size: 6MB
+    max-file-size: 11MB
+    max-request-size: 11MB
 logging:
   level:
     org:

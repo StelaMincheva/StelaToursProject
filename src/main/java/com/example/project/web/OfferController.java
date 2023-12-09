@@ -60,10 +60,10 @@ public class OfferController {
         OfferDto offerDto = offerService.findById(id);
         modelAndView.addObject(offerDto);
 
-        List<String> priceIncludesInfoPoints = Arrays.stream(offerDto.getPriceIncludes().split(". ")).toList();
+        List<String> priceIncludesInfoPoints = Arrays.stream(offerDto.getPriceIncludes().split("\\. ")).toList();
         modelAndView.addObject("priceIncludesInfoPoints", priceIncludesInfoPoints);
 
-        List<String> priceNotIncludesInfoPoints = Arrays.stream(offerDto.getPriceNotIncludes().split(". ")).toList();
+        List<String> priceNotIncludesInfoPoints = Arrays.stream(offerDto.getPriceNotIncludes().split("\\. ")).toList();
         modelAndView.addObject("priceNotIncludesInfoPoints", priceNotIncludesInfoPoints);
 
         return modelAndView;
